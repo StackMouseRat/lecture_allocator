@@ -1,0 +1,240 @@
+{
+ "term": "第3学期（2023-2024学年第一学期）",
+ "term_code": "2023-24-1",
+ "semester_no": 3,
+ "semester_basis": "第一学期=2022年9月（入学学期），按培养方案编号：1,2,短1,3,4,短2,5,6,短3,7,8",
+ "term_start": "2023-09-04",
+ "teaching_weeks": 16,
+ "year": 2023,
+ "month": 9,
+ "weekday": 3,
+ "weekdays": 5,
+ "note": "排课规则：32学时=每周1次×2学时(1-16周)；64学时=每周2次×2学时(1-16周)；48学时=前半或后半学期(8周)每周2次×3学时(3节连上)；含小班讨论单独标记；实验课仅晚间且占满3节：大物A2为3/6学时规格，其余实验一律4学时/次。",
+ "courses": [
+  {
+   "name": "电路",
+   "credits": 4.0,
+   "category": "必修",
+   "type": "理论",
+   "weeks": "1-16",
+   "sessions_per_week": 2,
+   "hours_per_session": 2,
+   "total_hours": 64,
+   "lecture": 64,
+   "seminar": 0,
+   "practice": 0,
+   "other": 0,
+   "prefer": [
+    "上午"
+   ],
+   "desc": "64学时=每周2次×2学时"
+  },
+  {
+   "name": "电路实验",
+   "credits": 1.0,
+   "category": "必修",
+   "type": "实验",
+   "weeks": "1-16",
+   "sessions": 8,
+   "hours_per_session": 4,
+   "total_hours": 32,
+   "practice": 32,
+   "evening_only": true,
+   "prefer": [
+    "晚上"
+   ],
+   "desc": "32学时=8次×4学时（晚间3节连上）"
+  },
+  {
+   "name": "复变函数与积分变换",
+   "credits": 2.0,
+   "category": "必修",
+   "type": "理论",
+   "weeks": "1-16",
+   "sessions_per_week": 1,
+   "hours_per_session": 2,
+   "total_hours": 32,
+   "lecture": 32,
+   "prefer": [
+    "上午"
+   ],
+   "desc": "32学时=每周1次×2学时"
+  },
+  {
+   "name": "离散数学",
+   "credits": 2.0,
+   "category": "必修",
+   "type": "理论",
+   "weeks": "1-16",
+   "sessions_per_week": 1,
+   "hours_per_session": 2,
+   "total_hours": 32,
+   "lecture": 32,
+   "prefer": [
+    "上午"
+   ],
+   "desc": "32学时=每周1次×2学时"
+  },
+  {
+   "name": "C++面向对象程序设计",
+   "credits": 2.0,
+   "category": "普通选修",
+   "type": "理论",
+   "weeks": "1-16",
+   "sessions_per_week": 1,
+   "hours_per_session": 2,
+   "total_hours": 32,
+   "prefer": [
+    "晚上"
+   ],
+   "desc": "学院选修，学时按2学分估算32",
+   "lecture": 32
+  },
+  {
+   "name": "软件技术基础",
+   "credits": 2.0,
+   "category": "普通选修",
+   "type": "理论",
+   "weeks": "1-16",
+   "sessions_per_week": 1,
+   "hours_per_session": 2,
+   "total_hours": 32,
+   "prefer": [
+    "晚上"
+   ],
+   "desc": "学院选修，学时按2学分估算32",
+   "lecture": 32
+  },
+  {
+   "name": "体育（3）",
+   "credits": 1.0,
+   "category": "必修",
+   "type": "体育",
+   "weeks": "1-16",
+   "sessions_per_week": 1,
+   "hours_per_session": 2,
+   "total_hours": 36,
+   "practice": 32,
+   "other": 4,
+   "fixed_slot": 5,
+   "block_next": true,
+   "prefer": [
+    "下午"
+   ],
+   "desc": "144学时÷4学期=36/学期；体育课后一节不排课"
+  },
+  {
+   "name": "毛泽东思想和中国特色社会主义理论体系概论",
+   "credits": 3.0,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 48,
+   "intensive_half": "first",
+   "lecture": 48,
+   "prefer": [
+    "上午"
+   ],
+   "desc": "48学时：前半学期每周2节×2学时 + 后半学期每周1节×2学时"
+  },
+  {
+   "name": "概率论与数理统计A",
+   "credits": 3.0,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 48,
+   "intensive_half": "second",
+   "lecture": 48,
+   "other": 8,
+   "prefer": [
+    "上午"
+   ],
+   "desc": "48学时：前半学期每周1节 + 后半学期每周2节×2学时"
+  },
+  {
+   "name": "普通物理A（2）",
+   "credits": 3.0,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 48,
+   "intensive_half": "first",
+   "lecture": 48,
+   "prefer": [
+    "上午"
+   ],
+   "desc": "大班授课48学时：前半2节/周+后半1节/周"
+  },
+  {
+   "name": "普通物理A（2）·讨论",
+   "credits": 0.0,
+   "category": "必修",
+   "type": "讨论",
+   "total_hours": 16,
+   "sessions_per_week": 1,
+   "hours_per_session": 2,
+   "weeks": "9-16",
+   "seminar": 1,
+   "prefer": [
+    "下午"
+   ],
+   "desc": "小班讨论16学时：后半学期(9-16周)每周1次×2学时【单独标记】"
+  },
+  {
+   "name": "普通物理实验A（2）",
+   "credits": 1.0,
+   "category": "必修",
+   "type": "实验",
+   "weeks": "1-16",
+   "sessions": 8,
+   "hours_per_session": 3,
+   "total_hours": 32,
+   "virtual_hours": 8,
+   "practice": 32,
+   "evening_only": true,
+   "prefer": [
+    "晚上"
+   ],
+   "desc": "总32学时含8学时虚拟（不排课）；实际24学时=8次×3学时（晚间3节）"
+  },
+  {
+   "name": "军事理论",
+   "credits": 1.0,
+   "category": "必修",
+   "type": "讲座",
+   "weeks": "1-16",
+   "sessions_per_week": 1,
+   "hours_per_session": 2,
+   "total_hours": 36,
+   "lecture": 36,
+   "prefer": [
+    "下午"
+   ],
+   "desc": "36学时=每周1次×2学时（军事理论部分）"
+  }
+ ],
+ "semester_events": [
+  {
+   "name": "形势与政策(3)",
+   "credits": 0.25,
+   "category": "必修",
+   "type": "讲座",
+   "total_hours": 4,
+   "note": "培养方案形势与政策2学分32学时÷8学期=4学时/学期；一学期仅2次×2学时",
+   "events": [
+    {
+     "week": 3,
+     "weekday": 2,
+     "slot": 5,
+     "start": "14:30",
+     "end": "16:00"
+    },
+    {
+     "week": 12,
+     "weekday": 2,
+     "slot": 5,
+     "start": "14:30",
+     "end": "16:00"
+    }
+   ]
+  }
+ ]
+}

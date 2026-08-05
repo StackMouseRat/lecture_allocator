@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 生成的数据库（可重建：python3 build_semesters.py 1 2 3 4 5 6）
+db/virtual_time.db
+
+# 临时/系统
+*.swp
+.DS_Store

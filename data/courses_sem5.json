@@ -1,0 +1,261 @@
+{
+ "term": "第5学期（2024-2025学年第一学期）",
+ "term_code": "2024-25-1",
+ "term_start": "2024-09-02",
+ "courses": [
+  {
+   "name": "信号与系统",
+   "credits": 3.0,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 38,
+   "prefer": [
+    "上午"
+   ],
+   "lecture": 38
+  },
+  {
+   "name": "电力电子技术基础",
+   "credits": 3.0,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 56,
+   "prefer": [
+    "上午"
+   ],
+   "lecture": 36
+  },
+  {
+   "name": "电力电子技术基础实践",
+   "credits": 1.0,
+   "category": "必修",
+   "type": "实验",
+   "total_hours": 20,
+   "hours_per_session": 4,
+   "evening_only": true,
+   "prefer": [
+    "晚上"
+   ]
+  },
+  {
+   "name": "微机原理及其应用",
+   "credits": 3.0,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 48,
+   "prefer": [
+    "上午"
+   ],
+   "lecture": 48
+  },
+  {
+   "name": "自动控制原理",
+   "credits": 3.0,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 54,
+   "prefer": [
+    "上午"
+   ],
+   "lecture": 38
+  },
+  {
+   "name": "自动控制原理实验",
+   "credits": 1.0,
+   "category": "必修",
+   "type": "实验",
+   "total_hours": 12,
+   "hours_per_session": 4,
+   "evening_only": true,
+   "prefer": [
+    "晚上"
+   ]
+  },
+  {
+   "name": "电机学（上）",
+   "credits": 2.5,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 44,
+   "prefer": [
+    "上午"
+   ],
+   "half_term": true,
+   "lecture": 32
+  },
+  {
+   "name": "电机学（上）实验",
+   "credits": 1.0,
+   "category": "必修",
+   "type": "实验",
+   "total_hours": 12,
+   "hours_per_session": 4,
+   "evening_only": true,
+   "prefer": [
+    "晚上"
+   ]
+  },
+  {
+   "name": "电力系统基础（上）",
+   "credits": 2.5,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 40,
+   "prefer": [
+    "上午"
+   ],
+   "half_term": true,
+   "lecture": 34
+  },
+  {
+   "name": "高电压技术基础",
+   "credits": 2.0,
+   "category": "必修",
+   "type": "理论",
+   "total_hours": 32,
+   "prefer": [
+    "上午"
+   ],
+   "lecture": 32
+  },
+  {
+   "name": "机电技术创新实训",
+   "credits": 2.0,
+   "category": "必修",
+   "type": "实践",
+   "total_hours": 64,
+   "block": "mixed",
+   "half_weeks": "1-4",
+   "full_weeks": "5-10",
+   "desc": "前4周下午半天×4学时 + 后6周全全天×8学时 = 64（逐渐上调全天，全天一旦开始持续到结束）"
+  },
+  {
+   "name": "信号与系统·讨论",
+   "credits": 0.0,
+   "category": "必修",
+   "type": "讨论",
+   "total_hours": 16,
+   "sessions_per_week": 1,
+   "hours_per_session": 2,
+   "weeks": "9-10",
+   "seminar": 1,
+   "prefer": [
+    "下午"
+   ],
+   "intensive_half": "second"
+  },
+  {
+   "name": "信号与系统实验",
+   "credits": 1.0,
+   "category": "必修",
+   "type": "实验",
+   "total_hours": 12,
+   "hours_per_session": 4,
+   "evening_only": true,
+   "prefer": [
+    "晚上"
+   ]
+  },
+  {
+   "name": "微机原理及其应用实践",
+   "credits": 1.0,
+   "category": "必修",
+   "type": "实验",
+   "total_hours": 32,
+   "hours_per_session": 4,
+   "evening_only": true,
+   "prefer": [
+    "晚上"
+   ],
+   "split": [
+    4,
+    4
+   ]
+  }
+ ],
+ "semester_events": [
+  {
+   "name": "电子技术综合设计（集中）",
+   "credits": 2.0,
+   "category": "必修",
+   "type": "实践",
+   "note": "全天×8天=64学时（第13周5天+第14周3天）",
+   "events": [
+    {
+     "week": 13,
+     "weekday": 0,
+     "duration": "full",
+     "hours": 8
+    },
+    {
+     "week": 13,
+     "weekday": 1,
+     "duration": "full",
+     "hours": 8
+    },
+    {
+     "week": 13,
+     "weekday": 2,
+     "duration": "full",
+     "hours": 8
+    },
+    {
+     "week": 13,
+     "weekday": 3,
+     "duration": "full",
+     "hours": 8
+    },
+    {
+     "week": 13,
+     "weekday": 4,
+     "duration": "full",
+     "hours": 8
+    },
+    {
+     "week": 14,
+     "weekday": 0,
+     "duration": "full",
+     "hours": 8
+    },
+    {
+     "week": 14,
+     "weekday": 1,
+     "duration": "full",
+     "hours": 8
+    },
+    {
+     "week": 14,
+     "weekday": 2,
+     "duration": "full",
+     "hours": 8
+    }
+   ]
+  },
+  {
+   "name": "形势与政策(5)",
+   "credits": 0.25,
+   "category": "必修",
+   "type": "讲座",
+   "total_hours": 4,
+   "events": [
+    {
+     "week": 3,
+     "weekday": 2,
+     "slot": 5,
+     "start": "14:30",
+     "end": "16:00"
+    },
+    {
+     "week": 12,
+     "weekday": 2,
+     "slot": 5,
+     "start": "14:30",
+     "end": "16:00"
+    }
+   ]
+  }
+ ],
+ "semester_no": 5,
+ "weekdays": 5,
+ "teaching_weeks": 16
+}
