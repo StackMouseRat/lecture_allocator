@@ -21,11 +21,11 @@
     "taiyuan": "大学生心理健康教育"
   },
   "通识选修·晚间④": {
-    "default": "新中国史",
-    "surrey": "新中国史",
-    "orage": "新中国史",
-    "sakawa": "新中国史",
-    "taiyuan": "中共党史"
+    "default": "哲学导论",
+    "surrey": "哲学导论",
+    "orage": "哲学导论",
+    "sakawa": "哲学导论",
+    "taiyuan": "哲学导论"
   },
   "通识选修·晚间⑤": {
     "default": "C++面向对象程序设计",
@@ -75,5 +75,33 @@
     "orage": "高电压绝缘",
     "sakawa": "电器学",
     "taiyuan": "电力系统分析"
+  },
+  "四史·①": {
+    "default": "中共党史",
+    "surrey": "未选",
+    "orage": "未选",
+    "sakawa": "未选",
+    "taiyuan": "中共党史"
+  },
+  "四史·②": {
+    "default": "社会主义发展史",
+    "surrey": "社会主义发展史",
+    "orage": "未选",
+    "sakawa": "未选",
+    "taiyuan": "未选"
+  },
+  "四史·③": {
+    "default": "改革开放史",
+    "surrey": "未选",
+    "orage": "改革开放史",
+    "sakawa": "未选",
+    "taiyuan": "未选"
+  },
+  "四史·④": {
+    "default": "新中国史",
+    "surrey": "未选",
+    "orage": "未选",
+    "sakawa": "新中国史",
+    "taiyuan": "未选"
   }
 }

@@ -17,11 +17,12 @@ def load_content() -> dict:
     return _CONTENT
 
 def render_name(placeholder: str, girl: str = "default") -> str:
-    """占位符 → 具体课程名（按人设）"""
+    """占位符 → 具体课程名（按人设）；'未选' 表示该生未修此课"""
     m = load_content().get(placeholder)
     if not m:
         return placeholder
-    return m.get(girl) or m.get("default") or placeholder
+    name = m.get(girl) or m.get("default") or placeholder
+    return None if name == "未选" else name
 
 def render_table(text: str, girl: str = "default") -> str:
     """替换文本中的所有选修占位符"""
