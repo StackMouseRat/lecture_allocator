@@ -170,7 +170,7 @@ class VirtualClock:
             return "short_term"
         week = self.week_of_term(dt)
         if week <= 0:
-            return "before_term"
+            return "holiday"          # 开学前=假期（寒假/暑假）
         if week <= 16:
             return "teaching"
         if week <= 18:
