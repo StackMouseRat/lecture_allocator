@@ -239,8 +239,6 @@ def allocate(data):
             prefs = course.get("prefer") or ["上午"]
             w, combo = None, None
             wks = set(plan["weeks"]) if plan.get("weeks") else ALL_W
-            if course["name"] in ("电力系统基础（上）", "电力电子技术基础", "微机原理及其应用", "电机学（上）", "自动控制原理"):
-                print(f"    [A] {course['name']} 课次{len(course_days)} day_seq={day_seq} course_days={course_days} 分配前周一s1={used_weeks[0][1]}")
             if day_seq and len(course_days) < len(day_seq):
                 # 依次尝试模式内未用天（排除已用天相邻）
                 for target in day_seq[len(course_days):]:
@@ -263,8 +261,6 @@ def allocate(data):
                 used_weeks[w][s].update(wks)
             load[w] += len(combo)
             course_days.append(w)
-            if course["name"] in ("电力系统基础（上）", "电力电子技术基础", "微机原理及其应用", "电机学（上）", "自动控制原理"):
-                print(f"    [B] {course['name']} 课次{len(course_days)-1} → 周{w+1} slot{combo} 周次{min(wks)}-{max(wks)} | 周一s1现在={used_weeks[0][1]}")
             weeks = ",".join(map(str, plan["weeks"]))
             placed_records.append((course["name"], course["credits"], course["category"],
                                    course["type"], w, combo, weeks, plan["hours"], seminar))
