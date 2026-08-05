@@ -156,6 +156,44 @@ class VirtualClock:
             return 0
         return delta // 7 + 1
 
+    def week_status(self, dt: datetime | None = None) -> str:
+        """
+        周状态：教学/考试/过渡/放假
+        week 1-16   = 教学周
+        week 17-18  = 考试周
+        week 19     = 过渡周
+        week 20+    = 放假（第20周周一开始）
+        """
+        dt = dt or self.now()
+        sem = self.semester_of(dt)
+        if sem == -1:
+            return "short_term"
+        week = self.week_of_term(dt)
+        if week <= 0:
+            return "before_term"
+        if week <= 16:
+            return "teaching"
+        if week <= 18:
+            return "exam"
+        if week == 19:
+            return "transition"
+        return "holiday"
+
+    def week_range(self, semester_no: int) -> dict:
+        """返回某学期各阶段日期范围"""
+        start = self.term_start(semester_no)
+        if not start:
+            return {}
+        s = datetime.strptime(start, "%Y-%m-%d")
+        return {
+            "term_start": s.strftime("%Y-%m-%d"),                      # 周一
+            "teaching_end": (s + timedelta(weeks=15, days=4)).strftime("%Y-%m-%d"),   # 16周周五
+            "exam_start": (s + timedelta(weeks=16)).strftime("%Y-%m-%d"),             # 17周周一
+            "exam_end": (s + timedelta(weeks=17, days=4)).strftime("%Y-%m-%d"),       # 18周周五
+            "transition_week": (s + timedelta(weeks=18)).strftime("%Y-%m-%d"),        # 19周周一
+            "holiday_start": (s + timedelta(weeks=19)).strftime("%Y-%m-%d"),          # 20周周一
+        }
+
     # ---------- 课程联动 ----------
 
     def current_course(self, dt: datetime | None = None) -> dict:
@@ -170,6 +208,22 @@ class VirtualClock:
         if sem == -1:
             return {"status": "short_term", "semester_no": sem,
                     "time": dt.strftime("%H:%M"), "course": None}
+        week = self.week_of_term(dt)
+        # 非教学周：考试周/过渡周/放假
+        if week > 16:
+            wstatus = self.week_status(dt)
+            wd_cn = WEEKDAY_CN[dt.weekday()]
+            if wstatus == "exam":
+                return {"status": "exam_week", "semester_no": sem, "week_no": week,
+                        "weekday_cn": wd_cn, "time": dt.strftime("%H:%M"), "course": None,
+                        "note": f"第{week}周 考试周"}
+            if wstatus == "transition":
+                return {"status": "transition_week", "semester_no": sem, "week_no": week,
+                        "weekday_cn": wd_cn, "time": dt.strftime("%H:%M"), "course": None,
+                        "note": "第19周 过渡周"}
+            return {"status": "holiday", "semester_no": sem, "week_no": week,
+                    "weekday_cn": wd_cn, "time": dt.strftime("%H:%M"), "course": None,
+                    "note": "第20周起 放假"}
         wd = dt.weekday()
         if wd >= 5:
             return {"status": "weekend", "semester_no": sem, "weekday_cn": WEEKDAY_CN[wd],
