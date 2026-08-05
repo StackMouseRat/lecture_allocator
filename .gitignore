@@ -9,3 +9,5 @@ db/virtual_time.db
 # 临时/系统
 *.swp
 .DS_Store
+# 生成的学期JSON（源在 build_semesters.py 的 SEMESTERS，可重建）
+data/courses_sem*.json
