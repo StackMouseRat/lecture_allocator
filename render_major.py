@@ -26,6 +26,7 @@ MAJORS = {
     "sakawa":  {"major": "测控",     "offset": 3, "opt_offset": 4, "label": "重樱轻巡"},
 }
 OPTIONAL = {"电磁场与波", "电路"}           # 可选课：同专业也可不同
+NO_SCHEDULE = ("思政实践",)                  # 无课表课程：不占用/不显示于周课表
 SEM_LABEL = {1:"大一上(2022-23-1)",2:"大一下(2022-23-2)",3:"大二上(2023-24-1)",
              4:"大二下(2023-24-2)",5:"大三上(2024-25-1)",6:"大三下(2024-25-2)"}
 SLOTS = [(1,"第一节①","08:00-08:45"),(2,"第一节②","08:55-09:40"),(3,"第二节①","09:50-10:45"),
@@ -75,6 +76,8 @@ def render(girl):
             cell[(wd,slot)].append((cname, ct, wks))
         ev_cell = defaultdict(list)
         for e in evs:
+            if any(k in e["course"] for k in NO_SCHEDULE):   # 无课表课程不显示
+                continue
             ev_cell[(e["weekday"], e["slot_index"])].append((e["course"], e["week_no"]))
         lines = []
         for s, lab, tm in SLOTS:

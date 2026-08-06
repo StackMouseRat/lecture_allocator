@@ -58,6 +58,7 @@ def main():
 
     events = conn.execute(
         "SELECT * FROM semester_events WHERE semester_no=? AND week_no=?", (sem, week_no)).fetchall()
+    events = [e for e in events if not any(k in e["course"] for k in ("思政实践", "军事技能"))]  # 无课表课程不显示
 
     for wd in range(5):
         print(f"--- {WEEKDAY_CN[wd]} ---")
