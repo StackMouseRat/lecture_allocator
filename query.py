@@ -470,13 +470,19 @@ def cmd_progress(a):
                 pending.append(r)
     out = {"course": course, "girl": girl, "semester": sem, "week": week,
            "time": dt.strftime("%Y-%m-%d %H:%M"), "on_course": on_course,
+           "position": learned[-1] if learned else None,   # 当前进度锚点（已学到的最新一节）
            "total": len(rows), "learned": learned, "current": current, "pending": pending}
     if a.json:
         print(json.dumps(out, ensure_ascii=False, indent=1))
         return 0
     print(f"# 课程进度 · {course}（{GIRL_CN[girl]}）@ {out['time']}（第{sem}学期 第{week}周）")
-    print(f"  状态: {'🕐 正在上课' if on_course else '未在课上'} ｜ 总 {out['total']} 节 ｜ "
-          f"已学 {len(learned)} ｜ 当前 {len(current)} ｜ 未学 {len(pending)}")
+    if on_course and current:
+        print(f"  状态: 🕐 正在上课【{current[0]['topic']}】｜ 已学 {len(learned)} ｜ 当前 1 ｜ 未学 {len(pending)}")
+    elif learned:
+        print(f"  状态: 未在课上 ｜ 📍已学到: W{learned[-1]['week']}·{learned[-1]['session']} {learned[-1]['topic']}"
+              f"｜ 已学 {len(learned)} ｜ 未学 {len(pending)}")
+    else:
+        print(f"  状态: 未在课上（尚未开课）｜ 已学 0 ｜ 未学 {len(pending)}")
     if current:
         print("  ▶ 当前:")
         for r in current:

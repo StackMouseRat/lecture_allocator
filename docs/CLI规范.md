@@ -45,6 +45,7 @@ python3 query.py help            # 查看全部命令与设计说明
 ### 4.1 文本模式（默认）
 - 人类可读：标题行 `# …`、Markdown 表格或 `键: 值` 行
 - 课表与渲染层一致：课程=人设名、含老师/地点（与 `girl_schedules/*.md` 同口径）
+- `progress` 状态行：在课=`🕐 正在上课【topic】`；非在课=`📍已学到: W周·次 topic`；未开课=`未在课上（尚未开课）`
 - 未找到：stderr 提示 + 退出码 2
 
 ### 4.2 JSON 模式（`--json`）
@@ -59,7 +60,8 @@ python3 query.py help            # 查看全部命令与设计说明
   - `check`: `{conflicts, render, locations, syllabus, data}`（末行结果串）
   - `summary`: `{sem: {门数, 学分, 课次行数, 事件}}`
   - `progress`: `{course, girl, semester, week, time, on_course, total,
-                 learned: [rows], current: [rows], pending: [rows]}`（rows = {week, session, topic}）
+                 position, learned: [rows], current: [rows], pending: [rows]}`
+    - rows = `{week, session, topic}`；`position` = 当前进度锚点（已学到的最新一节，同 rows 格式；尚未开课为 `null`）
   - `girl`: `{girl, name, major, pe, electives, personal, schedules}`
 
 ## 五、退出码
@@ -79,7 +81,7 @@ python3 query.py help            # 查看全部命令与设计说明
 | 课表行（S4/5） | `girl_course_schedule` per-girl（老师/地点已入库） |
 | 授课进度 | `data/syllabus_semN.json`（`render_utils.syllabus_topic` 同口径） |
 | 虚拟时间 | `virtual_time.VirtualClock.current_course`（`--at` 传 dt，不 set 不污染） |
-| 课程进度（已学/当前/未学） | 当前节=`current_course.syllabus`（权威锚点）；已学/未学=按该课 syllabus 行序（week×session 时间线）相对当前时刻分割；非在课时按 db 行 `(week, weekday, slot)` 定位 |
+| 课程进度（已学/当前/未学） | 当前节=`current_course.syllabus`（权威锚点）；已学/未学=按该课 syllabus 行序（week×session 时间线）相对当前时刻分割；非在课时按 db 行 `(week, weekday, slot)` 定位；`position`=已学清单末行（进度锚点，未开课为 null） |
 | 老师/地点 | `data/teachers.json` + `data/locations_semN.json` |
 | 学分（S1-3/6） | `virtual_course_schedule.credits`（build 权威，占位符含映射学分） |
 | 学分（S4/5） | `data/plan_courses.json`（培养方案；实验课按独立课程计 1 学分；体育/形势/四史不在 plan 计 0） |
@@ -105,6 +107,7 @@ python3 query.py summary --sem 6                            # 学期总览
 python3 query.py girl --girl sakawa                         # 女孩档案
 python3 query.py progress --course 电力系统分析 --at "2025-03-14 14:35"
 python3 query.py progress --course 传感与检测技术 --girl surrey   # 当前虚拟时间进度
+python3 query.py progress --course 传感与检测技术 --at "2025-03-14 10:00" --json  # JSON（含 position 锚点）
 ```
 
 ## 八、约束
