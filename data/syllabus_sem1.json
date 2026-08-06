@@ -56,192 +56,192 @@
    {
     "week": 4,
     "session": 2,
-    "topic": "第二章 导数与微分 · 导数的概念"
+    "topic": "第一章 函数与极限 · 深化：复合函数与反函数的性质"
    },
    {
     "week": 4,
     "session": 3,
+    "topic": "第二章 导数与微分 · 导数的概念"
+   },
+   {
+    "week": 5,
+    "session": 1,
     "topic": "第二章 导数与微分 · 求导法则"
    },
    {
     "week": 5,
-    "session": 1,
+    "session": 2,
     "topic": "第二章 导数与微分 · 高阶导数"
    },
    {
     "week": 5,
-    "session": 2,
+    "session": 3,
     "topic": "第二章 导数与微分 · 隐函数及参数方程求导"
    },
    {
-    "week": 5,
-    "session": 3,
+    "week": 6,
+    "session": 1,
     "topic": "第二章 导数与微分 · 函数的微分"
    },
    {
     "week": 6,
-    "session": 1,
-    "topic": "第三章 微分中值定理与导数的应用 · 微分中值定理"
-   },
-   {
-    "week": 6,
     "session": 2,
-    "topic": "第三章 微分中值定理与导数的应用 · 洛必达法则"
+    "topic": "第二章 导数与微分 · 深化：微分的近似计算"
    },
    {
     "week": 6,
     "session": 3,
+    "topic": "第三章 微分中值定理与导数的应用 · 微分中值定理"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "第三章 微分中值定理与导数的应用 · 洛必达法则"
+   },
+   {
+    "week": 7,
+    "session": 2,
     "topic": "第三章 微分中值定理与导数的应用 · 泰勒公式"
    },
    {
     "week": 7,
-    "session": 1,
+    "session": 3,
     "topic": "第三章 微分中值定理与导数的应用 · 函数单调性与曲线凹凸性"
    },
    {
-    "week": 7,
-    "session": 2,
+    "week": 8,
+    "session": 1,
     "topic": "第三章 微分中值定理与导数的应用 · 函数的极值与最值"
    },
    {
-    "week": 7,
-    "session": 3,
+    "week": 8,
+    "session": 2,
     "topic": "第三章 微分中值定理与导数的应用 · 弧微分与曲率"
    },
    {
     "week": 8,
+    "session": 3,
+    "topic": "第三章 微分中值定理与导数的应用 · 深化：函数图形的描绘"
+   },
+   {
+    "week": 9,
     "session": 1,
+    "topic": "第三章 微分中值定理与导数的应用 · 深化：最值应用问题"
+   },
+   {
+    "week": 9,
+    "session": 2,
     "topic": "第四章 不定积分 · 不定积分的概念与性质"
    },
    {
-    "week": 8,
-    "session": 2,
+    "week": 9,
+    "session": 3,
     "topic": "第四章 不定积分 · 换元积分法"
    },
    {
-    "week": 8,
-    "session": 3,
+    "week": 10,
+    "session": 1,
     "topic": "第四章 不定积分 · 分部积分法"
    },
    {
-    "week": 9,
-    "session": 1,
+    "week": 10,
+    "session": 2,
     "topic": "第四章 不定积分 · 有理函数积分"
    },
    {
-    "week": 9,
-    "session": 2,
+    "week": 10,
+    "session": 3,
+    "topic": "第四章 不定积分 · 深化：三角函数与简单无理函数积分"
+   },
+   {
+    "week": 11,
+    "session": 1,
     "topic": "第五章 定积分 · 定积分的概念与性质"
    },
    {
-    "week": 9,
-    "session": 3,
+    "week": 11,
+    "session": 2,
     "topic": "第五章 定积分 · 微积分基本公式"
    },
    {
-    "week": 10,
-    "session": 1,
+    "week": 11,
+    "session": 3,
     "topic": "第五章 定积分 · 定积分的换元法与分部积分法"
    },
    {
-    "week": 10,
-    "session": 2,
+    "week": 12,
+    "session": 1,
     "topic": "第五章 定积分 · 反常积分"
    },
    {
-    "week": 10,
+    "week": 12,
+    "session": 2,
+    "topic": "第五章 定积分 · 深化：积分中值定理"
+   },
+   {
+    "week": 12,
     "session": 3,
+    "topic": "第五章 定积分 · 深化：定积分的近似计算"
+   },
+   {
+    "week": 13,
+    "session": 1,
     "topic": "第六章 定积分的应用 · 定积分的元素法"
    },
    {
-    "week": 11,
-    "session": 1,
+    "week": 13,
+    "session": 2,
     "topic": "第六章 定积分的应用 · 平面图形面积与旋转体体积"
    },
    {
-    "week": 11,
-    "session": 2,
+    "week": 13,
+    "session": 3,
     "topic": "第六章 定积分的应用 · 平面曲线的弧长与物理应用"
    },
    {
-    "week": 11,
+    "week": 14,
+    "session": 1,
+    "topic": "第六章 定积分的应用 · 深化：旋转体侧面积"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "第六章 定积分的应用 · 深化：变力做功与液体的压力"
+   },
+   {
+    "week": 14,
     "session": 3,
     "topic": "第七章 微分方程 · 微分方程基本概念"
    },
    {
-    "week": 12,
+    "week": 15,
     "session": 1,
     "topic": "第七章 微分方程 · 可分离变量与齐次方程"
    },
    {
-    "week": 12,
+    "week": 15,
     "session": 2,
     "topic": "第七章 微分方程 · 一阶线性微分方程"
    },
    {
-    "week": 12,
+    "week": 15,
     "session": 3,
     "topic": "第七章 微分方程 · 可降阶的高阶方程"
    },
    {
-    "week": 13,
+    "week": 16,
     "session": 1,
     "topic": "第七章 微分方程 · 二阶常系数线性方程"
    },
    {
-    "week": 13,
+    "week": 16,
     "session": 2,
     "topic": "第七章 微分方程 · 微分方程应用"
    },
    {
-    "week": 13,
-    "session": 3,
-    "topic": "补充素材 · 复合函数与反函数的性质"
-   },
-   {
-    "week": 14,
-    "session": 1,
-    "topic": "补充素材 · 微分的近似计算"
-   },
-   {
-    "week": 14,
-    "session": 2,
-    "topic": "补充素材 · 函数图形的描绘"
-   },
-   {
-    "week": 14,
-    "session": 3,
-    "topic": "补充素材 · 最值应用问题"
-   },
-   {
-    "week": 15,
-    "session": 1,
-    "topic": "补充素材 · 三角函数与简单无理函数积分"
-   },
-   {
-    "week": 15,
-    "session": 2,
-    "topic": "补充素材 · 积分中值定理"
-   },
-   {
-    "week": 15,
-    "session": 3,
-    "topic": "补充素材 · 定积分的近似计算"
-   },
-   {
-    "week": 16,
-    "session": 1,
-    "topic": "补充素材 · 旋转体侧面积"
-   },
-   {
-    "week": 16,
-    "session": 2,
-    "topic": "补充素材 · 变力做功与液体的压力"
-   },
-   {
     "week": 16,
     "session": 3,
-    "topic": "补充素材 · 微分方程的综合建模"
+    "topic": "第七章 微分方程 · 深化：微分方程的综合建模"
    }
   ]
  },
@@ -433,147 +433,147 @@
    {
     "week": 2,
     "session": 2,
+    "topic": "绪论 担当复兴大任 · 深化：大学学习方式的转变"
+   },
+   {
+    "week": 3,
+    "session": 1,
     "topic": "第一章 领悟人生真谛 · 人生观的内涵"
    },
    {
     "week": 3,
-    "session": 1,
+    "session": 2,
     "topic": "第一章 领悟人生真谛 · 人生价值的评价"
    },
    {
-    "week": 3,
-    "session": 2,
+    "week": 4,
+    "session": 1,
     "topic": "第一章 领悟人生真谛 · 人生追求的实现"
    },
    {
     "week": 4,
+    "session": 2,
+    "topic": "第一章 领悟人生真谛 · 深化：人生价值评价的时代要求"
+   },
+   {
+    "week": 5,
     "session": 1,
     "topic": "第二章 追求远大理想 · 理想信念的内涵"
    },
    {
-    "week": 4,
+    "week": 5,
     "session": 2,
     "topic": "第二章 追求远大理想 · 科学信仰的树立"
    },
    {
-    "week": 5,
+    "week": 6,
     "session": 1,
     "topic": "第二章 追求远大理想 · 理想与现实"
    },
    {
-    "week": 5,
-    "session": 2,
-    "topic": "第三章 继承优良传统 · 中国精神的内涵"
-   },
-   {
-    "week": 6,
-    "session": 1,
-    "topic": "第三章 继承优良传统 · 民族精神与时代精神"
-   },
-   {
     "week": 6,
     "session": 2,
-    "topic": "第三章 继承优良传统 · 爱国主义教育"
+    "topic": "第二章 追求远大理想 · 深化：理想与信念的实践转化"
    },
    {
     "week": 7,
+    "session": 1,
+    "topic": "第三章 继承优良传统 · 中国精神的内涵"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "第三章 继承优良传统 · 民族精神与时代精神"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "第三章 继承优良传统 · 爱国主义教育"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "第三章 继承优良传统 · 深化：新时代爱国主义的践行"
+   },
+   {
+    "week": 9,
     "session": 1,
     "topic": "第四章 明确价值要求 · 社会主义核心价值观"
    },
    {
-    "week": 7,
+    "week": 9,
     "session": 2,
     "topic": "第四章 明确价值要求 · 价值观的践行"
    },
    {
-    "week": 8,
+    "week": 10,
     "session": 1,
     "topic": "第四章 明确价值要求 · 道德与法治基础"
    },
    {
-    "week": 8,
+    "week": 10,
     "session": 2,
+    "topic": "第四章 明确价值要求 · 深化：核心价值观内化于心外化于行"
+   },
+   {
+    "week": 11,
+    "session": 1,
     "topic": "第五章 遵守道德规范 · 道德的本质与功能"
    },
    {
-    "week": 9,
-    "session": 1,
+    "week": 11,
+    "session": 2,
     "topic": "第五章 遵守道德规范 · 中华传统美德"
    },
    {
-    "week": 9,
-    "session": 2,
+    "week": 12,
+    "session": 1,
     "topic": "第五章 遵守道德规范 · 社会公德与职业道德"
    },
    {
-    "week": 10,
-    "session": 1,
+    "week": 12,
+    "session": 2,
     "topic": "第五章 遵守道德规范 · 家庭美德与个人品德"
    },
    {
-    "week": 10,
+    "week": 13,
+    "session": 1,
+    "topic": "第五章 遵守道德规范 · 深化：网络道德规范"
+   },
+   {
+    "week": 13,
     "session": 2,
+    "topic": "第五章 遵守道德规范 · 深化：职业道德案例分析"
+   },
+   {
+    "week": 14,
+    "session": 1,
     "topic": "第六章 学习法治思想 · 宪法与法律体系"
    },
    {
-    "week": 11,
-    "session": 1,
+    "week": 14,
+    "session": 2,
     "topic": "第六章 学习法治思想 · 法治思维"
    },
    {
-    "week": 11,
-    "session": 2,
+    "week": 15,
+    "session": 1,
     "topic": "第六章 学习法治思想 · 法律权利与义务"
    },
    {
-    "week": 12,
-    "session": 1,
+    "week": 15,
+    "session": 2,
     "topic": "第六章 学习法治思想 · 全面依法治国"
    },
    {
-    "week": 12,
-    "session": 2,
-    "topic": "补充素材 · 大学学习方式的转变"
-   },
-   {
-    "week": 13,
-    "session": 1,
-    "topic": "补充素材 · 人生价值评价的时代要求"
-   },
-   {
-    "week": 13,
-    "session": 2,
-    "topic": "补充素材 · 理想与信念的实践转化"
-   },
-   {
-    "week": 14,
-    "session": 1,
-    "topic": "补充素材 · 新时代爱国主义的践行"
-   },
-   {
-    "week": 14,
-    "session": 2,
-    "topic": "补充素材 · 核心价值观内化于心外化于行"
-   },
-   {
-    "week": 15,
-    "session": 1,
-    "topic": "补充素材 · 网络道德规范"
-   },
-   {
-    "week": 15,
-    "session": 2,
-    "topic": "补充素材 · 职业道德案例分析"
-   },
-   {
     "week": 16,
     "session": 1,
-    "topic": "补充素材 · 中国特色社会主义法律体系构成"
+    "topic": "第六章 学习法治思想 · 深化：中国特色社会主义法律体系构成"
    },
    {
     "week": 16,
     "session": 2,
-    "topic": "补充素材 · 依法治国与以德治国相结合"
+    "topic": "第六章 学习法治思想 · 深化：依法治国与以德治国相结合"
    }
   ]
  },
