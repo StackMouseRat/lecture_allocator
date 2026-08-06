@@ -26,6 +26,44 @@ def pe_plan():
     return _load("pe", "data/pe_plan.json")
 
 SISHI = {"中共党史", "社会主义发展史", "改革开放史", "新中国史"}
+_SYLLABUS = {}
+
+def syllabus_topic(course_name: str, semester_no: int, week: int, weekday: int, slot_index: int) -> str | None:
+    """查授课进度：当前这一节讲什么（syllabus_semN.json）
+    节次序号 = 该课在当周课表中的次序（按天/槽位排序）"""
+    global _SYLLABUS
+    f = BASE / "data" / f"syllabus_sem{semester_no}.json"
+    if not f.exists():
+        return None
+    if semester_no not in _SYLLABUS:
+        _SYLLABUS[semester_no] = json.load(open(f, encoding="utf-8"))
+    data = _SYLLABUS[semester_no]
+    for name, info in data.items():
+        if name != course_name:
+            continue
+        rows = info.get("rows", [])
+        this_week = [r for r in rows if r["week"] == week]
+        # 该课当周课次顺序（由 virtual_time 传入的 weekday/slot 直接映射 session）
+        # session 序号：rows 中 week 内第 n 个（按 session 字段）
+        for r in this_week:
+            if r["session"] == session_of_week(course_name, semester_no, week, weekday, slot_index):
+                return r["topic"]
+        return None
+    return None
+
+def session_of_week(course_name, semester_no, week, weekday, slot_index):
+    """该课当周第几节：按 db 中该课分布的不同天排序（同课次2小节算1节）"""
+    import sqlite3
+    conn = sqlite3.connect(BASE / "db" / "virtual_time.db")
+    rows = conn.execute(
+        "SELECT DISTINCT weekday FROM virtual_course_schedule "
+        "WHERE semester_no=? AND course=? ORDER BY weekday",
+        (semester_no, course_name)).fetchall()
+    conn.close()
+    days = [r[0] for r in rows]
+    if weekday in days:
+        return days.index(weekday) + 1
+    return 1
 PE_COURSES = {f"体育（{i}）" for i in range(1, 5)}
 
 def resolve(girl: str, raw_name: str, semester_no: int = 1):

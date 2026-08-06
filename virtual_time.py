@@ -277,9 +277,9 @@ class VirtualClock:
                          "credits": row["credits"], "category": row["category"],
                          "course_type": row["course_type"], "hours": row["hours"],
                          "has_seminar": bool(row["has_seminar"]), "event": False})
-        # 渲染层：girl 给定 → 人设课程名 + 老师 + 地点
+        # 渲染层：girl 给定 → 人设课程名 + 老师 + 地点 + 授课进度
         if girl and base.get("course"):
-            from render_utils import resolve
+            from render_utils import resolve, syllabus_topic
             r = resolve(girl, base["course"], sem)
             if r:
                 base["course"] = r["name"]
@@ -288,6 +288,8 @@ class VirtualClock:
                 base["course_type"] = r["course_type"]
                 if r.get("placeholder"):
                     base["placeholder"] = r["placeholder"]
+            base["syllabus"] = syllabus_topic(base["course"], sem, week, wd, slot["slot_index"]) \
+                or syllabus_topic(r["name"] if r else None and False, sem, week, wd, slot["slot_index"])
         return base
 
     # ---------- 时段/课程表 ----------
