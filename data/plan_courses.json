@@ -609,7 +609,9 @@
   "credits": 2,
   "hours": 64,
   "unit": "电气院",
-  "semesters": []
+  "semesters": [
+   5
+  ]
  },
  "电子技术综合设计（集中）": {
   "category": "实践环节",
@@ -625,35 +627,45 @@
   "credits": 2,
   "hours": 64,
   "unit": "电气院",
-  "semesters": []
+  "semesters": [
+   6
+  ]
  },
  "科研和生产实习": {
   "category": "实践环节",
   "credits": 2,
   "hours": 64,
   "unit": "电气院",
-  "semesters": []
+  "semesters": [
+   "短3"
+  ]
  },
  "专业写作与科技交流": {
   "category": "实践环节",
   "credits": 1,
   "hours": 20,
   "unit": "电气院",
-  "semesters": []
+  "semesters": [
+   6
+  ]
  },
  "专业课程设计": {
   "category": "实践环节",
   "credits": 2,
   "hours": 64,
   "unit": "电气院",
-  "semesters": []
+  "semesters": [
+   6
+  ]
  },
  "专业综合实验": {
   "category": "实践环节",
   "credits": 1,
   "hours": 32,
   "unit": "电气院",
-  "semesters": []
+  "semesters": [
+   6
+  ]
  },
  "毕业实习": {
   "category": "实践环节",
