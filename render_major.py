@@ -19,6 +19,18 @@ BASE = Path(__file__).parent
 DB = BASE / "db" / "virtual_time.db"
 OUT = BASE / "girl_schedules"
 
+# 体育专项：4人选的体育项目（依据pe_options.md选项制）
+PE_PLAN = {
+    "surrey":  {"体育（1）":"体育舞蹈","体育（2）":"体育舞蹈","体育（3）":"体育舞蹈","体育（4）":"体育舞蹈·提高",
+                "teacher": "PE-舞蹈组A"},
+    "orage":   {"体育（1）":"定向越野","体育（2）":"定向越野","体育（3）":"定向越野","体育（4）":"田径",
+                "teacher": "PE-定向越野队"},
+    "sakawa":  {"体育（1）":"瑜伽","体育（2）":"瑜伽","体育（3）":"瑜伽","体育（4）":"瑜伽·提高",
+                "teacher": "PE-瑜伽组B"},
+    "taiyuan": {"体育（1）":"武术","体育（2）":"武术","体育（3）":"武术","体育（4）":"武术·提高",
+                "teacher": "PE-武术组C"},
+}
+
 MAJORS = {
     "surrey":  {"major": "电气工程", "offset": 0, "opt_offset": 1, "label": "皇家重巡"},
     "taiyuan": {"major": "电气工程", "offset": 0, "opt_offset": 3, "label": "东煌驱逐"},
@@ -27,6 +39,7 @@ MAJORS = {
 }
 OPTIONAL = {"电磁场与波", "电路"}           # 可选课：同专业也可不同
 NO_SCHEDULE = ("思政实践", "电子技术综合设计", "劳动教育")                  # 无课表课程：不占用/不显示于周课表
+SISHI = {"中共党史", "社会主义发展史", "改革开放史", "新中国史"}   # 四史：只上5次，多余学时自行复习
 SEM_LABEL = {1:"大一上(2022-23-1)",2:"大一下(2022-23-2)",3:"大二上(2023-24-1)",
              4:"大二下(2023-24-2)",5:"大三上(2024-25-1)",6:"大三下(2024-25-2)"}
 SLOTS = [(1,"第一节①","08:00-08:45"),(2,"第一节②","08:55-09:40"),(3,"第二节①","09:50-10:45"),
@@ -75,10 +88,24 @@ def render(girl):
                 real = rname(cname, girl)
                 if real is None: continue
                 cname, ct = real, "选修"
+            # 四史：只上5次课（多余学时自行复习），仅显示第1-5周
+            if cname in SISHI:
+                wks = ",".join(map(str, range(1, 6)))   # 5次
+                ct = "四史"
+                cell[(wd, slot)].append((cname, ct, wks, "自习"))
+                continue
+            # 体育课 → 具体专项（按人设），时间不变（同公共课周三下午）
+            if cname in PE_PLAN.get(girl, {}):
+                pname = PE_PLAN[girl][cname]
+                tname = PE_PLAN[girl]["teacher"]
+                ct = "体育"
+                cname = pname
+                tinfo = None  # 体育专项时间固定，不参与天偏移
+            else:
+                tname = ""
             # 天偏移：按老师分配（同老师同偏移→时间必同；不同老师可不同）
             tinfo = load_teachers().get(cname)
-            tname = ""
-            if tinfo:
+            if tinfo and not tname:
                 a = tinfo["assign"].get(girl)
                 if a:
                     wd = (wd + a["offset"]) % 5
@@ -97,6 +124,9 @@ def render(girl):
                 for cname, wn in sorted(ev_cell.get((wd,s),[])):
                     parts.append(f"⚠️{cname[:8]}(W{wn})")
                 for cname, ct, wks, tname in sorted(cell.get((wd,s),[]), key=lambda x: min(int(y) for y in x[2].split(','))):
+                    if ct == "四史":
+                        parts.append(f"{cname}（5次·自习）{fmt_w(wks)}")
+                        continue
                     tg = "🔬" if ct=="实验" else ("🏭" if ct=="实践" else "")
                     parts.append(f"{cname[:8]}{tg}{fmt_w(wks)}{('·'+tname) if tname else ''}")
                 line += (" "+"<br>".join(parts)+" |") if parts else " — |"

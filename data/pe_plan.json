@@ -1,0 +1,22 @@
+{
+  "surrey": {
+    "label": "体育舞蹈",
+    "sem1_3": "体育舞蹈", "sem4": "体育舞蹈·提高",
+    "teacher": "PE-舞蹈组A", "location": "体育馆"
+  },
+  "orage": {
+    "label": "定向越野",
+    "sem1_3": "定向越野", "sem4": "田径",
+    "teacher": "PE-定向越野队", "location": "田径场(全校)"
+  },
+  "sakawa": {
+    "label": "瑜伽",
+    "sem1_3": "瑜伽", "sem4": "瑜伽·提高",
+    "teacher": "PE-瑜伽组B", "location": "体育馆"
+  },
+  "taiyuan": {
+    "label": "武术",
+    "sem1_3": "武术", "sem4": "武术·提高",
+    "teacher": "PE-武术组C", "location": "田径场"
+  }
+}
