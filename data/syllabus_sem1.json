@@ -1,0 +1,2078 @@
+{
+ "高等数学A（1）": {
+  "spw": 3,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "第一章 函数与极限 · 映射与函数"
+   },
+   {
+    "week": 1,
+    "session": 2,
+    "topic": "第一章 函数与极限 · 数列的极限"
+   },
+   {
+    "week": 1,
+    "session": 3,
+    "topic": "第一章 函数与极限 · 函数的极限"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "第一章 函数与极限 · 无穷小与无穷大"
+   },
+   {
+    "week": 2,
+    "session": 2,
+    "topic": "第一章 函数与极限 · 极限运算法则"
+   },
+   {
+    "week": 2,
+    "session": 3,
+    "topic": "第一章 函数与极限 · 极限存在准则"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "第一章 函数与极限 · 两个重要极限"
+   },
+   {
+    "week": 3,
+    "session": 2,
+    "topic": "第一章 函数与极限 · 函数的连续性与间断点"
+   },
+   {
+    "week": 3,
+    "session": 3,
+    "topic": "第一章 函数与极限 · 连续函数的运算与初等函数的连续性"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "第一章 函数与极限 · 闭区间上连续函数的性质"
+   },
+   {
+    "week": 4,
+    "session": 2,
+    "topic": "第二章 导数与微分 · 导数的概念"
+   },
+   {
+    "week": 4,
+    "session": 3,
+    "topic": "第二章 导数与微分 · 求导法则"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "第二章 导数与微分 · 高阶导数"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "第二章 导数与微分 · 隐函数及参数方程求导"
+   },
+   {
+    "week": 5,
+    "session": 3,
+    "topic": "第二章 导数与微分 · 函数的微分"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "第三章 微分中值定理与导数的应用 · 微分中值定理"
+   },
+   {
+    "week": 6,
+    "session": 2,
+    "topic": "第三章 微分中值定理与导数的应用 · 洛必达法则"
+   },
+   {
+    "week": 6,
+    "session": 3,
+    "topic": "第三章 微分中值定理与导数的应用 · 泰勒公式"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "第三章 微分中值定理与导数的应用 · 函数单调性与曲线凹凸性"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "第三章 微分中值定理与导数的应用 · 函数的极值与最值"
+   },
+   {
+    "week": 7,
+    "session": 3,
+    "topic": "第三章 微分中值定理与导数的应用 · 弧微分与曲率"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "第四章 不定积分 · 不定积分的概念与性质"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "第四章 不定积分 · 换元积分法"
+   },
+   {
+    "week": 8,
+    "session": 3,
+    "topic": "第四章 不定积分 · 分部积分法"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "第四章 不定积分 · 有理函数积分"
+   },
+   {
+    "week": 9,
+    "session": 2,
+    "topic": "第五章 定积分 · 定积分的概念与性质"
+   },
+   {
+    "week": 9,
+    "session": 3,
+    "topic": "第五章 定积分 · 微积分基本公式"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "第五章 定积分 · 定积分的换元法与分部积分法"
+   },
+   {
+    "week": 10,
+    "session": 2,
+    "topic": "第五章 定积分 · 反常积分"
+   },
+   {
+    "week": 10,
+    "session": 3,
+    "topic": "第六章 定积分的应用 · 定积分的元素法"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "第六章 定积分的应用 · 平面图形面积与旋转体体积"
+   },
+   {
+    "week": 11,
+    "session": 2,
+    "topic": "第六章 定积分的应用 · 平面曲线的弧长与物理应用"
+   },
+   {
+    "week": 11,
+    "session": 3,
+    "topic": "第七章 微分方程 · 微分方程基本概念"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "第七章 微分方程 · 可分离变量与齐次方程"
+   },
+   {
+    "week": 12,
+    "session": 2,
+    "topic": "第七章 微分方程 · 一阶线性微分方程"
+   },
+   {
+    "week": 12,
+    "session": 3,
+    "topic": "第七章 微分方程 · 可降阶的高阶方程"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "第七章 微分方程 · 二阶常系数线性方程"
+   },
+   {
+    "week": 13,
+    "session": 2,
+    "topic": "第七章 微分方程 · 微分方程应用"
+   },
+   {
+    "week": 13,
+    "session": 3,
+    "topic": "第一章 函数与极限 · 映射与函数"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "第一章 函数与极限 · 数列的极限"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "第一章 函数与极限 · 函数的极限"
+   },
+   {
+    "week": 14,
+    "session": 3,
+    "topic": "第一章 函数与极限 · 无穷小与无穷大"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "第一章 函数与极限 · 极限运算法则"
+   },
+   {
+    "week": 15,
+    "session": 2,
+    "topic": "第一章 函数与极限 · 极限存在准则"
+   },
+   {
+    "week": 15,
+    "session": 3,
+    "topic": "第一章 函数与极限 · 两个重要极限"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "第一章 函数与极限 · 函数的连续性与间断点"
+   },
+   {
+    "week": 16,
+    "session": 2,
+    "topic": "第一章 函数与极限 · 连续函数的运算与初等函数的连续性"
+   },
+   {
+    "week": 16,
+    "session": 3,
+    "topic": "第一章 函数与极限 · 闭区间上连续函数的性质"
+   }
+  ]
+ },
+ "大学英语A（1）": {
+  "spw": 2,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "Unit 1 Fresh Start · 课文精读与词汇"
+   },
+   {
+    "week": 1,
+    "session": 2,
+    "topic": "Unit 1 Fresh Start · 语法：时态总复习"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "Unit 1 Fresh Start · 听力训练"
+   },
+   {
+    "week": 2,
+    "session": 2,
+    "topic": "Unit 1 Fresh Start · 口语：自我介绍"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "Unit 2 Friendship · 课文精读与词汇"
+   },
+   {
+    "week": 3,
+    "session": 2,
+    "topic": "Unit 2 Friendship · 语法：非谓语动词"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "Unit 2 Friendship · 听力训练"
+   },
+   {
+    "week": 4,
+    "session": 2,
+    "topic": "Unit 2 Friendship · 口语：描述朋友"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "Unit 3 Family · 课文精读与词汇"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "Unit 3 Family · 语法：定语从句"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "Unit 3 Family · 听力训练"
+   },
+   {
+    "week": 6,
+    "session": 2,
+    "topic": "Unit 3 Family · 口语：家庭话题"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "Unit 4 City Life · 课文精读与词汇"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "Unit 4 City Life · 语法：名词性从句"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "Unit 4 City Life · 听力训练"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "Unit 4 City Life · 口语：城市生活"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "Unit 5 Health · 课文精读与词汇"
+   },
+   {
+    "week": 9,
+    "session": 2,
+    "topic": "Unit 5 Health · 语法：状语从句"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "Unit 5 Health · 听力训练"
+   },
+   {
+    "week": 10,
+    "session": 2,
+    "topic": "Unit 5 Health · 口语：健康习惯"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "Unit 6 Science · 课文精读与词汇"
+   },
+   {
+    "week": 11,
+    "session": 2,
+    "topic": "Unit 6 Science · 语法：虚拟语气"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "Unit 6 Science · 听力训练"
+   },
+   {
+    "week": 12,
+    "session": 2,
+    "topic": "Unit 6 Science · 口语：科技话题"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "Unit 7 Environment · 课文精读与词汇"
+   },
+   {
+    "week": 13,
+    "session": 2,
+    "topic": "Unit 7 Environment · 语法：被动语态"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "Unit 7 Environment · 听力训练"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "Unit 7 Environment · 口语：环保"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "Unit 8 Culture · 课文精读与词汇"
+   },
+   {
+    "week": 15,
+    "session": 2,
+    "topic": "Unit 8 Culture · 语法：综合复习"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "Unit 8 Culture · 听力测试"
+   },
+   {
+    "week": 16,
+    "session": 2,
+    "topic": "Unit 8 Culture · 口语：文化差异"
+   }
+  ]
+ },
+ "思想道德与法治": {
+  "spw": 2,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "绪论 担当复兴大任 · 走进大学"
+   },
+   {
+    "week": 1,
+    "session": 2,
+    "topic": "绪论 担当复兴大任 · 新时代新使命"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "绪论 担当复兴大任 · 大学生成长成才"
+   },
+   {
+    "week": 2,
+    "session": 2,
+    "topic": "第一章 领悟人生真谛 · 人生观的内涵"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "第一章 领悟人生真谛 · 人生价值的评价"
+   },
+   {
+    "week": 3,
+    "session": 2,
+    "topic": "第一章 领悟人生真谛 · 人生追求的实现"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "第二章 追求远大理想 · 理想信念的内涵"
+   },
+   {
+    "week": 4,
+    "session": 2,
+    "topic": "第二章 追求远大理想 · 科学信仰的树立"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "第二章 追求远大理想 · 理想与现实"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "第三章 继承优良传统 · 中国精神的内涵"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "第三章 继承优良传统 · 民族精神与时代精神"
+   },
+   {
+    "week": 6,
+    "session": 2,
+    "topic": "第三章 继承优良传统 · 爱国主义教育"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "第四章 明确价值要求 · 社会主义核心价值观"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "第四章 明确价值要求 · 价值观的践行"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "第四章 明确价值要求 · 道德与法治基础"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "第五章 遵守道德规范 · 道德的本质与功能"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "第五章 遵守道德规范 · 中华传统美德"
+   },
+   {
+    "week": 9,
+    "session": 2,
+    "topic": "第五章 遵守道德规范 · 社会公德与职业道德"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "第五章 遵守道德规范 · 家庭美德与个人品德"
+   },
+   {
+    "week": 10,
+    "session": 2,
+    "topic": "第六章 学习法治思想 · 宪法与法律体系"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "第六章 学习法治思想 · 法治思维"
+   },
+   {
+    "week": 11,
+    "session": 2,
+    "topic": "第六章 学习法治思想 · 法律权利与义务"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "第六章 学习法治思想 · 全面依法治国"
+   },
+   {
+    "week": 12,
+    "session": 2,
+    "topic": "绪论 担当复兴大任 · 走进大学"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "绪论 担当复兴大任 · 新时代新使命"
+   },
+   {
+    "week": 13,
+    "session": 2,
+    "topic": "绪论 担当复兴大任 · 大学生成长成才"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "第一章 领悟人生真谛 · 人生观的内涵"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "第一章 领悟人生真谛 · 人生价值的评价"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "第一章 领悟人生真谛 · 人生追求的实现"
+   },
+   {
+    "week": 15,
+    "session": 2,
+    "topic": "第二章 追求远大理想 · 理想信念的内涵"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "第二章 追求远大理想 · 科学信仰的树立"
+   },
+   {
+    "week": 16,
+    "session": 2,
+    "topic": "第二章 追求远大理想 · 理想与现实"
+   }
+  ]
+ },
+ "工程制图": {
+  "spw": 1,
+  "weeks": 14,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "第一章 制图基本知识 · 国家标准与图纸幅面"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "第一章 制图基本知识 · 绘图工具与几何作图"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "第二章 正投影基础 · 投影法与三视图"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "第二章 正投影基础 · 点的投影"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "第二章 正投影基础 · 直线的投影"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "第二章 正投影基础 · 平面的投影"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "第三章 立体投影 · 平面立体投影"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "第三章 立体投影 · 回转体投影"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "第四章 截交线与相贯线 · 截交线"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "第四章 截交线与相贯线 · 相贯线"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "第五章 组合体 · 组合体构型"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "第五章 组合体 · 组合体视图画法"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "第五章 组合体 · 组合体尺寸标注"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "第五章 组合体 · 读组合体视图"
+   }
+  ]
+ },
+ "大学生心理健康教育": {
+  "spw": 1,
+  "weeks": 8,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "模块一 心理健康概述 · 心理健康的标准"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "模块一 心理健康概述 · 大学生心理发展特点"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "模块二 自我意识 · 自我认知"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "模块二 自我意识 · 自我接纳与完善"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "模块三 情绪管理 · 情绪识别"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "模块三 情绪管理 · 情绪调节方法"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "模块四 人际关系 · 人际交往技巧"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "模块四 人际关系 · 宿舍关系处理"
+   }
+  ]
+ },
+ "禅宗与中国文化": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 禅宗源流与印度佛教"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 达摩与早期禅宗"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 六祖慧能与《坛经》"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 禅的思维方式"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 禅宗公案解析"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 禅与诗歌"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 禅与书画艺术"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 禅与茶道"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 禅与日本文化"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 禅宗的南北之争"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 临济宗与棒喝"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 禅与生活美学"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 禅与现代心理"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 禅宗文化遗址"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 禅学经典选读"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结与研讨"
+   }
+  ]
+ },
+ "欧洲美术传世经典赏析": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 古希腊罗马艺术"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 中世纪宗教艺术"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 文艺复兴三杰"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 威尼斯画派"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 巴洛克艺术"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 洛可可艺术"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 新古典主义"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 浪漫主义"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 现实主义"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 印象派"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 后印象派"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 现代艺术开端"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 毕加索与立体主义"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 超现实主义"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 当代艺术概览"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结与研讨"
+   }
+  ]
+ },
+ "平面设计艺术基础": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 设计原理与要素"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 色彩基础"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 字体设计"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 版式设计"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 标志设计"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 海报设计"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 包装设计"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 书籍装帧"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · UI界面设计"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 品牌视觉识别"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 设计软件入门"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 图形创意方法"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 设计案例分析"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 专题创作(一)"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 专题创作(二)"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 作品展示与评讲"
+   }
+  ]
+ },
+ "英语论辩演讲艺术": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 演讲概述与礼仪"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 选题与立意"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 演讲稿写作"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 开场与结尾技巧"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 语音语调训练"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 肢体语言"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 即兴演讲"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 论证方法与逻辑"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 辩论规则与赛制"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 立论与驳论"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 质询技巧"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 模拟辩论(一)"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 模拟辩论(二)"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 演讲比赛实践"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 辩论赛实践"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ },
+ "无人机应用技术": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 无人机发展概述"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 空气动力学基础"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 无人机飞行原理"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 飞控系统"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 动力系统"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 导航与定位"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 航拍技术"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 无人机测绘应用"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 农业植保应用"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 电力巡检应用"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 物流配送应用"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 航拍图像处理"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 飞行安全法规"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 模拟飞行实训"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 实操飞行体验"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结与考核"
+   }
+  ]
+ },
+ "土木工程与人类文明": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 土木工程概述"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 古代建筑奇迹"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 中国古建筑体系"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 桥梁工程史"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 隧道工程史"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 高层建筑发展"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 大跨度结构"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 建筑美学"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 土木与可持续发展"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 智能建造技术"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 防灾减灾工程"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 港珠澳大桥案例"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 地下空间开发"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 城市轨道交通"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 未来土木展望"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结与研讨"
+   }
+  ]
+ },
+ "文化与技术": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 文化与技术概论"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 文字与印刷技术"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 摄影技术的文化影响"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 电影技术与文化"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 广播与电视"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 计算机与互联网文化"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 人工智能与文化"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 虚拟现实文化"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 数字艺术"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 社交媒体文化"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 技术与身份认同"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 技术与全球化"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 技术伦理"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 技术变迁中的文化传承"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 案例研讨"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ },
+ "化学实验室安全科学": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 实验室安全概述"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 化学品分类与标识"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 危险化学品管理"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 实验室个人防护"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 火灾预防与扑救"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 爆炸预防"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 中毒与急救"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 腐蚀与灼伤处理"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 废弃物处置"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 实验室电气安全"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 高压气瓶安全"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 生物安全基础"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 应急预案编制"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 安全演练"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 实验室安全管理体系"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结与考核"
+   }
+  ]
+ },
+ "走进积极心理学": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 积极心理学导论"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 幸福的理论"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 积极情绪"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 投入与心流"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 人际关系与幸福"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 意义与人生"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 成就感"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 性格优势"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 乐观与希望"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 感恩练习"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 正念与冥想"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 韧性培养"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 积极组织"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 幸福测量"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 幸福行动计划"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ },
+ "湖湘饮食文化": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 湖湘饮食概述"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 湘菜历史源流"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 湘菜味型与技法"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 经典湘菜赏析"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 湘菜名人"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 湖湘小吃"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 湘菜与地理环境"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 湘菜与人文精神"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 湘菜名店探访"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 饮食礼仪"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 湘菜产业化"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 湖湘茶文化"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 湖湘酒文化"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 健康饮食"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 湘菜创新"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ },
+ "简明中国传统文化": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 文化概述"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 儒家思想"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 道家思想"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 佛教与中国文化"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 传统政治制度"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 科举制度"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 传统教育"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 书法艺术"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 绘画艺术"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 音乐戏曲"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 传统建筑"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 传统服饰"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 传统节日"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 礼仪文化"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 文化传承与创新"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ },
+ "加缪的文学与思想": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 加缪生平与时代"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 《局外人》精读(一)"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 《局外人》精读(二)"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 荒诞哲学"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 《西西弗神话》"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 《鼠疫》精读(一)"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 《鼠疫》精读(二)"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 反抗哲学"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 《堕落》精读"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 《流亡与独立王国》"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 加缪与存在主义"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 加缪与萨特之争"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 加缪的戏剧"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 加缪的随笔"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 加缪思想的影响"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ },
+ "中国哲学简史": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 中国哲学绪论"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 孔子与儒学"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 孟子与性善论"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 老子与道家"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 庄子与逍遥"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 墨子与兼爱"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 荀子与性恶论"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 韩非与法家"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 董仲舒与汉代儒学"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 魏晋玄学"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 佛教哲学传入"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 禅宗哲学"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 宋明理学"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 王阳明心学"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 近代哲学转型"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ },
+ "网络媒介与社会生活": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 网络媒介概述"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 互联网发展史"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 网络传播特征"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 社交媒体研究"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 网络舆情"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 数字鸿沟"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 网络身份认同"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 网络社区文化"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 短视频传播"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 网络直播现象"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 网络谣言治理"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 网络伦理"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 网络与公共参与"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 网络成瘾问题"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 数字素养教育"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ },
+ "沈从文的乡土文学": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 沈从文生平与创作"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 《边城》精读(一)"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 《边城》精读(二)"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 湘西世界"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 《长河》精读"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 《萧萧》精读"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 《丈夫》精读"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 乡土叙事风格"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 沈从文与京派文学"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 城乡对照"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 人性主题"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 沈从文的散文"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 沈从文与鲁迅"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 文学史地位"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 沈从文研究的当代价值"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ },
+ "社会学与社会生活十二讲": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "全课程 · 社会学导论"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "全课程 · 社会与文化"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "全课程 · 社会化"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "全课程 · 社会互动"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "全课程 · 社会群体与组织"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "全课程 · 社会分层与流动"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "全课程 · 社会变迁"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "全课程 · 城市化"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "全课程 · 家庭与婚姻"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "全课程 · 教育社会学"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "全课程 · 健康社会学"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "全课程 · 社会问题与治理"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "全课程 · 社会调查方法"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "全课程 · 专题研讨(一)"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "全课程 · 专题研讨(二)"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "全课程 · 课程总结"
+   }
+  ]
+ }
+}
