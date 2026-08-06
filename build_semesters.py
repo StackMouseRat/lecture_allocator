@@ -233,8 +233,9 @@ SEMESTERS = {
         ],
         "semester_events": [
             {"name": "劳动教育与素养", "credits": 0.0, "category": "必修", "type": "实践",
-             "note": "半天（上午）劳动教育",
-             "events": [{"week": 10, "weekday": 3, "duration": "half-am", "hours": 4}]},
+             # 线上课·无具体时间（用户明确）：slot_index=0 哨兵，不占课时段/不冲突/不显示/不干扰虚拟时间（同电子技术综合设计）
+             "note": "线上课·无具体时间",
+             "events": [{"week": 10, "weekday": 0, "slot": 0, "hours": 4}]},
             # 形势与政策(6) 已作为课程定义（见 courses）,
         ],
     },
