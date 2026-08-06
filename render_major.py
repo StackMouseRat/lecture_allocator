@@ -91,9 +91,9 @@ def render(girl):
     cfg = MAJORS[girl]
     rname = load_elective()
     conn = sqlite3.connect(DB); conn.row_factory = sqlite3.Row
-    for sem in range(1,7):
-        if sem == 4:
-            continue   # 第4学期由 scheduler.py 智能排课器生成（per-girl），不在此渲染
+    for sem in range(1, 7):
+        if sem in (4, 5):
+            continue   # 第4、5学期由 scheduler.py 智能排课器生成（per-girl），不在此渲染
         rows = conn.execute("SELECT * FROM virtual_course_schedule WHERE semester_no=? ORDER BY weekday, slot_index",(sem,)).fetchall()
         evs = conn.execute("SELECT * FROM semester_events WHERE semester_no=?",(sem,)).fetchall()
         cell = defaultdict(list)   # (wd,slot) -> 显示条目
