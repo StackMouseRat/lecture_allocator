@@ -54,11 +54,11 @@
    },
    "taiyuan": {
     "teacher": "O502",
-    "offset": 1
+    "offset": 0
    },
    "orage": {
     "teacher": "O503",
-    "offset": 2
+    "offset": 0
    }
   }
  },
