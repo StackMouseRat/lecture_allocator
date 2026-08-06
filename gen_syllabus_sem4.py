@@ -76,10 +76,10 @@ COURSES = {
     ("第八章 综合项目", ["综合项目（成绩管理系统）", "项目演示与交流"]),
 ],
 "模拟电子技术实验": [
-    ("模电实验", ["绪论与安全规范", "常用仪器使用与器件识别", "单管共射放大电路实验", "多级放大电路实验", "负反馈放大电路实验", "集成运放基本运算电路实验", "功率放大电路实验", "直流稳压电源实验"]),
+    ("模电实验", ["常用仪器使用与器件识别", "半导体器件参数测试", "单管共射放大电路实验", "多级放大电路实验", "负反馈放大电路实验", "集成运放基本运算电路实验", "功率放大电路实验", "直流稳压电源实验"]),
 ],
 "数字电子技术实验": [
-    ("数电实验", ["绪论与安全规范", "TTL门电路功能实验", "组合逻辑电路实验", "编码器与译码器实验", "触发器功能实验", "计数器实验", "寄存器与移位实验", "D/A与A/D转换实验"]),
+    ("数电实验", ["常用仪器使用与逻辑电平测试", "TTL门电路功能实验", "组合逻辑电路实验", "编码器与译码器实验", "触发器功能实验", "计数器实验", "寄存器与移位实验", "D/A与A/D转换实验"]),
 ],
 "体育（4）": [
     ("专项提高（第4学期）", ["专项热身与状态调整", "专项技术强化(一)", "专项技术强化(二)", "专项战术配合(一)", "专项战术配合(二)", "专项体能强化(一)", "专项体能强化(二)", "专项综合演练(一)", "专项综合演练(二)", "体质测试", "专项技能测试(一)", "专项技能测试(二)", "专项对抗练习", "专项自主强化", "学期综合展示", "结课回顾与展望"]),
@@ -104,16 +104,35 @@ RENDER_NAMES = {
 
 
 def db_rows():
-    """读 S4 排课：course -> [(weekday, weeks)]，按 weekday 排序"""
+    """读 S4 per-girl 排课：course -> [(weekday, weeks)]（普通课取 surrey，四史按人取）"""
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
     data = {}
-    for r in conn.execute("SELECT course, weekday, slot_index, session_weeks FROM virtual_course_schedule "
-                          "WHERE semester_no=4 ORDER BY weekday, slot_index"):
+    girl_for = {"四史·③": "orage", "四史·④": "sakawa"}   # 四史占位符 → 选课人
+    for r in conn.execute("SELECT course, girl, weekday, session_weeks FROM girl_course_schedule "
+                          "WHERE semester_no=4 ORDER BY weekday"):
+        course = r["course"]
+        # 渲染名 → 归一为 db/生成器内部名
+        if course == "改革开放史":
+            course = "四史·③"
+        elif course == "新中国史":
+            course = "四史·④"
+        elif course == "Python语言程序设计":
+            course = "通识选修·晚间⑦"
+        elif course in ("体育舞蹈·提高", "田径", "瑜伽·提高", "武术·提高"):
+            course = "体育（4）"
+        want = girl_for.get(course, "surrey")
+        if r["girl"] != want:
+            continue
         weeks = [int(x) for x in r["session_weeks"].split(",") if x.strip()]
-        data.setdefault(r["course"], []).append((r["weekday"], weeks))
+        data.setdefault(course, []).append((r["weekday"], weeks))
     conn.close()
-    return data
+    # 去重（同一 weekday 多行 slot 合并）
+    out = {}
+    for c, rows in data.items():
+        seen = set()
+        out[c] = [(wd, ws) for (wd, ws) in rows if not (wd, tuple(ws)) in seen and not seen.add((wd, tuple(ws)))]
+    return out
 
 
 def build_rows(name, materials, db_course):
@@ -155,7 +174,7 @@ def main():
     syllabus = {}
     OUT.mkdir(parents=True, exist_ok=True)
     for name, materials in COURSES.items():
-        # db 课名：选修占位符用渲染名
+        # db 课名：选修/四史用占位符，其余同名
         db_course = None
         dname_target = RENDER_NAMES.get(name, name)
         for dname, rows in db.items():
