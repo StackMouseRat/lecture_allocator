@@ -26,10 +26,10 @@ def T(name, credits, hours, **kw):     # 理论课
     d.update(kw)
     return d
 
-def E(name, credits, hours, hps=4, **kw):   # 实验课（晚间3节）
+def E(name, credits, hours, hps=4, **kw):   # 实验课（下午优先，晚间兜底）
     d = {"name": name, "credits": credits, "category": "必修", "type": "实验",
-         "total_hours": hours, "hours_per_session": hps, "evening_only": True,
-         "prefer": ["晚上"]}
+         "total_hours": hours, "hours_per_session": hps, "evening_only": False,
+         "prefer": ["下午"]}
     d.update(kw)
     return d
 
@@ -84,7 +84,7 @@ SEMESTERS = {
             T("大学英语A（1）", 4.0, 64),
             T("思想道德与法治", 3.0, 54),
             T("工程制图", 2.0, 28, prefer=["下午"], sessions_per_week=1, hours_per_session=2, weeks="1-14"),   # 大班授课28学时=14周×2
-            E("工程制图上机", 0.5, 8, hps=4, weeks="9,11", desc="小班讨论实际为上机：8学时=晚间2次×4学时，前进楼"),
+            E("工程制图上机", 0.5, 8, hps=4, weeks="9,11", evening_only=True, desc="小班讨论实际为上机：8学时=晚间2次×4学时，前进楼"),
             T("高等数学A（1）", 5.0, 96),
             T("通识选修·晚间①", 2.0, 32, lecture=32, category="普通选修", prefer=["晚上"], elective_slot="eve1"),
             T("通识选修·晚间②", 2.0, 32, lecture=32, category="普通选修", prefer=["晚上"], elective_slot="eve2"),
@@ -293,8 +293,7 @@ def verify_semester(sem_no, week_no=None):
 
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    only = int(args[0]) if args else None
-    sems = [only] if only else sorted(SEMESTERS.keys())
+    sems = [int(a) for a in args] if args else sorted(SEMESTERS.keys())
     for s in sems:
         build_one(s)
     # 每学期随机抽一周

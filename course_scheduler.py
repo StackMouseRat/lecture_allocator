@@ -310,7 +310,7 @@ def allocate(data):
                     if any(exp_cnt[x] >= 3 for x in sw):   # 每周最多3个实验
                         continue
                     sw_set = set(sw)
-                    w, combo = pick_slot({slot_group: pool}, [slot_group], allow_reserved=True, weeks=sw_set)
+                    w, combo = pick_slot({slot_group: pool}, [slot_group], allow_reserved=False, weeks=sw_set)
                     if w is not None:
                         placed_records.append((course["name"], course["credits"], course["category"],
                                                "实验", w, combo, ",".join(map(str, sw)), hps, 0))
