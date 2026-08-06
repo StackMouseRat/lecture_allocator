@@ -458,7 +458,10 @@ SEM_TERMS = {
 # 集中实践事件（无课表课程）：sem -> [(名称, 学分, [(周, 全天天数), ...])]
 SEM_EVENTS = {
     4: [("思政实践（社会实践）", 1.0, [(14, 5), (15, 3)])],
-    5: [("电子技术综合设计（集中）", 2.0, [(13, 5), (14, 3)])],
+    # 电子技术综合设计：每天1课时（1学时），从第7周起连续64天（W7周一→W16周一，含周末），排满64结课
+    # 事件不排课：slot_index=0 哨兵（不在 schedule 1-10 内）→ 不占课时段/不冲突/不显示/不干扰虚拟时间
+    5: [("电子技术综合设计（集中）", 2.0,
+         [(w, 7) for w in range(7, 16)] + [(16, 1)])],
 }
 
 
@@ -589,8 +592,11 @@ def export_db(s, sem):
     cur.execute("DELETE FROM semester_events WHERE semester_no=?", (sem,))
     for ev_name, credits, blocks in SEM_EVENTS.get(sem, []):
         for week, n_days in blocks:
-            for wd in range(n_days):
-                for slot in range(1, 7):   # 全天 6 小节
+            for wd in range(min(n_days, 7)):
+                # 每天1课时事件（电子技术综合设计 W7 起×64 天）：slot_index=0 哨兵，不排课
+                # 集中事件（思政实践 W14-15 全天）：slot 1-6 逐小节
+                slots = [0] if sem == 5 and ev_name == "电子技术综合设计（集中）" else list(range(1, 7))
+                for slot in slots:
                     cur.execute(
                         "INSERT OR IGNORE INTO semester_events "
                         "(semester_no, course, credits, category, course_type, week_no, weekday, slot_index) "
