@@ -42,23 +42,23 @@
   }
  },
  "大学英语A（1）": {
-  "type": "public",
+  "type": "optional",
   "assign": {
    "surrey": {
-    "teacher": "P03",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P03",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P03",
+    "teacher": "O501",
     "offset": 0
    },
    "sakawa": {
-    "teacher": "P03",
+    "teacher": "O501",
     "offset": 0
+   },
+   "taiyuan": {
+    "teacher": "O502",
+    "offset": 1
+   },
+   "orage": {
+    "teacher": "O503",
+    "offset": 2
    }
   }
  },

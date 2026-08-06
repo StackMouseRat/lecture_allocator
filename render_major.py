@@ -61,7 +61,7 @@ PE_LOC = None
 def load_loc1():
     global LOC1
     if LOC1 is None:
-        LOC1 = json.load(open(BASE/"data"/"locations_sem1.json", encoding="utf-8"))["courses"]
+        LOC1 = json.load(open(BASE/"data"/"locations_sem1.json", encoding="utf-8"))
     return LOC1
 def load_pe_loc():
     global PE_LOC
@@ -103,7 +103,7 @@ def render(girl):
                 real = rname(cname, girl)
                 if real is None: continue
                 cname, ct = real, "选修"
-                loc = load_loc1().get(ph, "")
+                loc = load_loc1().get("courses", {}).get(ph, "")
             # 四史：只上5次课（多余学时自行复习），仅显示第1-5周
             if cname in SISHI:
                 wks = ",".join(map(str, range(1, 6)))   # 5次
@@ -128,7 +128,8 @@ def render(girl):
                     wd = (wd + a["offset"]) % 5
                     tname = a["teacher"]
             if not loc:
-                loc = load_loc1().get(cname, "")
+                # 老师级教室优先（不同老师教室必不同），再课程级
+                loc = load_loc1().get("teacher_rooms", {}).get(tname, "") or load_loc1().get("courses", {}).get(cname, "")
             cell[(wd,slot)].append((cname, ct, wks, tname, loc))
         ev_cell = defaultdict(list)
         for e in evs:
