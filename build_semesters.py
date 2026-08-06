@@ -43,10 +43,13 @@ def EV(name, credits, half="first", weeks="9-16", hps=2):  # 讨论/讲座课
             "total_hours": 16, "sessions_per_week": 1, "hours_per_session": hps,
             "weeks": weeks, "seminar": 1, "prefer": ["下午"], "intensive_half": half}
 
-def SX(name, credits):   # 形势与政策：课程（非事件），相邻周W3+W4，周二下午保留槽位
-    return {"name": name, "credits": credits, "category": "必修", "type": "讲座",
-            "total_hours": 4, "weeks": "3-4", "sessions_per_week": 1,
-            "hours_per_session": 2, "prefer": ["下午"]}
+def SX(name, credits, day=None, slot=None):   # 形势与政策：课程（非事件），相邻周W3+W4
+    d = {"name": name, "credits": credits, "category": "必修", "type": "讲座",
+         "total_hours": 4, "weeks": "3-4", "sessions_per_week": 1,
+         "hours_per_session": 2, "prefer": ["下午"]}
+    if day is not None: d["fx_day"] = day     # 指定天（如避让实训）
+    if slot is not None: d["fx_slot"] = slot  # 指定槽位
+    return d
 
 # 培养方案大班授课学时（用于标准档判断：总学时含讨论/实践，大班学时才是排课主体）
 LECTURE_MAP = {
@@ -197,7 +200,7 @@ SEMESTERS = {
             EV("信号与系统·讨论", 0.0, half="second", weeks="9-10"),
             E("信号与系统实验", 1.0, 12, hps=4),
             E("微机原理及其应用实践", 1.0, 32, hps=4, split=[4, 4]),   # 拆成4+4两段
-            SX("形势与政策(5)", 0.25),
+            SX("形势与政策(5)", 0.25, day=4, slot=6),
         ],
         "semester_events": [
 

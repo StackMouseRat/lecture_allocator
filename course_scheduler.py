@@ -275,8 +275,19 @@ def allocate(data):
     for course in specials:
         seminar = 1 if course.get("seminar", 0) else 0
         plan = build_lesson_plans(course)[0]
-        pool = SLOT_1H if plan["hours"] == 1 else SLOT_2H
-        w, combo = pick_slot(pool, course.get("prefer") or ["下午"], allow_reserved=False)
+        fd, fs = course.get("fx_day"), course.get("fx_slot")
+        if fd is not None and fs is not None:
+            # 指定天/槽：该槽在 W3+W4 空闲则用，否则回退自动
+            wks_set = set(int(x) for x in plan["weeks"].split(",")) if isinstance(plan["weeks"], str) else set(plan["weeks"])
+            if all(not (used_weeks[fd][s] & wks_set) for s in (fs,)):
+                w, combo = fd, (fs,)
+            else:
+                w, combo = None, None
+        else:
+            w, combo = None, None
+        if w is None:
+            pool = SLOT_1H if plan["hours"] == 1 else SLOT_2H
+            w, combo = pick_slot(pool, course.get("prefer") or ["下午"], allow_reserved=False)
         if w is None:
             print(f"  ⚠️ 无法分配(兜底): {course['name']}")
             continue
@@ -441,41 +452,13 @@ def allocate(data):
 def write_db(data, records):
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
+    from db_schema import init_schema
+    init_schema(conn)   # 统一 Schema：全部表+种子（唯一权威 db_schema.py）
+    cur = conn.cursor()
 
-    # 虚拟时钟表（单行，id=1）：基准 2023-09-14（周四，工作日）08:30
-    cur.execute("""CREATE TABLE IF NOT EXISTS virtual_time (
-        id INTEGER PRIMARY KEY CHECK (id = 1),
-        virtual_datetime TEXT NOT NULL,
-        year INTEGER, month INTEGER, day INTEGER, weekday INTEGER,
-        hour INTEGER, minute INTEGER, second INTEGER,
-        is_workday INTEGER, note TEXT, updated_at TEXT)""")
-    cur.execute("INSERT OR IGNORE INTO virtual_time (id, virtual_datetime, year, month, day, weekday, hour, minute, second, is_workday, note, updated_at) "
-                "VALUES (1, '2023-09-14 08:30:00', 2023, 9, 14, 3, 8, 30, 0, 1, '调度器初始设定：2023年9月中旬工作日早晨', '')")
-    cur.execute("""CREATE TABLE IF NOT EXISTS time_log (
-        id INTEGER PRIMARY KEY AUTOINCREMENT, action TEXT, old_time TEXT,
-        new_time TEXT, note TEXT, created_at TEXT)""")
-    cur.execute("""CREATE TABLE IF NOT EXISTS schedule (
-        slot_index INTEGER PRIMARY KEY, period TEXT, segment TEXT,
-        start_time TEXT, end_time TEXT)""")
-    SLOT_DEFS = [(1,"第一节①","早晨","08:00","08:45"),(2,"第一节②","早晨","08:55","09:40"),
-                 (3,"第二节①","上午","09:50","10:45"),(4,"第二节②","上午","10:55","11:40"),
-                 (5,"第三节","下午","14:30","16:00"),(6,"第四节","下午","16:10","17:40"),
-                 (7,"第五节①","晚上","19:00","19:45"),(8,"第五节②","晚上","19:55","20:40"),
-                 (9,"第五节③","晚上","20:50","21:35")]
-    cur.executemany("INSERT OR IGNORE INTO schedule VALUES (?,?,?,?,?)", SLOT_DEFS)
-
-    cur.execute("CREATE TABLE IF NOT EXISTS terms (semester_no INTEGER PRIMARY KEY, term_code TEXT, start_date TEXT, end_date TEXT, note TEXT)")
-    cur.execute("DELETE FROM terms WHERE semester_no=?", (data.get("semester_no", 0),))
-    cur.execute("INSERT INTO terms (semester_no, term_code, start_date, end_date, note) VALUES (?,?,?,?,?)",
-                (data.get("semester_no", 0), data["term_code"], data.get("term_start"), None, data["term"]))
-
-    cur.execute("""CREATE TABLE IF NOT EXISTS semester_events (
-        id INTEGER PRIMARY KEY AUTOINCREMENT, term_code TEXT, semester_no INTEGER,
-        week_no INTEGER, weekday INTEGER, weekday_cn TEXT, slot_index INTEGER,
-        start_time TEXT, end_time TEXT, course TEXT, credits REAL, category TEXT,
-        course_type TEXT, hours REAL, note TEXT)""")
+    # 学期事件（军训/思政实践/电子设计/劳动教育等集中实践）——按 data["semester_events"] 展开
     cur.execute("DELETE FROM semester_events WHERE semester_no=?", (data.get("semester_no", 0),))
-    DUR_SLOTS = {   # 半天/全天展开
+    DUR_SLOTS = {
         "full":     [(s, st, et) for s, p, seg, st, et, h in SLOTS if s <= 6],
         "half-am":  [(s, st, et) for s, p, seg, st, et, h in SLOTS if s <= 4],
         "half-pm":  [(s, st, et) for s, p, seg, st, et, h in SLOTS if 5 <= s <= 6],
@@ -498,13 +481,6 @@ def write_db(data, records):
                              ev["name"], ev["credits"], ev["category"], ev["type"],
                              e.get("hours", 2), ev.get("note", "")))
 
-    cur.execute("""CREATE TABLE IF NOT EXISTS virtual_course_schedule (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        term_code TEXT, semester_no INTEGER,
-        weekday INTEGER, weekday_cn TEXT,
-        slot_index INTEGER, period TEXT, start_time TEXT, end_time TEXT,
-        course TEXT, credits REAL, category TEXT, course_type TEXT,
-        session_weeks TEXT, hours REAL, has_seminar INTEGER DEFAULT 0)""")
     cur.execute("DELETE FROM virtual_course_schedule WHERE semester_no=?", (data.get("semester_no", 0),))
     slot_map = {s: (period, st, et) for s, period, seg, st, et, h in SLOTS}
     for name, credits, cat, ctype, wd, combo, weeks, hours, seminar in records:
