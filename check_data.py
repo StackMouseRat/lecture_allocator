@@ -21,7 +21,7 @@ chk(need <= have, f"全部表存在 {sorted(need - have) or '✓'}")
 print("【虚拟时钟基准】")
 r = conn.execute("SELECT virtual_datetime FROM virtual_time WHERE id=1").fetchone()
 chk(r and r[0] == "2023-09-14 08:30:00", f"基准={r[0] if r else '缺失'}")
-chk(conn.execute("SELECT COUNT(*) FROM schedule").fetchone()[0] == 10, "schedule 10时段（含第12节21:35-22:20）")
+chk(conn.execute("SELECT COUNT(*) FROM schedule").fetchone()[0] == 10, "schedule 10时段（含第10节21:35-22:20）")
 
 print("【各学期】")
 for sem in range(1, 7):

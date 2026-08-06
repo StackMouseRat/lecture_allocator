@@ -38,7 +38,7 @@ MAX_NODES = 2_000_000
 
 GIRLS = ["surrey", "orage", "sakawa", "taiyuan"]
 EE_GROUP = {"surrey", "taiyuan"}
-AFTERNOON_EVENING = {5, 6, 7, 8, 9, 12}
+AFTERNOON_EVENING = {5, 6, 7, 8, 9, 10}
 PREF = {"surrey": [0], "taiyuan": [0], "orage": [2, 0, 3, 1, 4], "sakawa": [3, 0, 2, 1, 4]}
 PREF_RANK = {g: {o: i for i, o in enumerate(lst)} for g, lst in PREF.items()}
 

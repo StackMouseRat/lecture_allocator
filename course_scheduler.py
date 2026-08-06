@@ -39,7 +39,7 @@ SLOTS = [
     (7, "第五节", 1, "19:00", "19:45", 1),
     (8, "第五节", 2, "19:55", "20:40", 1),
     (9, "第五节", 3, "20:50", "21:35", 1),
-    (12, "第五节", 4, "21:35", "22:20", 1),
+    (10, "第五节", 4, "21:35", "22:20", 1),
 ]
 
 SLOT_2H = {"上午": [(1, 2), (3, 4)], "下午": [(5,), (6,)], "晚上": [(7, 8)]}   # 晚上：普通选修课优先
@@ -98,7 +98,7 @@ def build_lesson_plans(course):
         sessions = course.get("sessions", max(1, round(eff / hps)))
         # 晚间小节数按每次学时：4学时→4小节(7,8,9,12)；3学时→3小节；≤2学时→2小节
         if hps >= 4:
-            slots = (7, 8, 9, 12)
+            slots = (7, 8, 9, 10)
         elif hps == 3:
             slots = (7, 8, 9)
         else:
@@ -166,7 +166,7 @@ def allocate(data):
     placed_records = []
     two_slot_idx = 0        # 2课次课模式轮换计数器
     # 周次感知槽位：used_weeks[天][slot] = 已占用周次集合（支持1-8周/9-16周不同课复用同一槽位）
-    used_weeks = {w: {s: set() for s in range(1, 13) if s != 10 and s != 11} for w in range(ndays)}
+    used_weeks = {w: {s: set() for s in range(1, 11)} for w in range(ndays)}   # 10 时段（含第五节④ 21:35-22:20）
     ALL_W = set(range(1, 17))
 
     def pick_slot(combo_pool, prefs, allow_reserved=False, exclude_days=(), no_evening=False,
@@ -322,7 +322,7 @@ def allocate(data):
             placed = False
             groups = ["晚上"] if course.get("evening_only") else ["下午", "晚上"]   # 仅晚间实验（上机）
             for slot_group in groups:                # 下午优先，晚上兜底
-                eve_combo = (7, 8, 9, 12) if hps >= 4 else ((7, 8, 9) if hps == 3 else (7, 8))
+                eve_combo = (7, 8, 9, 10) if hps >= 4 else ((7, 8, 9) if hps == 3 else (7, 8))
                 pool = {"下午": SLOT_AFTERNOON_BLOCK, "晚上": [eve_combo]}[slot_group]
                 if course.get("weeks"):
                     week_opts = [[int(x) for x in course["weeks"].split(",")]]
@@ -441,7 +441,7 @@ def allocate(data):
         if any(exp_cnt[x] >= 3 for x in sw):
             print(f"  ⚠️ 降级失败: {cname}（周{sw}实验数将超3）")
             continue
-        eve_combo = (7, 8, 9, 12) if hps >= 4 else ((7, 8, 9) if hps == 3 else (7, 8))
+        eve_combo = (7, 8, 9, 10) if hps >= 4 else ((7, 8, 9) if hps == 3 else (7, 8))
         w2, combo2 = pick_slot({"晚上": [eve_combo]}, ["晚上"], allow_reserved=True, weeks=sw_set)
         if w2 is not None:
             for s in combo2:
