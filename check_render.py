@@ -2,10 +2,20 @@
 # -*- coding: utf-8 -*-
 """渲染层时间冲突校验：4人×6学期，渲染(天偏移)后同格双课检查
 db无冲突≠渲染无冲突（老师offset可能把课移到其他课槽位）"""
-import sys, sqlite3
+import sys, sqlite3, json
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from render_utils import resolve
+
+TEACHERS = json.load(open(Path(__file__).parent / "data" / "teachers.json", encoding="utf-8"))
+def render_wd(course_raw, girl, wd):
+    """与 render_major 一致：老师 assign offset 天偏移"""
+    ti = TEACHERS.get(course_raw)
+    if ti:
+        a = ti.get("assign", {}).get(girl)
+        if a:
+            return (wd + a.get("offset", 0)) % 5
+    return wd
 
 conn = sqlite3.connect(Path(__file__).parent / "db" / "virtual_time.db")
 conn.row_factory = sqlite3.Row
@@ -20,7 +30,7 @@ def main():
             for r in conn.execute("SELECT course, weekday, slot_index, session_weeks FROM virtual_course_schedule WHERE semester_no=?", (sem,)):
                 resolved = resolve(g, r["course"], sem)
                 if not resolved: continue
-                wd = r["weekday"]; slot = r["slot_index"]
+                wd = render_wd(r["course"], g, r["weekday"]); slot = r["slot_index"]
                 weeks = {int(x) for x in r["session_weeks"].split(",") if x.strip()}
                 grid.setdefault((wd, slot), []).append((resolved["name"], weeks))
             for (wd, slot), lst in grid.items():
