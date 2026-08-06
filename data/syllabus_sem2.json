@@ -997,127 +997,127 @@
    {
     "week": 4,
     "session": 2,
+    "topic": "第二章 程序设计与Python · 深化：Python文件与异常处理"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "第二章 程序设计与Python · 深化：Python正则表达式"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "第二章 程序设计与Python · 深化：Python综合编程实战"
+   },
+   {
+    "week": 6,
+    "session": 1,
     "topic": "第三章 算法基础 · 算法与复杂度"
    },
    {
-    "week": 5,
-    "session": 1,
+    "week": 6,
+    "session": 2,
     "topic": "第三章 算法基础 · 排序与查找"
    },
    {
-    "week": 5,
-    "session": 2,
+    "week": 7,
+    "session": 1,
     "topic": "第三章 算法基础 · 递归与分治"
    },
    {
-    "week": 6,
+    "week": 7,
+    "session": 2,
+    "topic": "第三章 算法基础 · 深化：递归的经典问题"
+   },
+   {
+    "week": 8,
     "session": 1,
+    "topic": "第三章 算法基础 · 深化：常用排序算法对比"
+   },
+   {
+    "week": 8,
+    "session": 2,
     "topic": "第四章 数据与数据库 · 数据结构概览"
    },
    {
-    "week": 6,
-    "session": 2,
+    "week": 9,
+    "session": 1,
     "topic": "第四章 数据与数据库 · 数据库基础"
    },
    {
-    "week": 7,
-    "session": 1,
+    "week": 9,
+    "session": 2,
     "topic": "第四章 数据与数据库 · SQL入门"
    },
    {
-    "week": 7,
+    "week": 10,
+    "session": 1,
+    "topic": "第四章 数据与数据库 · 深化：SQL查询优化入门"
+   },
+   {
+    "week": 10,
     "session": 2,
+    "topic": "第四章 数据与数据库 · 深化：数据清洗与预处理"
+   },
+   {
+    "week": 11,
+    "session": 1,
     "topic": "第五章 人工智能导论 · AI发展史"
    },
    {
-    "week": 8,
-    "session": 1,
+    "week": 11,
+    "session": 2,
     "topic": "第五章 人工智能导论 · 机器学习基础"
    },
    {
-    "week": 8,
-    "session": 2,
+    "week": 12,
+    "session": 1,
     "topic": "第五章 人工智能导论 · 神经网络初步"
    },
    {
-    "week": 9,
-    "session": 1,
+    "week": 12,
+    "session": 2,
     "topic": "第五章 人工智能导论 · AI应用案例"
    },
    {
-    "week": 9,
+    "week": 13,
+    "session": 1,
+    "topic": "第五章 人工智能导论 · 深化：机器学习模型评估"
+   },
+   {
+    "week": 13,
     "session": 2,
+    "topic": "第五章 人工智能导论 · 深化：朴素贝叶斯分类器"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "第五章 人工智能导论 · 深化：K近邻算法"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "第五章 人工智能导论 · 深化：梯度下降原理"
+   },
+   {
+    "week": 15,
+    "session": 1,
     "topic": "第六章 网络与安全 · 计算机网络基础"
    },
    {
-    "week": 10,
-    "session": 1,
+    "week": 15,
+    "session": 2,
     "topic": "第六章 网络与安全 · 信息安全"
    },
    {
-    "week": 10,
-    "session": 2,
+    "week": 16,
+    "session": 1,
     "topic": "第六章 网络与安全 · 伦理与法律"
    },
    {
-    "week": 11,
-    "session": 1,
-    "topic": "第六章 网络与安全 · 深化：数据清洗与预处理"
-   },
-   {
-    "week": 11,
+    "week": 16,
     "session": 2,
     "topic": "第六章 网络与安全 · 深化：网络安全攻防演练"
-   },
-   {
-    "week": 12,
-    "session": 1,
-    "topic": "Python配套深化（跟随对应章节） · Python文件与异常处理"
-   },
-   {
-    "week": 12,
-    "session": 2,
-    "topic": "Python配套深化（跟随对应章节） · Python正则表达式"
-   },
-   {
-    "week": 13,
-    "session": 1,
-    "topic": "Python配套深化（跟随对应章节） · Python综合编程实战"
-   },
-   {
-    "week": 13,
-    "session": 2,
-    "topic": "Python配套深化（跟随对应章节） · 递归的经典问题"
-   },
-   {
-    "week": 14,
-    "session": 1,
-    "topic": "Python配套深化（跟随对应章节） · 常用排序算法对比"
-   },
-   {
-    "week": 14,
-    "session": 2,
-    "topic": "Python配套深化（跟随对应章节） · SQL查询优化入门"
-   },
-   {
-    "week": 15,
-    "session": 1,
-    "topic": "Python配套深化（跟随对应章节） · 机器学习模型评估"
-   },
-   {
-    "week": 15,
-    "session": 2,
-    "topic": "Python配套深化（跟随对应章节） · 朴素贝叶斯分类器"
-   },
-   {
-    "week": 16,
-    "session": 1,
-    "topic": "Python配套深化（跟随对应章节） · K近邻算法"
-   },
-   {
-    "week": 16,
-    "session": 2,
-    "topic": "Python配套深化（跟随对应章节） · 梯度下降原理"
    }
   ]
  },
