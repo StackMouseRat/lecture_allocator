@@ -68,12 +68,12 @@ def log(msg):
 # =====================================================================
 def C(course, ctype, building, hours, pattern, teachers=None, public=False,
       weeks=None, weeks_list=None, slot_fixed=None, day_fixed=None, hps=2, sync=False,
-      block_after=False, fixed=None, afternoon_first=False):
+      block_after=False, fixed=None, afternoon_first=False, hours_list=None):
     return dict(course=course, type=ctype, building=building, hours=hours, pattern=pattern,
                 teachers=teachers or {}, public=public, weeks=weeks,
                 weeks_list=weeks_list, slot_fixed=slot_fixed, day_fixed=day_fixed, hps=hps,
                 sync=sync, block_after=block_after, fixed=fixed or [],
-                afternoon_first=afternoon_first)
+                afternoon_first=afternoon_first, hours_list=hours_list)
 
 
 S4 = [
@@ -129,12 +129,13 @@ S5 = [
       teachers={"*": "P18a"}, weeks=[3, 4], day_fixed=4, slot_fixed=6,
       fixed=[(4, 6, [3, 4])]),
     # ---- 实验（物电院，大三连续周，下午优先/晚间兜底）----
-    C("电力电子技术基础实践", "实验", "物电院", 20, "cont", public=True, weeks=list(range(1, 6)),
-      teachers={"*": "E700"}, hps=4, afternoon_first=True),
+    C("电力电子技术基础实践", "实验", "物电院", 16, "cont", public=True, weeks=list(range(1, 5)),
+      teachers={"*": "E700"}, hps=4, afternoon_first=True),   # 4次×4学时=16（培养方案实践16）
     C("自动控制原理实验", "实验", "物电院", 12, "cont", public=True, weeks=list(range(4, 10)),
       teachers={"*": "E600"}, hps=2, afternoon_first=True),   # 2学时/次 × 6次（用户明确）
-    C("电机学（上）实验", "实验", "物电院", 12, "cont", public=True, weeks=list(range(6, 9)),
-      teachers={"*": "E1000"}, hps=4, afternoon_first=True),
+    C("电机学（上）实验", "实验", "物电院", 8, "multi", public=True,
+      weeks_list=[[6], [7], [8]], hours_list=[3, 3, 2], hps=3,
+      teachers={"*": "E1000"}),   # 3次：3+3+2=8学时（培养方案实践8），3学时晚间3小节/2学时晚间2小节
     C("信号与系统实验", "实验", "物电院", 12, "cont", public=True, weeks=list(range(9, 12)),
       teachers={"*": "E900"}, hps=4, afternoon_first=True),
     C("微机原理及其应用实践", "实验", "物电院", 32, "split", public=True,
@@ -165,6 +166,8 @@ def row_weeks(c, ri):
         return c["weeks"]
     if p == "cont":
         return c["weeks"]
+    if p == "multi":
+        return c["weeks_list"][ri]
     if p == "split":
         return c["weeks_list"][ri]
     if p == "biweekly":
@@ -177,6 +180,8 @@ def row_weeks(c, ri):
 
 
 def n_rows(c):
+    if c["pattern"] == "multi":
+        return len(c["weeks_list"])
     return {"full_half": 2, "full": 1, "full+part5": 2, "full+part3": 2, "full+w12": 2,
             "full+half1": 2, "same2": 2, "cont": 1, "split": 2, "biweekly": 1,
             "single": 1, "fixed": 0}[c["pattern"]]
@@ -190,21 +195,31 @@ def gap_ok(prev_slot, next_slot):
     return 0 <= (h2 * 60 + m2) - (h1 * 60 + m1) <= 30
 
 
-def slots_of(c, slot):
+def slots_of(c, slot, ri=0):
     """一次课占用的小节（按时段学时换算）：
     下午 slot5/6 = 90分钟 = 2学时 → 1小节；上午 slot1-4 = 45分钟/节 → 2小节=2学时；
-    晚间 slot7-10 = 45分钟/节 → 2小节=2学时；四史3小节=3学时；实验4学时=下午2小节或晚间4小节；
+    晚间 slot7-10 = 45分钟/节 → 2小节=2学时；四史3小节=3学时；实验：4学时=下午2小节或晚间4小节，
+    3学时=晚间3小节（slot7-8-9）；hours_list 支持每次不同学时（如电机学实验 3+3+2）；
     实践：slot5=半天下午[5,6]，slot1=全天[1-6]"""
     if c["type"] in ("体育", "讲座"):
         return [slot]
     if c["type"] == "四史":            # 3学时 = 晚间3小节（slot7-8-9）
         return [slot, slot + 1, slot + 2]
-    if c["type"] == "实验" and c.get("hps", 2) == 4:
+    if c["type"] == "实验":
+        hps = c.get("hours_list", [c.get("hps", 2)])[ri] if c.get("hours_list") else c.get("hps", 2)
+        if hps == 4:
+            if slot == 7:
+                return [7, 8, 9, 10]   # 晚间4小节
+            if slot == 5:
+                return [5, 6]          # 下午2小节 = 4学时
+            return [slot]
+        if hps == 3:
+            return [7, 8, 9] if slot == 7 else [slot]   # 3学时仅晚间3小节（slot7 起）
         if slot == 7:
-            return [7, 8, 9, 10]       # 晚间4小节
-        if slot == 5:
-            return [5, 6]              # 下午2小节 = 4学时
-        return [slot]
+            return [7, 8]              # 晚间2小节
+        if slot in (5, 6):
+            return [slot]              # 下午1小节 = 2学时
+        return [slot, slot + 1]
     if c["type"] == "实践":
         if slot == 1:
             return [1, 2, 3, 4, 5, 6]  # 全天
@@ -238,6 +253,8 @@ class Scheduler:
     def slot_cands(self, c):
         t = c["type"]
         if t == "实验":
+            if c.get("hours_list") and 3 in c["hours_list"]:
+                return [7]              # 含3学时次 → 仅晚间 slot7（3学时=晚间3小节）
             return [5, 7] if c.get("afternoon_first") else [7]   # S5 下午优先/晚间兜底；S4 晚间
         if t == "理论":
             return [1, 3, 5, 6]       # 上午2小节(1-2/3-4) 或 下午1小节(5/6)
@@ -289,17 +306,17 @@ class Scheduler:
                     return False
         return True
 
-    def pick_room(self, c, wd, slot, weeks):
+    def pick_room(self, c, wd, slot, weeks, ri=0):
         for room in ROOMS[c["building"]]:
             occ = self.room_occ.get(room, {})
-            if all(not (occ.get((wd, s), set()) & set(weeks)) for s in slots_of(c, slot)):
+            if all(not (occ.get((wd, s), set()) & set(weeks)) for s in slots_of(c, slot, ri)):
                 return room
         return None
 
     # ---------- place / unplace ----------
     def place(self, c, girl, wd, slot, weeks, room, ri):
         b = BUILDING[c["building"]]
-        slots = slots_of(c, slot)
+        slots = slots_of(c, slot, ri)
         targets = GIRLS if girl == "*" else [girl]
         if girl == "surrey" and c.get("sync"):
             targets.append("taiyuan")
@@ -322,7 +339,7 @@ class Scheduler:
 
     def unplace(self, c, girl, wd, slot, weeks, room, ri):
         b = BUILDING[c["building"]]
-        slots = slots_of(c, slot)
+        slots = slots_of(c, slot, ri)
         targets = GIRLS if girl == "*" else [girl]
         for g in targets:
             for s in slots:
@@ -360,7 +377,7 @@ class Scheduler:
             if not c.get("fixed"):
                 continue
             for ri, (wd, slot, weeks) in enumerate(c["fixed"]):
-                room = self.pick_room(c, wd, slot, weeks)
+                room = self.pick_room(c, wd, slot, weeks, ri)
                 if room is None:
                     room = ROOMS[c["building"]][0]
                 girl = "*" if c["public"] else next(iter(c["teachers"]))
@@ -404,7 +421,7 @@ class Scheduler:
                 for slot in self.slot_cands(c):
                     if not self.ok(c, girl, wd, slot, weeks, prev):
                         continue
-                    room = self.pick_room(c, wd, slot, weeks)
+                    room = self.pick_room(c, wd, slot, weeks, ri)
                     if room is not None:
                         cands.append((wd, slot, room))
             if not cands:
@@ -489,9 +506,9 @@ def verify(s):
             for ri, (wd, slot, weeks) in enumerate(rows):
                 weeks_set = set(weeks)
                 # 时段
-                if c["type"] == "实验" and not (set(slots_of(c, slot)) & (AFTERNOON | EVENING)):
+                if c["type"] == "实验" and not (set(slots_of(c, slot, ri)) & (AFTERNOON | EVENING)):
                     errs.append(f"{c['course']} {girl} 实验时段非法 slot{slot}")
-                if c["type"] == "理论" and any(s not in DAYTIME for s in slots_of(c, slot)):
+                if c["type"] == "理论" and any(s not in DAYTIME for s in slots_of(c, slot, ri)):
                     errs.append(f"{c['course']} {girl} 理论课晚间 slot{slot}")
                 # 周二下午
                 if wd == 1 and slot in (5, 6):
@@ -503,7 +520,7 @@ def verify(s):
                 # 时间冲突 + 相邻楼（per target）
                 for g in targets:
                     ggrid = s.grid[g]
-                    for s_ in slots_of(c, slot):
+                    for s_ in slots_of(c, slot, ri):
                         for (wset, nb) in ggrid.get((wd, s_), []):
                             if wset == weeks_set:
                                 continue
@@ -519,7 +536,7 @@ def verify(s):
                 # 教室唯一
                 room = s.rooms.get((c["course"], girl, ri))
                 if room:
-                    for s_ in slots_of(c, slot):
+                    for s_ in slots_of(c, slot, ri):
                         occ = rooms_occ.setdefault(room, {}).setdefault((wd, s_), set())
                         if occ & weeks_set:
                             errs.append(f"{c['course']} {girl} 教室{room} 冲突")
@@ -527,7 +544,7 @@ def verify(s):
                 # 老师
                 t = c["teachers"].get(girl) or c["teachers"].get("*")
                 if t:
-                    for s_ in slots_of(c, slot):
+                    for s_ in slots_of(c, slot, ri):
                         occ = teacher_occ.setdefault(t, {}).setdefault((wd, s_), set())
                         if occ & weeks_set:
                             errs.append(f"{c['course']} {girl} 老师{t} 同时两班")
@@ -555,7 +572,7 @@ def render_md(s, girl, sem):
                     t = {"surrey": "PE-舞蹈组A", "orage": "PE-定向越野队", "sakawa": "PE-瑜伽组B", "taiyuan": "PE-武术组C"}[girl]
                 if name.startswith("形势与政策") and sem == 5:   # S5 同班 P18a；S4 保持 P17
                     t = "P18a"
-                for s_ in slots_of(c, slot):
+                for s_ in slots_of(c, slot, ri):
                     cell.setdefault((wd, s_), []).append((name, fmt_w(weeks), t, room))
     lines = []
     SLOT_LABEL = [(1, "第一节①", "08:00-08:45"), (2, "第一节②", "08:55-09:40"),
@@ -607,7 +624,8 @@ def export_db(s, sem):
         course TEXT, weekday INTEGER, slot_index INTEGER, session_weeks TEXT,
         hours REAL, course_type TEXT, teacher TEXT, location TEXT, has_seminar INTEGER)""")
     cur.execute("DELETE FROM girl_course_schedule WHERE semester_no=?", (sem,))
-    hps = {c["course"]: c["hps"] for c in s.courses}
+    # hours_list 按行(ri)取学时；无 hours_list 用课程 hps
+    hl_map = {c["course"]: (c.get("hours_list") or [c.get("hps", 2)]) for c in s.courses}
     for c in s.courses:
         for g, rows in s.solution.get(c["course"], {}).items():
             targets = GIRLS if g == "*" else [g]
@@ -616,7 +634,7 @@ def export_db(s, sem):
                 t = c["teachers"].get("*") if g == "*" else c["teachers"].get(g, "")
                 if c.get("sync") and g == "surrey":
                     targets = [g, "taiyuan"]   # 电气同班同步
-                slots = slots_of(c, slot)
+                slots = slots_of(c, slot, ri)
                 for girl in targets:
                     cname = c["course"]
                     if cname in SISHI_NAME:
@@ -633,7 +651,9 @@ def export_db(s, sem):
                         if c["type"] == "实践":
                             per_slot = 2.0 if s_ in (5, 6) else 1.0
                         else:
-                            per_slot = hps.get(c["course"], 2) / len(slots)
+                            hl = hl_map[c["course"]]
+                            hps_this = hl[ri] if len(hl) > 1 else hl[0]   # hours_list 按行取；普通课取单值
+                            per_slot = hps_this / len(slots)
                         cur.execute(
                             "INSERT INTO girl_course_schedule "
                             "(girl, semester_no, course, weekday, slot_index, session_weeks, hours, course_type, teacher, location, has_seminar) "

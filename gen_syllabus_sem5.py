@@ -81,7 +81,7 @@ COURSES = {
     ("形势政策专题", ["专题一：进一步全面深化改革与中国式现代化", "专题二：新质生产力与科技自立自强"]),
 ],
 "电力电子技术基础实践": [
-    ("电力电子实践", ["晶闸管触发电路与单相可控整流实验", "三相桥式可控整流电路实验", "降压斩波电路（Buck）实验", "单相桥式逆变电路实验", "PWM控制与直流调速综合实验"]),
+    ("电力电子实践", ["晶闸管触发电路与单相可控整流实验", "三相桥式可控整流电路实验", "降压斩波电路（Buck）实验", "单相桥式逆变电路实验"]),
 ],
 "自动控制原理实验": [
     ("自控实验", ["典型环节的模拟实验", "一阶系统时域响应实验", "二阶系统时域响应实验",
@@ -111,6 +111,8 @@ COURSES = {
 # 实训：半天 4 学时 / 全天 8 学时（与 db 行一致）
 XUNSHI_BLOCK = {"机电技术创新实训": {6: 4, 7: 4, 8: 4, 9: 4, 10: 4, 11: 4,   # 周三下午 W6-11 半天
                                      12: 8, 13: 8, 14: 8, 15: 8, 16: 8}}  # 周五全天 W12-16
+# 电机学（上）实验：3次 = 3+3+2 学时（培养方案实践8，用户明确）
+SPECIAL_HOURS = {"电机学（上）实验": {6: 3, 7: 3, 8: 2}}
 
 
 def db_rows():
@@ -182,6 +184,13 @@ def main():
             note = f"> 总学时 {total} ｜ {len(rows)}天（6 半天×4学时 + 5 全天×8学时）"
             syllabus[name] = {"spw": None, "weeks": 16, "rows": rows, "hps": 8, "hours_map": hours_map}
             (OUT / f"{name}.md").write_text(render_md(name, rows, 8, note), encoding="utf-8")
+        elif name in SPECIAL_HOURS:
+            rows = build_rows(name, materials, db_course)
+            hours_map = SPECIAL_HOURS[name]
+            total = sum(hours_map[r["week"]] for r in rows)
+            note = f"> 总学时 {total} ｜ {len(rows)}次（{' + '.join(str(hours_map[r['week']]) for r in rows)}学时）"
+            syllabus[name] = {"spw": None, "weeks": 16, "rows": rows, "hps": 3, "hours_map": hours_map}
+            (OUT / f"{name}.md").write_text(render_md(name, rows, 3, note), encoding="utf-8")
         else:
             hps = 4 if ("实验" in name or "实践" in name) else 2
             rows = build_rows(name, materials, db_course)
