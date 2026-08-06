@@ -1468,5 +1468,26 @@
     "offset": 3
    }
   }
+ },
+ "工程制图上机": {
+  "type": "core",
+  "assign": {
+   "surrey": {
+    "teacher": "P22",
+    "offset": 0
+   },
+   "taiyuan": {
+    "teacher": "P22",
+    "offset": 0
+   },
+   "orage": {
+    "teacher": "P22",
+    "offset": 0
+   },
+   "sakawa": {
+    "teacher": "P22",
+    "offset": 0
+   }
+  }
  }
 }

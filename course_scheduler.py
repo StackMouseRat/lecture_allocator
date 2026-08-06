@@ -297,9 +297,12 @@ def allocate(data):
         seg_total = 0
         for seg_n in segs:
             placed = False
-            for slot_group in ["下午", "晚上"]:      # 下午优先，晚上兜底
+            groups = ["晚上"] if course.get("evening_only") else ["下午", "晚上"]   # 仅晚间实验（上机）
+            for slot_group in groups:                # 下午优先，晚上兜底
                 pool = {"下午": SLOT_AFTERNOON_BLOCK, "晚上": SLOT_EVENING}[slot_group]
-                if continuous:
+                if course.get("weeks"):
+                    week_opts = [[int(x) for x in course["weeks"].split(",")]]
+                elif continuous:
                     week_opts = [list(range(s, s + seg_n)) for s in range(1, 17 - seg_n + 1)]
                 else:
                     week_opts = [gen_session_weeks(seg_n, 1, 16, off) for off in [0, 1]]
