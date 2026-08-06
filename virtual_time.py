@@ -257,18 +257,22 @@ class VirtualClock:
                          "event": True, "event_note": ev["note"],
                          "start_time": ev["start_time"], "end_time": ev["end_time"]})
             return base
-        # ② 每周课表
-        row = conn.execute(
+        # ② 每周课表（同槽多课=周次复用：取当前周匹配的行）
+        rows = conn.execute(
             "SELECT course, credits, category, course_type, hours, start_time, end_time, "
             "session_weeks, has_seminar "
             "FROM virtual_course_schedule WHERE semester_no=? AND weekday=? AND slot_index=?",
             (sem, wd, slot["slot_index"])
-        ).fetchone()
-        # 按 session_weeks（课次所在周次列表）过滤
-        if row is not None and row["session_weeks"]:
-            sw = {int(x) for x in row["session_weeks"].split(",") if x.strip()}
-            if week not in sw:
-                row = None
+        ).fetchall()
+        row = None
+        for r in rows:
+            if not r["session_weeks"]:
+                row = r
+                break
+            sw = {int(x) for x in r["session_weeks"].split(",") if x.strip()}
+            if week in sw:
+                row = r
+                break
         conn.close()
         if row is None:
             base.update({"status": "free", "course": None, "event": False})
@@ -282,6 +286,10 @@ class VirtualClock:
             from render_utils import resolve, syllabus_topic
             raw_name = base["course"]
             r = resolve(girl, raw_name, sem)
+            if r is None:
+                # 该生未修此占位课（如四史·② 太原未选）→ 此时无课
+                base.update({"status": "free", "course": None, "event": False})
+                return base
             if r:
                 base["course"] = r["name"]
                 base["teacher"] = r["teacher"]
