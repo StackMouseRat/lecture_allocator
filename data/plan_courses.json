@@ -1,0 +1,676 @@
+{
+ "毛泽东思想和中国特色社会主义理论体系概论": {
+  "category": "通识必修",
+  "credits": 3,
+  "hours": 48,
+  "unit": "马院",
+  "semesters": [
+   3
+  ]
+ },
+ "习近平新时代中国特色社会主义思想概论": {
+  "category": "通识必修",
+  "credits": 2,
+  "hours": 36,
+  "unit": "马院",
+  "semesters": [
+   4
+  ]
+ },
+ "马克思主义基本原理": {
+  "category": "通识必修",
+  "credits": 3,
+  "hours": 54,
+  "unit": "马院",
+  "semesters": [
+   4
+  ]
+ },
+ "中国近现代史纲要": {
+  "category": "通识必修",
+  "credits": 3,
+  "hours": 54,
+  "unit": "马院",
+  "semesters": [
+   2
+  ]
+ },
+ "思想道德与法治": {
+  "category": "通识必修",
+  "credits": 3,
+  "hours": 54,
+  "unit": "马院",
+  "semesters": [
+   1
+  ]
+ },
+ "形势与政策": {
+  "category": "通识必修",
+  "credits": 0.25,
+  "hours": 4,
+  "unit": "马院",
+  "semesters": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "大学英语": {
+  "category": "通识必修",
+  "credits": 8,
+  "hours": 128,
+  "unit": "外语院",
+  "semesters": [
+   1,
+   2
+  ]
+ },
+ "体育": {
+  "category": "通识必修",
+  "credits": 4,
+  "hours": 144,
+  "unit": "体育院",
+  "semesters": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "计算与人工智能概论": {
+  "category": "通识必修",
+  "credits": 4,
+  "hours": 80,
+  "unit": "信息院",
+  "semesters": [
+   2
+  ]
+ },
+ "大学生心理健康教育": {
+  "category": "通识必修",
+  "credits": 1,
+  "hours": 16,
+  "unit": "学工部",
+  "semesters": [
+   1
+  ]
+ },
+ "军事理论": {
+  "category": "通识必修",
+  "credits": 1,
+  "hours": 36,
+  "unit": "武装部",
+  "semesters": [
+   3
+  ]
+ },
+ "高等数学A（1）": {
+  "category": "学门核心",
+  "credits": 5,
+  "hours": 96,
+  "unit": "数学院",
+  "semesters": [
+   1
+  ]
+ },
+ "高等数学A（2）": {
+  "category": "学门核心",
+  "credits": 5,
+  "hours": 96,
+  "unit": "数学院",
+  "semesters": [
+   2
+  ]
+ },
+ "线性代数A": {
+  "category": "学门核心",
+  "credits": 3,
+  "hours": 48,
+  "unit": "数学院",
+  "semesters": [
+   2
+  ]
+ },
+ "概率论与数理统计A": {
+  "category": "学门核心",
+  "credits": 3,
+  "hours": 48,
+  "unit": "数学院",
+  "semesters": [
+   3
+  ]
+ },
+ "普通物理A（1）": {
+  "category": "学门核心",
+  "credits": 3,
+  "hours": 64,
+  "unit": "物电院",
+  "semesters": [
+   2
+  ]
+ },
+ "普通物理A（2）": {
+  "category": "学门核心",
+  "credits": 3,
+  "hours": 64,
+  "unit": "物电院",
+  "semesters": [
+   3
+  ]
+ },
+ "普通物理实验A（1）": {
+  "category": "学门核心",
+  "credits": 1,
+  "hours": 24,
+  "unit": "物电院",
+  "semesters": [
+   2
+  ]
+ },
+ "普通物理实验A（2）": {
+  "category": "学门核心",
+  "credits": 1,
+  "hours": 24,
+  "unit": "物电院",
+  "semesters": [
+   3
+  ]
+ },
+ "离散数学": {
+  "category": "学门核心",
+  "credits": 2,
+  "hours": 32,
+  "unit": "数学院",
+  "semesters": [
+   3
+  ]
+ },
+ "复变函数与积分变换": {
+  "category": "学门核心",
+  "credits": 2,
+  "hours": 32,
+  "unit": "数学院",
+  "semesters": [
+   3
+  ]
+ },
+ "工程制图": {
+  "category": "学门核心",
+  "credits": 2,
+  "hours": 36,
+  "unit": "机械院",
+  "semesters": [
+   1
+  ]
+ },
+ "电路": {
+  "category": "学类核心",
+  "credits": 4,
+  "hours": 64,
+  "unit": "电气院",
+  "semesters": [
+   3
+  ]
+ },
+ "电路实验": {
+  "category": "学类核心",
+  "credits": 1,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   3
+  ]
+ },
+ "模拟电子技术基础": {
+  "category": "学类核心",
+  "credits": 3,
+  "hours": 48,
+  "unit": "电气院",
+  "semesters": [
+   4
+  ]
+ },
+ "模拟电子技术实验": {
+  "category": "学类核心",
+  "credits": 1,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   4
+  ]
+ },
+ "数字电子技术基础": {
+  "category": "学类核心",
+  "credits": 3,
+  "hours": 48,
+  "unit": "电气院",
+  "semesters": [
+   4
+  ]
+ },
+ "数字电子技术实验": {
+  "category": "学类核心",
+  "credits": 1,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   4
+  ]
+ },
+ "电磁场与波": {
+  "category": "学类核心",
+  "credits": 3,
+  "hours": 48,
+  "unit": "电气院",
+  "semesters": [
+   4
+  ]
+ },
+ "微机原理及其应用": {
+  "category": "学类核心",
+  "credits": 3,
+  "hours": 48,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "微机原理及其应用实践": {
+  "category": "学类核心",
+  "credits": 1,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "自动控制原理": {
+  "category": "专业核心",
+  "credits": 3,
+  "hours": 54,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "自动控制原理实验": {
+  "category": "专业核心",
+  "credits": 1,
+  "hours": 12,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "信号与系统": {
+  "category": "专业核心",
+  "credits": 3,
+  "hours": 54,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "信号与系统实验": {
+  "category": "专业核心",
+  "credits": 1,
+  "hours": 12,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "传感与检测技术": {
+  "category": "专业核心",
+  "credits": 3,
+  "hours": 52,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电力电子技术基础": {
+  "category": "专业核心",
+  "credits": 3,
+  "hours": 56,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "电力电子技术基础实践": {
+  "category": "专业核心",
+  "credits": 1,
+  "hours": 20,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "电机学（上）": {
+  "category": "专业核心",
+  "credits": 2.5,
+  "hours": 44,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "电机学（上）实验": {
+  "category": "专业核心",
+  "credits": 1,
+  "hours": 12,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "电机学（下）": {
+  "category": "专业核心",
+  "credits": 3.5,
+  "hours": 60,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电机学（下）实验": {
+  "category": "专业核心",
+  "credits": 1,
+  "hours": 12,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电力系统基础（上）": {
+  "category": "专业核心",
+  "credits": 2.5,
+  "hours": 40,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "电力系统基础（下）": {
+  "category": "专业核心",
+  "credits": 2.5,
+  "hours": 40,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "高电压技术基础": {
+  "category": "专业核心",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "电机控制技术": {
+  "category": "专业核心",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电气工程新技术导论": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "新能源发电技术": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电力系统过电压": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "高电压绝缘": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电力系统分析": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电力系统继电保护原理": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "发电厂电气主系统": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电力系统自动控制技术": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电机设计": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电力电子装置设计": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电机系统建模与仿真技术": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电器学": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "高电压实验技术": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "高压电力设备在线监测及故障诊断": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "现代驱动技术": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "电机系统动态分析": {
+  "category": "专业选修",
+  "credits": 2,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": [
+   6
+  ]
+ },
+ "军事技能（集中军训）": {
+  "category": "实践环节",
+  "credits": 2,
+  "hours": 80,
+  "unit": "武装部",
+  "semesters": [
+   1
+  ]
+ },
+ "思政实践（社会实践）": {
+  "category": "实践环节",
+  "credits": 1,
+  "hours": 64,
+  "unit": "马院",
+  "semesters": [
+   4
+  ]
+ },
+ "机电技术综合实训": {
+  "category": "实践环节",
+  "credits": 3,
+  "hours": 96,
+  "unit": "工训中心",
+  "semesters": [
+   "短2"
+  ]
+ },
+ "机电技术创新实训": {
+  "category": "实践环节",
+  "credits": 2,
+  "hours": 64,
+  "unit": "工训中心",
+  "semesters": [
+   5
+  ]
+ },
+ "创新创业": {
+  "category": "实践环节",
+  "credits": 2,
+  "hours": 64,
+  "unit": "电气院",
+  "semesters": []
+ },
+ "电子技术综合设计（集中）": {
+  "category": "实践环节",
+  "credits": 2,
+  "hours": 64,
+  "unit": "电气院",
+  "semesters": [
+   5
+  ]
+ },
+ "计算机应用系统综合设计": {
+  "category": "实践环节",
+  "credits": 2,
+  "hours": 64,
+  "unit": "电气院",
+  "semesters": []
+ },
+ "科研和生产实习": {
+  "category": "实践环节",
+  "credits": 2,
+  "hours": 64,
+  "unit": "电气院",
+  "semesters": []
+ },
+ "专业写作与科技交流": {
+  "category": "实践环节",
+  "credits": 1,
+  "hours": 20,
+  "unit": "电气院",
+  "semesters": []
+ },
+ "专业课程设计": {
+  "category": "实践环节",
+  "credits": 2,
+  "hours": 64,
+  "unit": "电气院",
+  "semesters": []
+ },
+ "专业综合实验": {
+  "category": "实践环节",
+  "credits": 1,
+  "hours": 32,
+  "unit": "电气院",
+  "semesters": []
+ },
+ "毕业实习": {
+  "category": "实践环节",
+  "credits": 2,
+  "hours": 64,
+  "unit": "电气院",
+  "semesters": [
+   8
+  ]
+ },
+ "毕业设计（论文）": {
+  "category": "实践环节",
+  "credits": 12,
+  "hours": 384,
+  "unit": "电气院",
+  "semesters": [
+   8
+  ]
+ }
+}
