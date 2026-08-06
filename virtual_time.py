@@ -280,7 +280,8 @@ class VirtualClock:
         # 渲染层：girl 给定 → 人设课程名 + 老师 + 地点 + 授课进度
         if girl and base.get("course"):
             from render_utils import resolve, syllabus_topic
-            r = resolve(girl, base["course"], sem)
+            raw_name = base["course"]
+            r = resolve(girl, raw_name, sem)
             if r:
                 base["course"] = r["name"]
                 base["teacher"] = r["teacher"]
@@ -288,8 +289,9 @@ class VirtualClock:
                 base["course_type"] = r["course_type"]
                 if r.get("placeholder"):
                     base["placeholder"] = r["placeholder"]
+            # 进度查询：渲染名优先（选修），回退原始名（体育/普通课）
             base["syllabus"] = syllabus_topic(base["course"], sem, week, wd, slot["slot_index"]) \
-                or syllabus_topic(r["name"] if r else None and False, sem, week, wd, slot["slot_index"])
+                or syllabus_topic(raw_name, sem, week, wd, slot["slot_index"])
         return base
 
     # ---------- 时段/课程表 ----------
