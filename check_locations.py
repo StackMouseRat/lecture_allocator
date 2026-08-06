@@ -14,7 +14,7 @@ conn.row_factory = sqlite3.Row
 SLOT_TIME = {1:"08:00", 2:"08:55", 3:"10:00", 4:"10:55", 5:"14:30", 6:"16:10", 7:"19:00", 8:"19:55", 9:"20:50", 10:"21:35"}
 WD = ["周一","周二","周三","周四","周五"]
 GIRLS = [("surrey","萨里"),("orage","暴风雨"),("sakawa","酒匂"),("taiyuan","太原")]
-SEM_LIST = [1, 2, 3, 4, 5]   # 已分配地点的学期（S4/5 走 per-girl 表）
+SEM_LIST = [1, 2, 3, 4, 5, 6]   # 已分配地点的学期（S4/5 走 per-girl 表；S6 用 locations_sem6.json）
 
 def building(loc):
     if not loc: return None

@@ -1029,44 +1029,20 @@
     }
   },
   "电力系统过电压": {
-    "type": "core",
+    "type": "选修",
     "assign": {
-      "surrey": {
-        "teacher": "T1300",
-        "offset": 0
-      },
-      "taiyuan": {
-        "teacher": "T1300",
-        "offset": 0
-      },
       "orage": {
-        "teacher": "T1301",
-        "offset": 2
-      },
-      "sakawa": {
-        "teacher": "T1302",
-        "offset": 3
+        "teacher": "T2210",
+        "offset": 0
       }
     }
   },
   "高电压绝缘": {
-    "type": "core",
+    "type": "选修",
     "assign": {
-      "surrey": {
-        "teacher": "T1400",
-        "offset": 0
-      },
-      "taiyuan": {
-        "teacher": "T1400",
-        "offset": 0
-      },
       "orage": {
-        "teacher": "T1401",
-        "offset": 2
-      },
-      "sakawa": {
-        "teacher": "T1402",
-        "offset": 3
+        "teacher": "T2230",
+        "offset": 0
       }
     }
   },
@@ -1486,6 +1462,112 @@
       },
       "sakawa": {
         "teacher": "P22",
+        "offset": 0
+      }
+    }
+  },
+  "电力系统分析": {
+    "type": "选修",
+    "assign": {
+      "surrey": {
+        "teacher": "T2100",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T2100",
+        "offset": 0
+      }
+    }
+  },
+  "发电厂电气主系统": {
+    "type": "选修",
+    "assign": {
+      "surrey": {
+        "teacher": "T2110",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T2110",
+        "offset": 0
+      }
+    }
+  },
+  "电力系统继电保护原理": {
+    "type": "选修",
+    "assign": {
+      "surrey": {
+        "teacher": "T2120",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T2120",
+        "offset": 0
+      }
+    }
+  },
+  "电力系统自动控制技术": {
+    "type": "选修",
+    "assign": {
+      "surrey": {
+        "teacher": "T2130",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T2130",
+        "offset": 0
+      }
+    }
+  },
+  "高电压实验技术": {
+    "type": "选修",
+    "assign": {
+      "orage": {
+        "teacher": "T2200",
+        "offset": 0
+      }
+    }
+  },
+  "高压电力设备在线监测及故障诊断": {
+    "type": "选修",
+    "assign": {
+      "orage": {
+        "teacher": "T2220",
+        "offset": 0
+      }
+    }
+  },
+  "电机设计": {
+    "type": "选修",
+    "assign": {
+      "sakawa": {
+        "teacher": "T2300",
+        "offset": 0
+      }
+    }
+  },
+  "电力电子装置设计": {
+    "type": "选修",
+    "assign": {
+      "sakawa": {
+        "teacher": "T2310",
+        "offset": 0
+      }
+    }
+  },
+  "电机系统建模与仿真技术": {
+    "type": "选修",
+    "assign": {
+      "sakawa": {
+        "teacher": "T2320",
+        "offset": 0
+      }
+    }
+  },
+  "电器学": {
+    "type": "选修",
+    "assign": {
+      "sakawa": {
+        "teacher": "T2330",
         "offset": 0
       }
     }

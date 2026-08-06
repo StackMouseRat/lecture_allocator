@@ -16,10 +16,10 @@ echo "=== ⑤ 时间冲突校验（db 层 S1-3/6 + per-girl S4-5）==="
 python3 check_conflicts.py | tail -1
 echo "=== ⑥ 渲染层冲突校验（S1-3/6 老师偏移后 + S4-5 per-girl）==="
 python3 check_render.py | tail -1
-echo "=== ⑦ 地点冲突校验（S1-5）==="
+echo "=== ⑦ 地点冲突校验（S1-6）==="
 python3 check_locations.py | tail -1
-echo "=== ⑧ 授课方案质量校验（S1/2/4/5）==="
-python3 check_syllabus.py 1 2 4 5 | tail -1
+echo "=== ⑧ 授课方案质量校验（S1/2/4/5/6）==="
+python3 check_syllabus.py 1 2 4 5 6 | tail -1
 echo "=== ⑨ 数据完整性自检 ==="
 python3 check_data.py | tail -1
 echo "=== ✅ 重建完成 ==="
