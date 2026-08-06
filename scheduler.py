@@ -455,8 +455,8 @@ def render_md(s, girl):
     cell = {}
     for c in s.courses:
         for g, rows in s.solution.get(c["course"], {}).items():
-            if g != "*" and g != girl:
-                continue
+            if g != "*" and g != girl and not (c.get("sync") and girl == "taiyuan" and g == "surrey"):
+                continue   # 电气同班：taiyuan 复用 surrey 行
             for ri, (wd, slot, weeks) in enumerate(rows):
                 room = s.rooms.get((c["course"], g, ri), "")
                 t = c["teachers"].get(girl) or c["teachers"].get("*")
@@ -512,6 +512,8 @@ def export_db(s):
             for ri, (wd, slot, weeks) in enumerate(rows):
                 room = s.rooms.get((c["course"], g, ri), "")
                 t = c["teachers"].get("*") if g == "*" else c["teachers"].get(g, "")
+                if c.get("sync") and g == "surrey":
+                    targets = [g, "taiyuan"]   # 电气同班同步
                 for girl in targets:
                     # 渲染名（virtual_time/syllabus 用）
                     cname = c["course"]
