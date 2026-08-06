@@ -29,7 +29,8 @@ def pe_plan():
 SISHI = {"中共党史", "社会主义发展史", "改革开放史", "新中国史"}
 _SYLLABUS = {}
 
-def syllabus_topic(course_name: str, semester_no: int, week: int, weekday: int, slot_index: int) -> str | None:
+def syllabus_topic(course_name: str, semester_no: int, week: int, weekday: int, slot_index: int,
+                   girl: str | None = None) -> str | None:
     """查授课进度：当前这一节讲什么（syllabus_semN.json）
     节次序号 = 该课在当周课表中的次序（按天/槽位排序）"""
     global _SYLLABUS
@@ -47,19 +48,26 @@ def syllabus_topic(course_name: str, semester_no: int, week: int, weekday: int, 
         # 该课当周课次顺序（由 virtual_time 传入的 weekday/slot 直接映射 session）
         # session 序号：rows 中 week 内第 n 个（按 session 字段）
         for r in this_week:
-            if r["session"] == session_of_week(course_name, semester_no, week, weekday, slot_index):
+            if r["session"] == session_of_week(course_name, semester_no, week, weekday, slot_index, girl):
                 return r["topic"]
         return None
     return None
 
-def session_of_week(course_name, semester_no, week, weekday, slot_index):
-    """该课当周第几节：按 db 中该课分布的不同天排序（同课次2小节算1节）"""
+def session_of_week(course_name, semester_no, week, weekday, slot_index, girl: str | None = None):
+    """该课当周第几节：按 db 中该课分布的不同天排序（同课次2小节算1节）
+    per-girl 学期（4/5）查 girl_course_schedule（按 girl），共享学期查 virtual_course_schedule"""
     import sqlite3
     conn = sqlite3.connect(BASE / "db" / "virtual_time.db")
-    rows = conn.execute(
-        "SELECT DISTINCT weekday FROM virtual_course_schedule "
-        "WHERE semester_no=? AND course=? ORDER BY weekday",
-        (semester_no, course_name)).fetchall()
+    if semester_no in (4, 5) and girl:
+        rows = conn.execute(
+            "SELECT DISTINCT weekday FROM girl_course_schedule "
+            "WHERE semester_no=? AND course=? AND girl=? ORDER BY weekday",
+            (semester_no, course_name, girl)).fetchall()
+    else:
+        rows = conn.execute(
+            "SELECT DISTINCT weekday FROM virtual_course_schedule "
+            "WHERE semester_no=? AND course=? ORDER BY weekday",
+            (semester_no, course_name)).fetchall()
     conn.close()
     days = [r[0] for r in rows]
     if weekday in days:

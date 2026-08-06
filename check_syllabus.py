@@ -12,7 +12,7 @@ BAN = ["复习", "答疑", "机动", "考前", "习题课", "研讨", "总结", 
 def check(sem):
     f = BASE / f"syllabus_sem{sem}.json"
     if not f.exists():
-        print(f"第{sem}学期: 无 syllabus 文件"); return
+        print(f"第{sem}学期: 无 syllabus 文件"); return 0
     d = json.load(open(f, encoding="utf-8"))
     print(f"\n{'='*60}\n第{sem}学期 syllabus 检查（{len(d)}门课）\n{'='*60}")
     total_bad = 0

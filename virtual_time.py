@@ -258,8 +258,8 @@ class VirtualClock:
                          "start_time": ev["start_time"], "end_time": ev["end_time"]})
             return base
         # ② 每周课表（同槽多课=周次复用：取当前周匹配的行）
-        if sem == 4:
-            # 第4学期：per-girl 课表（scheduler.py 智能排课器生成，无共享行/无offset）
+        if sem in (4, 5):
+            # 第4、5学期：per-girl 课表（scheduler.py 智能排课器生成，无共享行/无offset）
             rows = conn.execute(
                 "SELECT course, course_type, hours, session_weeks, teacher, location, has_seminar "
                 "FROM girl_course_schedule WHERE semester_no=? AND girl=? AND weekday=? AND slot_index=?",
@@ -288,12 +288,12 @@ class VirtualClock:
         base.update({"status": "in_class", "course": row["course"],
                      "course_type": row["course_type"], "hours": row["hours"],
                      "has_seminar": bool(row["has_seminar"]), "event": False})
-        if sem == 4:
+        if sem in (4, 5):
             # per-girl：老师/地点直接入库；syllabus 用渲染名查询
             base["teacher"] = row["teacher"] or ""
             base["location"] = row["location"] or ""
             from render_utils import syllabus_topic
-            base["syllabus"] = syllabus_topic(base["course"], sem, week, wd, slot["slot_index"])
+            base["syllabus"] = syllabus_topic(base["course"], sem, week, wd, slot["slot_index"], girl)
             return base
         # 渲染层：girl 给定 → 人设课程名 + 老师 + 地点 + 授课进度
         if girl and base.get("course"):

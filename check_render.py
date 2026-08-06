@@ -27,12 +27,22 @@ def main():
     for g, cn in GIRLS:
         for sem in range(1, 7):
             grid = {}   # (wd, slot) -> [(course, weeks)]
-            for r in conn.execute("SELECT course, weekday, slot_index, session_weeks FROM virtual_course_schedule WHERE semester_no=?", (sem,)):
-                resolved = resolve(g, r["course"], sem)
-                if not resolved: continue
-                wd = render_wd(r["course"], g, r["weekday"]); slot = r["slot_index"]
-                weeks = {int(x) for x in r["session_weeks"].split(",") if x.strip()}
-                grid.setdefault((wd, slot), []).append((resolved["name"], weeks))
+            if sem in (4, 5):
+                # per-girl 学期：直接读 girl_course_schedule（已按人渲染，无偏移）
+                rows = conn.execute(
+                    "SELECT course, weekday, slot_index, session_weeks FROM girl_course_schedule WHERE semester_no=? AND girl=?",
+                    (sem, g)).fetchall()
+                for r in rows:
+                    weeks = {int(x) for x in r["session_weeks"].split(",") if x.strip()}
+                    grid.setdefault((r["weekday"], r["slot_index"]), []).append((r["course"], weeks))
+            else:
+                rows = conn.execute("SELECT course, weekday, slot_index, session_weeks FROM virtual_course_schedule WHERE semester_no=?", (sem,))
+                for r in rows:
+                    resolved = resolve(g, r["course"], sem)
+                    if not resolved: continue
+                    wd = render_wd(r["course"], g, r["weekday"]); slot = r["slot_index"]
+                    weeks = {int(x) for x in r["session_weeks"].split(",") if x.strip()}
+                    grid.setdefault((wd, slot), []).append((resolved["name"], weeks))
             for (wd, slot), lst in grid.items():
                 for i in range(len(lst)):
                     for j in range(i+1, len(lst)):

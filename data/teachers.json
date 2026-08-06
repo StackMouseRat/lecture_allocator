@@ -1,1493 +1,1493 @@
 {
- "高等数学A（1）": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P01",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P01",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P01",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P01",
-    "offset": 0
-   }
+  "高等数学A（1）": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P01",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P01",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P01",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P01",
+        "offset": 0
+      }
+    }
+  },
+  "高等数学A（2）": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P02",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P02",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P02",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P02",
+        "offset": 0
+      }
+    }
+  },
+  "大学英语A（1）": {
+    "type": "optional",
+    "assign": {
+      "surrey": {
+        "teacher": "O501",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "O501",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "O502",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "O503",
+        "offset": 0
+      }
+    }
+  },
+  "大学英语A（2）": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "O501",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "O501",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "O502",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "O503",
+        "offset": 0
+      }
+    }
+  },
+  "思想道德与法治": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P05",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P05",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P05",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P05",
+        "offset": 0
+      }
+    }
+  },
+  "马克思主义基本原理": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P06",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P06",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P06",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P06",
+        "offset": 0
+      }
+    }
+  },
+  "毛泽东思想和中国特色社会主义理论体系概论": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P07",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P07",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P07",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P07",
+        "offset": 0
+      }
+    }
+  },
+  "习近平新时代中国特色社会主义思想概论": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P08",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P08",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P08",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P08",
+        "offset": 0
+      }
+    }
+  },
+  "中国近现代史纲要": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P09",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P09",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P09",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P09",
+        "offset": 0
+      }
+    }
+  },
+  "体育（1）": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P10",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P10",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P10",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P10",
+        "offset": 0
+      }
+    }
+  },
+  "体育（2）": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P11",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P11",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P11",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P11",
+        "offset": 0
+      }
+    }
+  },
+  "体育（3）": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P12",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P12",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P12",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P12",
+        "offset": 0
+      }
+    }
+  },
+  "体育（4）": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P13",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P13",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P13",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P13",
+        "offset": 0
+      }
+    }
+  },
+  "形势与政策(1)": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P14a",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P14a",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P14b",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P14c",
+        "offset": 0
+      }
+    }
+  },
+  "形势与政策(2)": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P15a",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P15a",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P15b",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P15c",
+        "offset": 0
+      }
+    }
+  },
+  "形势与政策(3)": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P16a",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P16a",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P16b",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P16c",
+        "offset": 0
+      }
+    }
+  },
+  "形势与政策(4)": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P17a",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P17a",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P17b",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P17c",
+        "offset": 0
+      }
+    }
+  },
+  "形势与政策(5)": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P18a",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P18a",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P18a",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P18a",
+        "offset": 0
+      }
+    }
+  },
+  "形势与政策(6)": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P19a",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P19a",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P19b",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P19c",
+        "offset": 0
+      }
+    }
+  },
+  "军事理论": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P20",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P20",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P20",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P20",
+        "offset": 0
+      }
+    }
+  },
+  "大学生心理健康教育": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P21",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P21",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P21",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P21",
+        "offset": 0
+      }
+    }
+  },
+  "工程制图": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P22",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P22",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P22",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P22",
+        "offset": 0
+      }
+    }
+  },
+  "导师课程": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P23",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P23",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P23",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P23",
+        "offset": 0
+      }
+    }
+  },
+  "土木工程防灾概论": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P24",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P24",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P24",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P24",
+        "offset": 0
+      }
+    }
+  },
+  "社会学导论": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P25",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P25",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P25",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P25",
+        "offset": 0
+      }
+    }
+  },
+  "新中国史": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P26",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P26",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P26",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P26",
+        "offset": 0
+      }
+    }
+  },
+  "计算与人工智能概论": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P27",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P27",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P27",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P27",
+        "offset": 0
+      }
+    }
+  },
+  "普通物理A（1）": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P28",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P28",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P28",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P28",
+        "offset": 0
+      }
+    }
+  },
+  "普通物理A（2）": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P29",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P29",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P29",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P29",
+        "offset": 0
+      }
+    }
+  },
+  "线性代数A": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P30",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P30",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P30",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P30",
+        "offset": 0
+      }
+    }
+  },
+  "概率论与数理统计A": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P31",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P31",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P31",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P31",
+        "offset": 0
+      }
+    }
+  },
+  "复变函数与积分变换": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P32",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P32",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P32",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P32",
+        "offset": 0
+      }
+    }
+  },
+  "离散数学": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P33",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P33",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P33",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P33",
+        "offset": 0
+      }
+    }
+  },
+  "C++面向对象程序设计": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P34",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P34",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P34",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P34",
+        "offset": 0
+      }
+    }
+  },
+  "软件技术基础": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P35",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P35",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P35",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P35",
+        "offset": 0
+      }
+    }
+  },
+  "Python语言程序设计": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P36",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P36",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P36",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P36",
+        "offset": 0
+      }
+    }
+  },
+  "普通物理A（2）·讨论": {
+    "type": "public",
+    "assign": {
+      "surrey": {
+        "teacher": "P37",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P37",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P37",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P37",
+        "offset": 0
+      }
+    }
+  },
+  "自动控制原理": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T100",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T100",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T100",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "T100",
+        "offset": 0
+      }
+    }
+  },
+  "电机学（上）": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T200",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T200",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T200",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "T200",
+        "offset": 0
+      }
+    }
+  },
+  "电力电子技术基础": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T300",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T300",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T300",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "T300",
+        "offset": 0
+      }
+    }
+  },
+  "微机原理及其应用": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T400",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T400",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T400",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "T400",
+        "offset": 0
+      }
+    }
+  },
+  "电力系统基础（上）": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T500",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T500",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T500",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "T500",
+        "offset": 0
+      }
+    }
+  },
+  "信号与系统": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T600",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T600",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T600",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "T600",
+        "offset": 0
+      }
+    }
+  },
+  "高电压技术基础": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T700",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T700",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T700",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "T700",
+        "offset": 0
+      }
+    }
+  },
+  "传感与检测技术": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T800",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T800",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T801",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T802",
+        "offset": 3
+      }
+    }
+  },
+  "电气工程新技术导论": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T900",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T900",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T901",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T902",
+        "offset": 3
+      }
+    }
+  },
+  "电机学（下）": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1000",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1000",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1001",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T1002",
+        "offset": 3
+      }
+    }
+  },
+  "电力系统基础（下）": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1100",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1100",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1101",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T1102",
+        "offset": 3
+      }
+    }
+  },
+  "电机控制技术": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1200",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1200",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1201",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T1202",
+        "offset": 3
+      }
+    }
+  },
+  "电力系统过电压": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1300",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1300",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1301",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T1302",
+        "offset": 3
+      }
+    }
+  },
+  "高电压绝缘": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1400",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1400",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1401",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T1402",
+        "offset": 3
+      }
+    }
+  },
+  "新能源发电技术": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1500",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1500",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1501",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T1502",
+        "offset": 3
+      }
+    }
+  },
+  "数字电子技术基础": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1600",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1600",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1601",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T1602",
+        "offset": 3
+      }
+    }
+  },
+  "模拟电子技术基础": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1700",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1700",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1701",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T1702",
+        "offset": 3
+      }
+    }
+  },
+  "机电技术创新实训": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1800",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1800",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1800",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "T1800",
+        "offset": 0
+      }
+    }
+  },
+  "信号与系统·讨论": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T1900",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T1900",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T1900",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "T1900",
+        "offset": 0
+      }
+    }
+  },
+  "传感与检测技术·讨论": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "T2000",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "T2000",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "T2001",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "T2002",
+        "offset": 3
+      }
+    }
+  },
+  "电磁场与波": {
+    "type": "optional",
+    "assign": {
+      "surrey": {
+        "teacher": "O301",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "O302",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "O303",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "O302",
+        "offset": 0
+      }
+    }
+  },
+  "电路": {
+    "type": "optional",
+    "assign": {
+      "surrey": {
+        "teacher": "O401",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "O401",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "O402",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "O403",
+        "offset": 0
+      }
+    }
+  },
+  "普通物理实验A（1）": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E100",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E100",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E101",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "E102",
+        "offset": 1
+      }
+    }
+  },
+  "电路实验": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E200",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E200",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E201",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "E202",
+        "offset": 3
+      }
+    }
+  },
+  "普通物理实验A（2）": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E300",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E300",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E301",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "E302",
+        "offset": 0
+      }
+    }
+  },
+  "模拟电子技术实验": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E400",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E400",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E401",
+        "offset": 3
+      },
+      "sakawa": {
+        "teacher": "E402",
+        "offset": 3
+      }
+    }
+  },
+  "数字电子技术实验": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E500",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E500",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E501",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "E502",
+        "offset": 2
+      }
+    }
+  },
+  "自动控制原理实验": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E600",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E600",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E600",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "E600",
+        "offset": 0
+      }
+    }
+  },
+  "电力电子技术基础实践": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E700",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E700",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E700",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "E700",
+        "offset": 0
+      }
+    }
+  },
+  "微机原理及其应用实践": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E800",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E800",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E800",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "E800",
+        "offset": 0
+      }
+    }
+  },
+  "信号与系统实验": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E900",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E900",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E900",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "E900",
+        "offset": 0
+      }
+    }
+  },
+  "电机学（上）实验": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E1000",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E1000",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E1000",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "E1000",
+        "offset": 0
+      }
+    }
+  },
+  "电机学（下）实验": {
+    "type": "lab",
+    "assign": {
+      "surrey": {
+        "teacher": "E1100",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "E1100",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "E1101",
+        "offset": 2
+      },
+      "sakawa": {
+        "teacher": "E1102",
+        "offset": 3
+      }
+    }
+  },
+  "工程制图上机": {
+    "type": "core",
+    "assign": {
+      "surrey": {
+        "teacher": "P22",
+        "offset": 0
+      },
+      "taiyuan": {
+        "teacher": "P22",
+        "offset": 0
+      },
+      "orage": {
+        "teacher": "P22",
+        "offset": 0
+      },
+      "sakawa": {
+        "teacher": "P22",
+        "offset": 0
+      }
+    }
   }
- },
- "高等数学A（2）": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P02",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P02",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P02",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P02",
-    "offset": 0
-   }
-  }
- },
- "大学英语A（1）": {
-  "type": "optional",
-  "assign": {
-   "surrey": {
-    "teacher": "O501",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "O501",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "O502",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "O503",
-    "offset": 0
-   }
-  }
- },
- "大学英语A（2）": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "O501",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "O501",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "O502",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "O503",
-    "offset": 0
-   }
-  }
- },
- "思想道德与法治": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P05",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P05",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P05",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P05",
-    "offset": 0
-   }
-  }
- },
- "马克思主义基本原理": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P06",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P06",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P06",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P06",
-    "offset": 0
-   }
-  }
- },
- "毛泽东思想和中国特色社会主义理论体系概论": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P07",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P07",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P07",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P07",
-    "offset": 0
-   }
-  }
- },
- "习近平新时代中国特色社会主义思想概论": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P08",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P08",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P08",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P08",
-    "offset": 0
-   }
-  }
- },
- "中国近现代史纲要": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P09",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P09",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P09",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P09",
-    "offset": 0
-   }
-  }
- },
- "体育（1）": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P10",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P10",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P10",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P10",
-    "offset": 0
-   }
-  }
- },
- "体育（2）": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P11",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P11",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P11",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P11",
-    "offset": 0
-   }
-  }
- },
- "体育（3）": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P12",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P12",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P12",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P12",
-    "offset": 0
-   }
-  }
- },
- "体育（4）": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P13",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P13",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P13",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P13",
-    "offset": 0
-   }
-  }
- },
- "形势与政策(1)": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P14a",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P14a",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P14b",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P14c",
-    "offset": 0
-   }
-  }
- },
- "形势与政策(2)": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P15a",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P15a",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P15b",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P15c",
-    "offset": 0
-   }
-  }
- },
- "形势与政策(3)": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P16a",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P16a",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P16b",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P16c",
-    "offset": 0
-   }
-  }
- },
- "形势与政策(4)": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P17a",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P17a",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P17b",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P17c",
-    "offset": 0
-   }
-  }
- },
- "形势与政策(5)": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P18a",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P18a",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P18a",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P18a",
-    "offset": 0
-   }
-  }
- },
- "形势与政策(6)": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P19a",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P19a",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P19b",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P19c",
-    "offset": 0
-   }
-  }
- },
- "军事理论": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P20",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P20",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P20",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P20",
-    "offset": 0
-   }
-  }
- },
- "大学生心理健康教育": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P21",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P21",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P21",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P21",
-    "offset": 0
-   }
-  }
- },
- "工程制图": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P22",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P22",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P22",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P22",
-    "offset": 0
-   }
-  }
- },
- "导师课程": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P23",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P23",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P23",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P23",
-    "offset": 0
-   }
-  }
- },
- "土木工程防灾概论": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P24",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P24",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P24",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P24",
-    "offset": 0
-   }
-  }
- },
- "社会学导论": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P25",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P25",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P25",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P25",
-    "offset": 0
-   }
-  }
- },
- "新中国史": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P26",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P26",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P26",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P26",
-    "offset": 0
-   }
-  }
- },
- "计算与人工智能概论": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P27",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P27",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P27",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P27",
-    "offset": 0
-   }
-  }
- },
- "普通物理A（1）": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P28",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P28",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P28",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P28",
-    "offset": 0
-   }
-  }
- },
- "普通物理A（2）": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P29",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P29",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P29",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P29",
-    "offset": 0
-   }
-  }
- },
- "线性代数A": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P30",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P30",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P30",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P30",
-    "offset": 0
-   }
-  }
- },
- "概率论与数理统计A": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P31",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P31",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P31",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P31",
-    "offset": 0
-   }
-  }
- },
- "复变函数与积分变换": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P32",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P32",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P32",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P32",
-    "offset": 0
-   }
-  }
- },
- "离散数学": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P33",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P33",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P33",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P33",
-    "offset": 0
-   }
-  }
- },
- "C++面向对象程序设计": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P34",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P34",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P34",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P34",
-    "offset": 0
-   }
-  }
- },
- "软件技术基础": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P35",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P35",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P35",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P35",
-    "offset": 0
-   }
-  }
- },
- "Python语言程序设计": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P36",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P36",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P36",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P36",
-    "offset": 0
-   }
-  }
- },
- "普通物理A（2）·讨论": {
-  "type": "public",
-  "assign": {
-   "surrey": {
-    "teacher": "P37",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P37",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P37",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P37",
-    "offset": 0
-   }
-  }
- },
- "自动控制原理": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T100",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T100",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T100",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "T100",
-    "offset": 0
-   }
-  }
- },
- "电机学（上）": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T200",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T200",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T200",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "T200",
-    "offset": 0
-   }
-  }
- },
- "电力电子技术基础": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T300",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T300",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T300",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "T300",
-    "offset": 0
-   }
-  }
- },
- "微机原理及其应用": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T400",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T400",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T400",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "T400",
-    "offset": 0
-   }
-  }
- },
- "电力系统基础（上）": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T500",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T500",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T500",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "T500",
-    "offset": 0
-   }
-  }
- },
- "信号与系统": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T600",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T600",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T600",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "T600",
-    "offset": 0
-   }
-  }
- },
- "高电压技术基础": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T700",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T700",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T700",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "T700",
-    "offset": 0
-   }
-  }
- },
- "传感与检测技术": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T800",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T800",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T801",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T802",
-    "offset": 3
-   }
-  }
- },
- "电气工程新技术导论": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T900",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T900",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T901",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T902",
-    "offset": 3
-   }
-  }
- },
- "电机学（下）": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1000",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1000",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1001",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T1002",
-    "offset": 3
-   }
-  }
- },
- "电力系统基础（下）": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1100",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1100",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1101",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T1102",
-    "offset": 3
-   }
-  }
- },
- "电机控制技术": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1200",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1200",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1201",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T1202",
-    "offset": 3
-   }
-  }
- },
- "电力系统过电压": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1300",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1300",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1301",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T1302",
-    "offset": 3
-   }
-  }
- },
- "高电压绝缘": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1400",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1400",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1401",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T1402",
-    "offset": 3
-   }
-  }
- },
- "新能源发电技术": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1500",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1500",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1501",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T1502",
-    "offset": 3
-   }
-  }
- },
- "数字电子技术基础": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1600",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1600",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1601",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T1602",
-    "offset": 3
-   }
-  }
- },
- "模拟电子技术基础": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1700",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1700",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1701",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T1702",
-    "offset": 3
-   }
-  }
- },
- "机电技术创新实训": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1800",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1800",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1800",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "T1800",
-    "offset": 0
-   }
-  }
- },
- "信号与系统·讨论": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T1900",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T1900",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T1900",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "T1900",
-    "offset": 0
-   }
-  }
- },
- "传感与检测技术·讨论": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "T2000",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "T2000",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "T2001",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "T2002",
-    "offset": 3
-   }
-  }
- },
- "电磁场与波": {
-  "type": "optional",
-  "assign": {
-   "surrey": {
-    "teacher": "O301",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "O302",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "O303",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "O302",
-    "offset": 0
-   }
-  }
- },
- "电路": {
-  "type": "optional",
-  "assign": {
-   "surrey": {
-    "teacher": "O401",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "O401",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "O402",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "O403",
-    "offset": 0
-   }
-  }
- },
- "普通物理实验A（1）": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E100",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E100",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E101",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "E102",
-    "offset": 1
-   }
-  }
- },
- "电路实验": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E200",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E200",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E201",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "E202",
-    "offset": 3
-   }
-  }
- },
- "普通物理实验A（2）": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E300",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E300",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E301",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "E302",
-    "offset": 0
-   }
-  }
- },
- "模拟电子技术实验": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E400",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E400",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E401",
-    "offset": 3
-   },
-   "sakawa": {
-    "teacher": "E402",
-    "offset": 3
-   }
-  }
- },
- "数字电子技术实验": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E500",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E500",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E501",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "E502",
-    "offset": 2
-   }
-  }
- },
- "自动控制原理实验": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E600",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E600",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E600",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "E600",
-    "offset": 0
-   }
-  }
- },
- "电力电子技术基础实践": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E700",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E700",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E700",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "E700",
-    "offset": 0
-   }
-  }
- },
- "微机原理及其应用实践": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E800",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E800",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E800",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "E800",
-    "offset": 0
-   }
-  }
- },
- "信号与系统实验": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E900",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E900",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E900",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "E900",
-    "offset": 0
-   }
-  }
- },
- "电机学（上）实验": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E1000",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E1000",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E1000",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "E1000",
-    "offset": 0
-   }
-  }
- },
- "电机学（下）实验": {
-  "type": "lab",
-  "assign": {
-   "surrey": {
-    "teacher": "E1100",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "E1100",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "E1101",
-    "offset": 2
-   },
-   "sakawa": {
-    "teacher": "E1102",
-    "offset": 3
-   }
-  }
- },
- "工程制图上机": {
-  "type": "core",
-  "assign": {
-   "surrey": {
-    "teacher": "P22",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P22",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P22",
-    "offset": 0
-   },
-   "sakawa": {
-    "teacher": "P22",
-    "offset": 0
-   }
-  }
- }
 }

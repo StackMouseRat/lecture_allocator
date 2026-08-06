@@ -13,12 +13,24 @@ SLOTS = {1:"08:00",2:"08:55",3:"10:00",4:"10:55",5:"14:30",6:"16:10",7:"19:00",8
 def main():
     total = 0
     block_reported = {i: set() for i in range(1, 7)}
+    GIRLS = ["surrey", "orage", "sakawa", "taiyuan"]
     for sem in range(1, 7):
         # 常规课：weekday, slot → 周次集合
-        grid = {}
-        for r in conn.execute("SELECT course, weekday, slot_index, session_weeks FROM virtual_course_schedule WHERE semester_no=?", (sem,)):
-            weeks = {int(x) for x in r["session_weeks"].split(",") if x.strip()}
-            grid.setdefault((r["weekday"], r["slot_index"]), []).append((r["course"], weeks))
+        # per-girl 学期（4/5）：每人独立成格（同班课程 4 人同时=同一课，跨人不算冲突）
+        grids = []
+        if sem in (4, 5):
+            for girl in GIRLS:
+                ggrid = {}
+                for r in conn.execute("SELECT course, weekday, slot_index, session_weeks FROM girl_course_schedule WHERE semester_no=? AND girl=?", (sem, girl)):
+                    weeks = {int(x) for x in r["session_weeks"].split(",") if x.strip()}
+                    ggrid.setdefault((r["weekday"], r["slot_index"]), []).append((r["course"], weeks))
+                grids.append(ggrid)
+        else:
+            ggrid = {}
+            for r in conn.execute("SELECT course, weekday, slot_index, session_weeks FROM virtual_course_schedule WHERE semester_no=?", (sem,)):
+                weeks = {int(x) for x in r["session_weeks"].split(",") if x.strip()}
+                ggrid.setdefault((r["weekday"], r["slot_index"]), []).append((r["course"], weeks))
+            grids.append(ggrid)
         # 事件：week, weekday, slot（集中实践=设计叠加，查看器过滤；其余=须排他）
         events = {}
         for r in conn.execute("SELECT course, week_no, weekday, slot_index FROM semester_events WHERE semester_no=?", (sem,)):
@@ -26,14 +38,16 @@ def main():
         BLOCK_EVENTS = {"军事技能（集中军训）", "思政实践（社会实践）",
                         "电子技术综合设计（集中）", "劳动教育与素养"}
         sem_conflicts = 0
-        for (wd, slot), courses in sorted(grid.items()):
-            for week in range(1, 17):
-                hit = [c for c, ws in courses if week in ws]
-                ev = events.get((week, wd, slot))
-                if ev:
-                    hit += [f"[事件]{c}" for c in ev]
-                hit = list(dict.fromkeys(hit))   # 去重（同一课多行如2小节）
-                if len(hit) >= 2:
+        for grid in grids:
+            for (wd, slot), courses in sorted(grid.items()):
+                for week in range(1, 17):
+                    hit = [c for c, ws in courses if week in ws]
+                    ev = events.get((week, wd, slot))
+                    if ev:
+                        hit += [f"[事件]{c}" for c in ev]
+                    hit = list(dict.fromkeys(hit))   # 去重（同一课多行如2小节）
+                    if len(hit) < 2:
+                        continue
                     # 集中实践事件与课程叠加=设计（查看器过滤）；其余=真冲突
                     ev_hit = [c for c in hit if c.startswith("[事件]")]
                     is_block = ev_hit and all(c[4:] in BLOCK_EVENTS for c in ev_hit)
@@ -45,7 +59,7 @@ def main():
                     sem_conflicts += 1
                     total += 1
                     print(f"  ❌ 第{sem}学期 W{week} {WD[wd]} slot{slot}({SLOTS[slot]}) 真冲突: {' + '.join(hit)}")
-        print(f"第{sem}学期: {sem_conflicts} 处冲突")
+            print(f"第{sem}学期: {sem_conflicts} 处冲突")
     print(f"\n共 {total} 处时间冲突")
     conn.close()
 
