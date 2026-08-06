@@ -43,6 +43,13 @@ def fmt_w(sw):
     if all(x%2==0 for x in wl) and len(wl)>=3: return f"双周{wl[0]}-{wl[-1]}"
     return ",".join(map(str,wl[:3]))+"…"
 
+TEACHERS = None
+def load_teachers():
+    global TEACHERS
+    if TEACHERS is None:
+        TEACHERS = json.load(open(BASE/"data"/"teachers.json", encoding="utf-8"))
+    return TEACHERS
+
 def load_elective():
     d = json.load(open(BASE/"data"/"elective_content.json", encoding="utf-8"))
     def name(ph, girl):
@@ -68,12 +75,15 @@ def render(girl):
                 real = rname(cname, girl)
                 if real is None: continue
                 cname, ct = real, "选修"
-            # 天偏移：可选课按个人、其余核心课按专业
-            if cname in OPTIONAL:
-                wd = (wd + cfg["opt_offset"]) % 5
-            elif ct in ("实验","实践","理论","讨论"):
-                wd = (wd + cfg["offset"]) % 5
-            cell[(wd,slot)].append((cname, ct, wks))
+            # 天偏移：按老师分配（同老师同偏移→时间必同；不同老师可不同）
+            tinfo = load_teachers().get(cname)
+            tname = ""
+            if tinfo:
+                a = tinfo["assign"].get(girl)
+                if a:
+                    wd = (wd + a["offset"]) % 5
+                    tname = a["teacher"]
+            cell[(wd,slot)].append((cname, ct, wks, tname))
         ev_cell = defaultdict(list)
         for e in evs:
             if any(k in e["course"] for k in NO_SCHEDULE):   # 无课表课程不显示
@@ -86,9 +96,9 @@ def render(girl):
                 parts = []
                 for cname, wn in sorted(ev_cell.get((wd,s),[])):
                     parts.append(f"⚠️{cname[:8]}(W{wn})")
-                for cname, ct, wks in sorted(cell.get((wd,s),[]), key=lambda x: min(int(y) for y in x[2].split(','))):
+                for cname, ct, wks, tname in sorted(cell.get((wd,s),[]), key=lambda x: min(int(y) for y in x[2].split(','))):
                     tg = "🔬" if ct=="实验" else ("🏭" if ct=="实践" else "")
-                    parts.append(f"{cname[:9]}{tg}{fmt_w(wks)}")
+                    parts.append(f"{cname[:8]}{tg}{fmt_w(wks)}{('·'+tname) if tname else ''}")
                 line += (" "+"<br>".join(parts)+" |") if parts else " — |"
             lines.append(line)
         out = OUT / f"{girl}_sem{sem}.md"
