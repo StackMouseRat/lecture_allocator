@@ -86,7 +86,8 @@ SEMESTERS = {
             T("大学英语A（1）", 4.0, 64),
             T("思想道德与法治", 3.0, 54),
             T("工程制图", 2.0, 28, prefer=["下午"], sessions_per_week=1, hours_per_session=2, weeks="1-14"),   # 大班授课28学时=14周×2
-            E("工程制图上机", 0.5, 8, hps=4, weeks="9,11", evening_only=True, desc="小班讨论实际为上机：8学时=晚间2次×4学时，前进楼"),
+            E("工程制图上机", 0.5, 8, hps=2, weeks="9,10,11,12", evening_only=True,
+              desc="小班讨论实际为上机：8学时=晚间4次×2学时（W9-12），前进楼"),
             T("高等数学A（1）", 5.0, 96),
             T("通识选修·晚间①", 2.0, 32, lecture=32, category="普通选修", prefer=["晚上"], elective_slot="eve1"),
             T("通识选修·晚间②", 2.0, 32, lecture=32, category="普通选修", prefer=["晚上"], elective_slot="eve2"),
