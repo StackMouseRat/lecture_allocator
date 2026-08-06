@@ -123,6 +123,8 @@ SEMESTERS = {
             T("导师课程", 1.0, 16, sessions_per_week=1, hours_per_session=2, weeks="9-16",
               prefer=["下午"]),
             E("普通物理实验A（1）", 1.0, 24, hps=3, desc="大物实验，32学时含8虚拟"),
+            E("计算与人工智能概论上机", 1.0, 32, hps=4, evening_only=True,
+              desc="培养方案80学时=48大班+32上机；上机8次×4学时隔周×16周，晚间，前进楼"),
             SX("形势与政策(2)", 0.25),
         ],
         "semester_events": [],  # 形势与政策(2) 已作为课程定义
