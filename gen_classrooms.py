@@ -17,7 +17,7 @@ for floor in range(1, 6):
         elif floor <= 2:
             rooms[num] = {"type": "大教室" if n in (4, 5) else "中教室"}
         else:
-            rooms[num] = {"type": "中教室" if n in (1,2,3,6,7,8,9,11,12,13,14,15) else "小教室"}
+            rooms[num] = {"type": "小教室" if n in (4,5,6,7) else "中教室"}
 
 data = {
     "综合楼": {
@@ -31,7 +31,11 @@ from collections import Counter
 cnt = Counter(r["type"] for r in rooms.values())
 print("✅ 综合楼教室模型已生成：")
 print(f"   共{len(rooms)}个房间（含办公室{cnt['办公室']}）")
-print(f"   大教室{cnt['大教室']}个: 104,105,204,205")
-print(f"   中教室{cnt['中教室']}个（每层12个）")
-print(f"   小教室{cnt['小教室']}个: 304,305,404,405,504,505")
-print(f"   办公室{cnt['办公室']}个: 110,210,310,410,510")
+big = sorted(k for k,v in rooms.items() if v["type"]=="大教室")
+small = sorted(k for k,v in rooms.items() if v["type"]=="小教室")
+mid = sorted(k for k,v in rooms.items() if v["type"]=="中教室")
+off = sorted(k for k,v in rooms.items() if v["type"]=="办公室")
+print(f"   大教室{cnt['大教室']}个: {','.join(big)}")
+print(f"   中教室{cnt['中教室']}个: {','.join(mid[:6])}…{','.join(mid[-3:])}")
+print(f"   小教室{cnt['小教室']}个: {','.join(small)}")
+print(f"   办公室{cnt['办公室']}个: {','.join(off)}")
