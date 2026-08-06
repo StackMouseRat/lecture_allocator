@@ -129,18 +129,18 @@ def gap_ok(prev_slot, next_slot):
 
 
 def slots_of(c, slot):
-    """一次课占用的小节（必须连续）：体育/讲座=1小节；四史=3小节；其余=2小节"""
+    """一次课占用的小节（按时段学时换算）：
+    下午 slot5/6 = 90分钟 = 2学时 → 1小节；上午 slot1-4 = 45分钟/节 → 2小节=2学时；
+    晚间 slot7-12 = 45分钟/节 → 2小节=2学时；四史3小节=3学时；实验4小节=4学时"""
     if c["type"] in ("体育", "讲座"):
         return [slot]
-    n = 3 if c["type"] == "四史" else 2
-    out = [slot]
-    for i in range(1, n):
-        s2 = slot + i
-        if s2 in SLOT_TIME and gap_ok(s2 - 1, s2):
-            out.append(s2)
-        else:
-            break
-    return out
+    if slot in (5, 6):                 # 下午：1小节 = 一次课(2学时)
+        return [slot]
+    if c["type"] == "四史":            # 3学时 = 晚间3小节（slot7-8-9）
+        return [slot, slot + 1, slot + 2]
+    if c["type"] == "实验" and c.get("hps", 2) == 4:   # 4学时 = 晚间4小节（slot7-8-9-12）
+        return [7, 8, 9, 12] if slot == 7 else [slot]
+    return [slot, slot + 1]            # 上午/晚间：2小节
 
 
 # =====================================================================
@@ -165,11 +165,11 @@ class Scheduler:
     def slot_cands(self, c):
         t = c["type"]
         if t == "实验":
-            return [5, 7, 9, 12]      # 5-6下午 / 7-8 / 9-12晚间 / 12单小节
+            return [7]                # 4学时一次：晚间4小节(slot7-8-9-12)连续
         if t == "理论":
-            return [1, 3, 5]          # 1-2 / 3-4 / 5-6（连续对）
+            return [1, 3, 5, 6]       # 上午2小节(1-2/3-4) 或 下午1小节(5/6)
         if t == "选修":
-            return [7, 9]             # 7-8 / 9-12
+            return [7, 9]             # 晚间2小节(7-8 / 9-12)
         if t == "讲座":
             return [5, 6]
         return [c["slot_fixed"]]
