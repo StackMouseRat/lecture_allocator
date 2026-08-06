@@ -196,9 +196,10 @@ class VirtualClock:
 
     # ---------- 课程联动 ----------
 
-    def current_course(self, dt: datetime | None = None) -> dict:
+    def current_course(self, dt: datetime | None = None, girl: str | None = None) -> dict:
         """
         查询虚拟时间当前正在上的课程。
+        girl（surrey/orage/sakawa/taiyuan）：返回渲染层信息（人设课程名/老师/地点）。
         返回：{status: in_class/free/weekend/break/short_term,
                semester_no, weekday_cn, slot_index, period,
                course, credits, category, course_type, start_time, end_time}
@@ -276,6 +277,17 @@ class VirtualClock:
                          "credits": row["credits"], "category": row["category"],
                          "course_type": row["course_type"], "hours": row["hours"],
                          "has_seminar": bool(row["has_seminar"]), "event": False})
+        # 渲染层：girl 给定 → 人设课程名 + 老师 + 地点
+        if girl and base.get("course"):
+            from render_utils import resolve
+            r = resolve(girl, base["course"], sem)
+            if r:
+                base["course"] = r["name"]
+                base["teacher"] = r["teacher"]
+                base["location"] = r["location"]
+                base["course_type"] = r["course_type"]
+                if r.get("placeholder"):
+                    base["placeholder"] = r["placeholder"]
         return base
 
     # ---------- 时段/课程表 ----------
