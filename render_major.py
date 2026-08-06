@@ -125,11 +125,13 @@ def render(girl):
             else:
                 tname = ""
             # 天偏移：按老师分配（同老师同偏移→时间必同；不同老师可不同）
+            # 选修：时间固定（共享槽位），不偏移（check_render 同口径）
             tinfo = load_teachers().get(cname)
             if tinfo and not tname:
                 a = tinfo["assign"].get(girl)
                 if a:
-                    wd = (wd + a["offset"]) % 5
+                    if ct != "选修":
+                        wd = (wd + a["offset"]) % 5
                     tname = a["teacher"]
             if not loc:
                 # 老师级教室优先（不同老师教室必不同），再课程级
@@ -158,8 +160,8 @@ def render(girl):
             lines.append(line)
         out = OUT / f"{girl}_sem{sem}.md"
         with open(out,"w",encoding="utf-8") as f:
-            f.write(f"# {girl.capitalize()}（{cfg['label']} · {cfg['major']}专业） · {SEM_LABEL[sem]}\n\n")
-            f.write(f"> **第{sem}学期 完整固定课表** · 专业班级：{cfg['major']}（核心课按专业同步）\n\n")
+            f.write(f"# {girl.capitalize()}（{cfg['label']} · {'电气工程' if sem >= 5 else cfg['major']}专业） · {SEM_LABEL[sem]}\n\n")
+            f.write(f"> **第{sem}学期 完整固定课表** · 专业班级：{'电气工程' if sem >= 5 else cfg['major']}（核心课按专业同步）\n\n")
             f.write("| 时段 | 周一 | 周二 | 周三 | 周四 | 周五 |\n|---|---|---|---|---|---|\n")
             f.write("\n".join(lines)+"\n")
     conn.close()

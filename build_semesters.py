@@ -221,7 +221,7 @@ SEMESTERS = {
         "courses": [
             T("传感与检测技术", 3.0, 52),
             T("电机学（下）", 3.5, 60, half_term=True),
-            E("电机学（下）实验", 1.0, 12, hps=4),     # 4实验+8上机
+            E("电机学（下）实验", 0.0, 8, hps=4),      # 实践学时8=2次×4（培养方案 practice 8，非独立课程）
             T("电力系统基础（下）", 2.5, 40, half_term=True),   # 无实验，全部大班
             T("电机控制技术", 2.0, 32),
             T("专业选修·下午①", 2.0, 32, lecture=32, category="专业选修", prefer=["下午"], no_evening=True, elective_slot="maj1"),
