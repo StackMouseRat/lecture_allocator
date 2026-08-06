@@ -21,7 +21,7 @@ chk(need <= have, f"全部表存在 {sorted(need - have) or '✓'}")
 print("【虚拟时钟基准】")
 r = conn.execute("SELECT virtual_datetime FROM virtual_time WHERE id=1").fetchone()
 chk(r and r[0] == "2023-09-14 08:30:00", f"基准={r[0] if r else '缺失'}")
-chk(conn.execute("SELECT COUNT(*) FROM schedule").fetchone()[0] == 9, "schedule 9时段")
+chk(conn.execute("SELECT COUNT(*) FROM schedule").fetchone()[0] == 10, "schedule 10时段（含第12节21:35-22:20）")
 
 print("【各学期】")
 for sem in range(1, 7):
@@ -35,9 +35,11 @@ print("【实验周次模式】")
 for r in conn.execute("SELECT DISTINCT semester_no, course, session_weeks FROM virtual_course_schedule WHERE course_type='实验'"):
     wks = [int(x) for x in r["session_weeks"].split(",")]
     sem = r["semester_no"]
-    if sem <= 4:   # 大一大二：隔周
-        odd = all(w % 2 == wks[0] % 2 for w in wks)
-        chk(odd, f"第{sem}学期 {r['course']}: 隔周模式 {wks[0]%2}")
+    if sem <= 4 and len(wks) >= 2:   # 大一大二：隔周（连续周如CAD上机W9-12合法）
+        continuous = any(wks[i+1] - wks[i] == 1 for i in range(len(wks)-1))
+        if not continuous:
+            odd = all(w % 2 == wks[0] % 2 for w in wks)
+            chk(odd, f"第{sem}学期 {r['course']}: 隔周模式 {wks[0]%2}")
 
 conn.close()
 print("\n" + ("✅ 全部检查通过" if ok else "❌ 存在异常"))
