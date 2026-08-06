@@ -276,19 +276,19 @@
   "type": "public",
   "assign": {
    "surrey": {
-    "teacher": "P14",
+    "teacher": "P14a",
     "offset": 0
    },
    "taiyuan": {
-    "teacher": "P14",
+    "teacher": "P14a",
     "offset": 0
    },
    "orage": {
-    "teacher": "P14",
+    "teacher": "P14b",
     "offset": 0
    },
    "sakawa": {
-    "teacher": "P14",
+    "teacher": "P14c",
     "offset": 0
    }
   }
@@ -297,19 +297,19 @@
   "type": "public",
   "assign": {
    "surrey": {
-    "teacher": "P15",
+    "teacher": "P15a",
     "offset": 0
    },
    "taiyuan": {
-    "teacher": "P15",
+    "teacher": "P15a",
     "offset": 0
    },
    "orage": {
-    "teacher": "P15",
+    "teacher": "P15b",
     "offset": 0
    },
    "sakawa": {
-    "teacher": "P15",
+    "teacher": "P15c",
     "offset": 0
    }
   }
@@ -318,19 +318,19 @@
   "type": "public",
   "assign": {
    "surrey": {
-    "teacher": "P16",
+    "teacher": "P16a",
     "offset": 0
    },
    "taiyuan": {
-    "teacher": "P16",
+    "teacher": "P16a",
     "offset": 0
    },
    "orage": {
-    "teacher": "P16",
+    "teacher": "P16b",
     "offset": 0
    },
    "sakawa": {
-    "teacher": "P16",
+    "teacher": "P16c",
     "offset": 0
    }
   }
@@ -339,19 +339,19 @@
   "type": "public",
   "assign": {
    "surrey": {
-    "teacher": "P17",
+    "teacher": "P17a",
     "offset": 0
    },
    "taiyuan": {
-    "teacher": "P17",
+    "teacher": "P17a",
     "offset": 0
    },
    "orage": {
-    "teacher": "P17",
+    "teacher": "P17b",
     "offset": 0
    },
    "sakawa": {
-    "teacher": "P17",
+    "teacher": "P17c",
     "offset": 0
    }
   }
@@ -360,19 +360,19 @@
   "type": "public",
   "assign": {
    "surrey": {
-    "teacher": "P18",
+    "teacher": "P18a",
     "offset": 0
    },
    "taiyuan": {
-    "teacher": "P18",
+    "teacher": "P18a",
     "offset": 0
    },
    "orage": {
-    "teacher": "P18",
+    "teacher": "P18b",
     "offset": 0
    },
    "sakawa": {
-    "teacher": "P18",
+    "teacher": "P18c",
     "offset": 0
    }
   }
@@ -381,19 +381,19 @@
   "type": "public",
   "assign": {
    "surrey": {
-    "teacher": "P19",
+    "teacher": "P19a",
     "offset": 0
    },
    "taiyuan": {
-    "teacher": "P19",
+    "teacher": "P19a",
     "offset": 0
    },
    "orage": {
-    "teacher": "P19",
+    "teacher": "P19b",
     "offset": 0
    },
    "sakawa": {
-    "teacher": "P19",
+    "teacher": "P19c",
     "offset": 0
    }
   }

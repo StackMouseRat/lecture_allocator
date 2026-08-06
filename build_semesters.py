@@ -43,11 +43,10 @@ def EV(name, credits, half="first", weeks="9-16", hps=2):  # 讨论/讲座课
             "total_hours": 16, "sessions_per_week": 1, "hours_per_session": hps,
             "weeks": weeks, "seminar": 1, "prefer": ["下午"], "intensive_half": half}
 
-def SX(name, credits, half="second", weeks="1-8"):   # 形势与政策学期事件
+def SX(name, credits):   # 形势与政策：课程（非事件），相邻周W3+W4，周二下午保留槽位
     return {"name": name, "credits": credits, "category": "必修", "type": "讲座",
-            "total_hours": 4,
-            "events": [{"week": 3, "weekday": 1, "slot": 5, "start": "14:30", "end": "16:00"},
-                       {"week": 12, "weekday": 1, "slot": 5, "start": "14:30", "end": "16:00"}]}
+            "total_hours": 4, "weeks": "3-4", "sessions_per_week": 1,
+            "hours_per_session": 2, "prefer": ["下午"]}
 
 # 培养方案大班授课学时（用于标准档判断：总学时含讨论/实践，大班学时才是排课主体）
 LECTURE_MAP = {
@@ -96,13 +95,14 @@ SEMESTERS = {
               sessions_per_week=1, hours_per_session=3, weeks="1-5", elective_slot="hist1"),
             T("四史·②", 1.0, 15, lecture=15, category="四史", type="四史", prefer=["晚上"],
               sessions_per_week=1, hours_per_session=3, weeks="1-5", elective_slot="hist2"),
+            SX("形势与政策(1)", 0.25),
         ],
         "semester_events": [
             {"name": "军事技能（集中军训）", "credits": 2.0, "category": "必修", "type": "实践",
              "note": "开学集中军训，全天×10天（第1-2周）",
              "events": [{"week": ww, "weekday": wd, "duration": "full", "hours": 8}
                         for ww in [1, 2] for wd in range(5)]},
-            SX("形势与政策(1)", 0.25),
+            # 形势与政策(1) 已作为课程定义（见 courses）,
         ],
     },
     # ================= 第2学期 2022-2023-2 =================
@@ -120,8 +120,9 @@ SEMESTERS = {
             T("导师课程", 1.0, 16, sessions_per_week=1, hours_per_session=2, weeks="9-16",
               prefer=["下午"]),
             E("普通物理实验A（1）", 1.0, 24, hps=3, desc="大物实验，32学时含8虚拟"),
+            SX("形势与政策(2)", 0.25),
         ],
-        "semester_events": [SX("形势与政策(2)", 0.25)],
+        "semester_events": [],  # 形势与政策(2) 已作为课程定义
     },
     # ================= 第3学期 2023-2024-1 =================
     3: {
@@ -142,8 +143,9 @@ SEMESTERS = {
             E("普通物理实验A（2）", 1.0, 32, hps=3, virtual_hours=8,
               desc="总32学时含8学时虚拟（不排课）；实际24学时=8次×3学时"),
             T("军事理论", 1.0, 36, type="讲座", prefer=["下午"]),
+            SX("形势与政策(3)", 0.25),
         ],
-        "semester_events": [SX("形势与政策(3)", 0.25)],
+        "semester_events": [],  # 形势与政策(3) 已作为课程定义
     },
     # ================= 第4学期 2023-2024-2 =================
     4: {
@@ -163,13 +165,15 @@ SEMESTERS = {
               sessions_per_week=1, hours_per_session=3, weeks="1-5", elective_slot="hist3"),
             T("四史·④", 1.0, 15, lecture=15, category="四史", type="四史", prefer=["晚上"],
               sessions_per_week=1, hours_per_session=3, weeks="1-5", elective_slot="hist4"),
+            SX("形势与政策(4)", 0.25),
+
         ],
         "semester_events": [
             {"name": "思政实践（社会实践）", "credits": 1.0, "category": "必修", "type": "实践",
              "note": "全天×8天=64学时（第14周5天+第15周3天）",
              "events": [{"week": ww, "weekday": wd, "duration": "full", "hours": 8}
                         for ww, nd in [(14, 5), (15, 3)] for wd in range(nd)]},
-            SX("形势与政策(4)", 0.25),
+            # 形势与政策(4) 已作为课程定义（见 courses）,
         ],
     },
     # ================= 第5学期 2024-2025-1 =================
@@ -193,6 +197,7 @@ SEMESTERS = {
             EV("信号与系统·讨论", 0.0, half="second", weeks="9-10"),
             E("信号与系统实验", 1.0, 12, hps=4),
             E("微机原理及其应用实践", 1.0, 32, hps=4, split=[4, 4]),   # 拆成4+4两段
+            SX("形势与政策(5)", 0.25),
         ],
         "semester_events": [
 
@@ -200,7 +205,7 @@ SEMESTERS = {
              "note": "全天×8天=64学时（第13周5天+第14周3天）",
              "events": [{"week": ww, "weekday": wd, "duration": "full", "hours": 8}
                         for ww, nd in [(13, 5), (14, 3)] for wd in range(nd)]},
-            SX("形势与政策(5)", 0.25),
+            # 形势与政策(5) 已作为课程定义（见 courses）,
         ],
     },
     # ================= 第6学期 2024-2025-2 =================
@@ -218,12 +223,13 @@ SEMESTERS = {
             T("专业选修·下午③", 2.0, 32, lecture=32, category="专业选修", prefer=["下午"], no_evening=True, elective_slot="maj3"),
             T("专业选修·下午④", 2.0, 32, lecture=32, category="专业选修", prefer=["下午"], no_evening=True, elective_slot="maj4"),
             EV("传感与检测技术·讨论", 0.0, half="second", weeks="9-16"),
+            SX("形势与政策(6)", 0.25),
         ],
         "semester_events": [
             {"name": "劳动教育与素养", "credits": 0.0, "category": "必修", "type": "实践",
              "note": "半天（上午）劳动教育",
              "events": [{"week": 10, "weekday": 3, "duration": "half-am", "hours": 4}]},
-            SX("形势与政策(6)", 0.25),
+            # 形势与政策(6) 已作为课程定义（见 courses）,
         ],
     },
 }

@@ -56,6 +56,10 @@ RESERVED_ONLY_COURSES = {"军事理论", "形势与政策"}
 def is_reserved(w, combo):
     return w == RESERVED_WEEKDAY and any(s in RESERVED_SLOTS for s in combo)
 
+def is_special(name):
+    """特殊课：军事理论 / 形势与政策（含学期后缀）——最后分配，但不允许占用周二下午"""
+    return name == "军事理论" or name.startswith("形势与政策")
+
 
 def load_courses():
     return json.loads(COURSE_FILE.read_text(encoding="utf-8"))
@@ -88,7 +92,9 @@ def build_lesson_plans(course):
     if course["type"] == "实验":
         hps = course.get("hours_per_session", 4)
         total = course.get("total_hours", 32)
-        sessions = course.get("sessions", max(1, round(total / hps)))
+        # 虚拟学时（不排课）扣除：实际排课时数 = 总学时 - 虚拟学时
+        eff = total - course.get("virtual_hours", 0)
+        sessions = course.get("sessions", max(1, round(eff / hps)))
         return [{"weeks": None, "slots": (7, 8, 9), "hours": hps, "sessions": sessions}]
     # 块状课程（机电创新实训等）：每周1个半天/全天块；支持混合（半天段→全天段，全天一旦开始持续到结束）
     if course.get("block"):
@@ -189,11 +195,11 @@ def allocate(data):
                     return combo
         return None
 
-    specials = [c for c in data["courses"] if c["name"] in RESERVED_ONLY_COURSES]
+    specials = [c for c in data["courses"] if is_special(c["name"])]
     # 分配顺序：体育(固定槽位) → 必修/专业选修 → 普通选修(晚上优先) → 实训(block最后) → 军事理论兜底
     fixed_first = [c for c in data["courses"] if c.get("fixed_slot")]
     common = [c for c in data["courses"]
-              if c["type"] != "实验" and c["name"] not in RESERVED_ONLY_COURSES
+              if c["type"] != "实验" and not is_special(c["name"])
               and not c.get("fixed_slot") and not c.get("block") and c.get("category") != "普通选修"]
     block_courses = [c for c in data["courses"] if c.get("block")]
     elective_eve = [c for c in data["courses"] if c.get("category") == "普通选修"]
@@ -265,14 +271,12 @@ def allocate(data):
             placed_records.append((course["name"], course["credits"], course["category"],
                                    course["type"], w, combo, weeks, plan["hours"], seminar))
 
-    # 军事理论/形势与政策：最后分配，优先非保留槽位，别无选择才用周二下午
+    # 军事理论/形势与政策：最后分配；周二下午对一切课程禁止（含军事理论/形势政策）
     for course in specials:
         seminar = 1 if course.get("seminar", 0) else 0
         plan = build_lesson_plans(course)[0]
         pool = SLOT_1H if plan["hours"] == 1 else SLOT_2H
         w, combo = pick_slot(pool, course.get("prefer") or ["下午"], allow_reserved=False)
-        if w is None:
-            w, combo = pick_slot(pool, ["下午"], allow_reserved=True)   # 兜底：允许保留槽位
         if w is None:
             print(f"  ⚠️ 无法分配(兜底): {course['name']}")
             continue
@@ -437,6 +441,28 @@ def allocate(data):
 def write_db(data, records):
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
+
+    # 虚拟时钟表（单行，id=1）：基准 2023-09-14（周四，工作日）08:30
+    cur.execute("""CREATE TABLE IF NOT EXISTS virtual_time (
+        id INTEGER PRIMARY KEY CHECK (id = 1),
+        virtual_datetime TEXT NOT NULL,
+        year INTEGER, month INTEGER, day INTEGER, weekday INTEGER,
+        hour INTEGER, minute INTEGER, second INTEGER,
+        is_workday INTEGER, note TEXT, updated_at TEXT)""")
+    cur.execute("INSERT OR IGNORE INTO virtual_time (id, virtual_datetime, year, month, day, weekday, hour, minute, second, is_workday, note, updated_at) "
+                "VALUES (1, '2023-09-14 08:30:00', 2023, 9, 14, 3, 8, 30, 0, 1, '调度器初始设定：2023年9月中旬工作日早晨', '')")
+    cur.execute("""CREATE TABLE IF NOT EXISTS time_log (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, action TEXT, old_time TEXT,
+        new_time TEXT, note TEXT, created_at TEXT)""")
+    cur.execute("""CREATE TABLE IF NOT EXISTS schedule (
+        slot_index INTEGER PRIMARY KEY, period TEXT, segment TEXT,
+        start_time TEXT, end_time TEXT)""")
+    SLOT_DEFS = [(1,"第一节①","早晨","08:00","08:45"),(2,"第一节②","早晨","08:55","09:40"),
+                 (3,"第二节①","上午","09:50","10:45"),(4,"第二节②","上午","10:55","11:40"),
+                 (5,"第三节","下午","14:30","16:00"),(6,"第四节","下午","16:10","17:40"),
+                 (7,"第五节①","晚上","19:00","19:45"),(8,"第五节②","晚上","19:55","20:40"),
+                 (9,"第五节③","晚上","20:50","21:35")]
+    cur.executemany("INSERT OR IGNORE INTO schedule VALUES (?,?,?,?,?)", SLOT_DEFS)
 
     cur.execute("CREATE TABLE IF NOT EXISTS terms (semester_no INTEGER PRIMARY KEY, term_code TEXT, start_date TEXT, end_date TEXT, note TEXT)")
     cur.execute("DELETE FROM terms WHERE semester_no=?", (data.get("semester_no", 0),))
