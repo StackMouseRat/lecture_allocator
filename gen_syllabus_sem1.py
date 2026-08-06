@@ -103,7 +103,7 @@ COURSES = {
     "新时代伟大成就（脱贫攻坚、科技强国）",
 ])]},
 # ---- 工程制图上机（CAD，2节×4学时，W9/11 晚间）----
-"工程制图上机": {"spw": 1, "weeks": 2, "chapters": [("CAD上机", [
+"工程制图上机": {"spw": 1, "weeks": 2, "hps": 4, "chapters": [("CAD上机", [
     "CAD基础：界面与绘图环境设置、基本绘图命令（直线/圆/矩形）",
     "CAD进阶：对象捕捉/图层管理、尺寸标注、工程图输出",
 ])], "weeks_override": [9, 11]},
@@ -150,7 +150,8 @@ def build(course, cfg):
 def render_md(name, cfg, rows):
     L = []
     L.append(f"# {name} 授课方案\n")
-    L.append(f"> 总学时 {cfg['spw']*cfg['weeks']*2} ｜ 每周 {cfg['spw']} 次 × {cfg['weeks']} 周 ｜ 每次2学时\n")
+    hps = cfg.get("hps", 2)
+    L.append(f"> 总学时 {len(rows)*hps} ｜ {len(rows)}次 × {hps}学时/次\n")
     L.append("| 周次 | 节次 | 授课内容 |")
     L.append("|---|---|---|")
     for r in rows:
