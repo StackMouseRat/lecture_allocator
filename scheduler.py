@@ -35,6 +35,8 @@ SLOT_END = {1: "08:45", 2: "09:40", 3: "10:45", 4: "11:40", 5: "16:00",
 AFTERNOON = {5, 6}
 EVENING = {7, 8, 9, 12}
 DAYTIME = {1, 2, 3, 4, 5, 6}
+# 排课时段偏好：优先 slot3(早上10点起) 与 slot6(下午4点起)，其次 slot5，最后 slot1；晚间按序
+SLOT_PREF = {3: 0, 6: 1, 5: 2, 1: 3, 7: 4, 9: 5, 12: 6}
 
 ROOMS = {
     "研楼": [f"研楼{c}{l}0{n}" for c in "ABC" for l in range(1, 4) for n in range(1, 6)],
@@ -357,7 +359,7 @@ class Scheduler:
         def ckey(item):
             wd, slot, room = item
             score = sum(len(self.grid[g_ref].get((wd, s), [])) for s in slots_of(c, slot))
-            return (score, wd, slot)
+            return (SLOT_PREF.get(slot, 9), score, wd, slot)
         best_cands.sort(key=ckey)
         for wd, slot, room in best_cands:
             self.place(c, girl, wd, slot, weeks, room, ri)
