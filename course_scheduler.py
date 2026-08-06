@@ -456,6 +456,11 @@ def write_db(data, records):
     init_schema(conn)   # 统一 Schema：全部表+种子（唯一权威 db_schema.py）
     cur = conn.cursor()
 
+    # 学期信息（供虚拟时钟 term_start/week_of_term）
+    cur.execute("DELETE FROM terms WHERE semester_no=?", (data.get("semester_no", 0),))
+    cur.execute("INSERT INTO terms (semester_no, term_code, start_date, end_date, note) VALUES (?,?,?,?,?)",
+                (data.get("semester_no", 0), data["term_code"], data.get("term_start"), None, data["term"]))
+
     # 学期事件（军训/思政实践/电子设计/劳动教育等集中实践）——按 data["semester_events"] 展开
     cur.execute("DELETE FROM semester_events WHERE semester_no=?", (data.get("semester_no", 0),))
     DUR_SLOTS = {

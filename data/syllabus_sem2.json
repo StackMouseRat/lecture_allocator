@@ -1,0 +1,1318 @@
+{
+ "高等数学A（2）": {
+  "spw": 3,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "第八章 向量代数与空间解析几何 · 向量及其线性运算"
+   },
+   {
+    "week": 1,
+    "session": 2,
+    "topic": "第八章 向量代数与空间解析几何 · 数量积向量积"
+   },
+   {
+    "week": 1,
+    "session": 3,
+    "topic": "第八章 向量代数与空间解析几何 · 平面与直线方程"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "第八章 向量代数与空间解析几何 · 曲面与曲线"
+   },
+   {
+    "week": 2,
+    "session": 2,
+    "topic": "第九章 多元函数微分学 · 多元函数与极限"
+   },
+   {
+    "week": 2,
+    "session": 3,
+    "topic": "第九章 多元函数微分学 · 偏导数"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "第九章 多元函数微分学 · 全微分"
+   },
+   {
+    "week": 3,
+    "session": 2,
+    "topic": "第九章 多元函数微分学 · 复合函数求导"
+   },
+   {
+    "week": 3,
+    "session": 3,
+    "topic": "第九章 多元函数微分学 · 隐函数求导"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "第九章 多元函数微分学 · 方向导数与梯度"
+   },
+   {
+    "week": 4,
+    "session": 2,
+    "topic": "第九章 多元函数微分学 · 多元极值"
+   },
+   {
+    "week": 4,
+    "session": 3,
+    "topic": "第九章 多元函数微分学 · 条件极值"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "第十章 重积分 · 二重积分概念与性质"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "第十章 重积分 · 直角坐标计算"
+   },
+   {
+    "week": 5,
+    "session": 3,
+    "topic": "第十章 重积分 · 极坐标计算"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "第十章 重积分 · 三重积分"
+   },
+   {
+    "week": 6,
+    "session": 2,
+    "topic": "第十章 重积分 · 重积分应用"
+   },
+   {
+    "week": 6,
+    "session": 3,
+    "topic": "第十一章 曲线积分与曲面积分 · 第一类曲线积分"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "第十一章 曲线积分与曲面积分 · 第二类曲线积分"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "第十一章 曲线积分与曲面积分 · 格林公式"
+   },
+   {
+    "week": 7,
+    "session": 3,
+    "topic": "第十一章 曲线积分与曲面积分 · 第一类曲面积分"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "第十一章 曲线积分与曲面积分 · 第二类曲面积分"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "第十一章 曲线积分与曲面积分 · 高斯公式与散度"
+   },
+   {
+    "week": 8,
+    "session": 3,
+    "topic": "第十一章 曲线积分与曲面积分 · 斯托克斯公式与旋度"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "第十二章 无穷级数 · 常数项级数"
+   },
+   {
+    "week": 9,
+    "session": 2,
+    "topic": "第十二章 无穷级数 · 正项级数判敛"
+   },
+   {
+    "week": 9,
+    "session": 3,
+    "topic": "第十二章 无穷级数 · 交错级数与绝对收敛"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "第十二章 无穷级数 · 幂级数"
+   },
+   {
+    "week": 10,
+    "session": 2,
+    "topic": "第十二章 无穷级数 · 函数展开成幂级数"
+   },
+   {
+    "week": 10,
+    "session": 3,
+    "topic": "第十二章 无穷级数 · 傅里叶级数"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "第八章 向量代数与空间解析几何 · 向量及其线性运算"
+   },
+   {
+    "week": 11,
+    "session": 2,
+    "topic": "第八章 向量代数与空间解析几何 · 数量积向量积"
+   },
+   {
+    "week": 11,
+    "session": 3,
+    "topic": "第八章 向量代数与空间解析几何 · 平面与直线方程"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "第八章 向量代数与空间解析几何 · 曲面与曲线"
+   },
+   {
+    "week": 12,
+    "session": 2,
+    "topic": "第九章 多元函数微分学 · 多元函数与极限"
+   },
+   {
+    "week": 12,
+    "session": 3,
+    "topic": "第九章 多元函数微分学 · 偏导数"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "第九章 多元函数微分学 · 全微分"
+   },
+   {
+    "week": 13,
+    "session": 2,
+    "topic": "第九章 多元函数微分学 · 复合函数求导"
+   },
+   {
+    "week": 13,
+    "session": 3,
+    "topic": "第九章 多元函数微分学 · 隐函数求导"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "第九章 多元函数微分学 · 方向导数与梯度"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "第九章 多元函数微分学 · 多元极值"
+   },
+   {
+    "week": 14,
+    "session": 3,
+    "topic": "第九章 多元函数微分学 · 条件极值"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "第十章 重积分 · 二重积分概念与性质"
+   },
+   {
+    "week": 15,
+    "session": 2,
+    "topic": "第十章 重积分 · 直角坐标计算"
+   },
+   {
+    "week": 15,
+    "session": 3,
+    "topic": "第十章 重积分 · 极坐标计算"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "第十章 重积分 · 三重积分"
+   },
+   {
+    "week": 16,
+    "session": 2,
+    "topic": "第十章 重积分 · 重积分应用"
+   },
+   {
+    "week": 16,
+    "session": 3,
+    "topic": "第十一章 曲线积分与曲面积分 · 第一类曲线积分"
+   }
+  ]
+ },
+ "大学英语A（2）": {
+  "spw": 2,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "Unit 1 Language Learning · 课文精读与词汇"
+   },
+   {
+    "week": 1,
+    "session": 2,
+    "topic": "Unit 1 Language Learning · 语法：时态与语态"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "Unit 1 Language Learning · 听力训练"
+   },
+   {
+    "week": 2,
+    "session": 2,
+    "topic": "Unit 1 Language Learning · 口语：学习经历"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "Unit 2 College Life · 课文精读与词汇"
+   },
+   {
+    "week": 3,
+    "session": 2,
+    "topic": "Unit 2 College Life · 语法：虚拟语气"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "Unit 2 College Life · 听力训练"
+   },
+   {
+    "week": 4,
+    "session": 2,
+    "topic": "Unit 2 College Life · 口语：校园生活"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "Unit 3 Travel · 课文精读与词汇"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "Unit 3 Travel · 语法：非谓语动词"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "Unit 3 Travel · 听力训练"
+   },
+   {
+    "week": 6,
+    "session": 2,
+    "topic": "Unit 3 Travel · 口语：旅行话题"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "Unit 4 Media · 课文精读与词汇"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "Unit 4 Media · 语法：定语从句"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "Unit 4 Media · 听力训练"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "Unit 4 Media · 口语：媒体影响"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "Unit 5 Career · 课文精读与词汇"
+   },
+   {
+    "week": 9,
+    "session": 2,
+    "topic": "Unit 5 Career · 语法：名词性从句"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "Unit 5 Career · 听力训练"
+   },
+   {
+    "week": 10,
+    "session": 2,
+    "topic": "Unit 5 Career · 口语：职业规划"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "Unit 6 Technology · 课文精读与词汇"
+   },
+   {
+    "week": 11,
+    "session": 2,
+    "topic": "Unit 6 Technology · 语法：状语从句"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "Unit 6 Technology · 听力训练"
+   },
+   {
+    "week": 12,
+    "session": 2,
+    "topic": "Unit 6 Technology · 口语：科技生活"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "Unit 7 Society · 课文精读与词汇"
+   },
+   {
+    "week": 13,
+    "session": 2,
+    "topic": "Unit 7 Society · 语法：倒装与强调"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "Unit 7 Society · 听力训练"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "Unit 7 Society · 口语：社会话题"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "Unit 8 Global Views · 课文精读与词汇"
+   },
+   {
+    "week": 15,
+    "session": 2,
+    "topic": "Unit 8 Global Views · 语法：综合复习"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "Unit 8 Global Views · 听力测试"
+   },
+   {
+    "week": 16,
+    "session": 2,
+    "topic": "Unit 8 Global Views · 口语：全球视野"
+   }
+  ]
+ },
+ "中国近现代史纲要": {
+  "spw": 2,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "导论 近代中国社会 · 鸦片战争前的中国"
+   },
+   {
+    "week": 1,
+    "session": 2,
+    "topic": "导论 近代中国社会 · 近代中国国情"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "第一章 反对外国侵略的斗争 · 资本-帝国主义侵华"
+   },
+   {
+    "week": 2,
+    "session": 2,
+    "topic": "第一章 反对外国侵略的斗争 · 反抗侵略的救亡斗争"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "第二章 对国家出路的早期探索 · 太平天国运动"
+   },
+   {
+    "week": 3,
+    "session": 2,
+    "topic": "第二章 对国家出路的早期探索 · 洋务运动"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "第二章 对国家出路的早期探索 · 戊戌维新"
+   },
+   {
+    "week": 4,
+    "session": 2,
+    "topic": "第三章 辛亥革命 · 资产阶级革命兴起"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "第三章 辛亥革命 · 辛亥革命与帝制终结"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "第四章 开天辟地的大事变 · 新文化运动与五四运动"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "第四章 开天辟地的大事变 · 中国共产党诞生"
+   },
+   {
+    "week": 6,
+    "session": 2,
+    "topic": "第五章 中国革命的新道路 · 国民革命"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "第五章 中国革命的新道路 · 土地革命与农村道路"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "第五章 中国革命的新道路 · 长征与遵义会议"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "第六章 中华民族的抗日战争 · 日本侵华"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "第六章 中华民族的抗日战争 · 全民族抗战"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "第六章 中华民族的抗日战争 · 抗战胜利"
+   },
+   {
+    "week": 9,
+    "session": 2,
+    "topic": "第七章 为新中国而奋斗 · 解放战争"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "第七章 为新中国而奋斗 · 新民主主义革命胜利"
+   },
+   {
+    "week": 10,
+    "session": 2,
+    "topic": "第八章 社会主义基本制度的确立 · 过渡时期总路线"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "第八章 社会主义基本制度的确立 · 三大改造"
+   },
+   {
+    "week": 11,
+    "session": 2,
+    "topic": "第九章 社会主义建设在探索中曲折发展 · 建设探索"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "第九章 社会主义建设在探索中曲折发展 · 曲折与成就"
+   },
+   {
+    "week": 12,
+    "session": 2,
+    "topic": "第十章 改革开放与社会主义现代化建设 · 改革开放起步"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "第十章 改革开放与社会主义现代化建设 · 中国特色社会主义"
+   },
+   {
+    "week": 13,
+    "session": 2,
+    "topic": "第十章 改革开放与社会主义现代化建设 · 新时代新征程"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "导论 近代中国社会 · 鸦片战争前的中国"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "导论 近代中国社会 · 近代中国国情"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "第一章 反对外国侵略的斗争 · 资本-帝国主义侵华"
+   },
+   {
+    "week": 15,
+    "session": 2,
+    "topic": "第一章 反对外国侵略的斗争 · 反抗侵略的救亡斗争"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "第二章 对国家出路的早期探索 · 太平天国运动"
+   },
+   {
+    "week": 16,
+    "session": 2,
+    "topic": "第二章 对国家出路的早期探索 · 洋务运动"
+   }
+  ]
+ },
+ "线性代数A": {
+  "spw": 2,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "第一章 行列式 · 行列式定义"
+   },
+   {
+    "week": 1,
+    "session": 2,
+    "topic": "第一章 行列式 · 行列式性质"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "第一章 行列式 · 展开定理"
+   },
+   {
+    "week": 2,
+    "session": 2,
+    "topic": "第一章 行列式 · 克拉默法则"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "第二章 矩阵 · 矩阵运算"
+   },
+   {
+    "week": 3,
+    "session": 2,
+    "topic": "第二章 矩阵 · 逆矩阵"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "第二章 矩阵 · 分块矩阵"
+   },
+   {
+    "week": 4,
+    "session": 2,
+    "topic": "第二章 矩阵 · 初等变换"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "第二章 矩阵 · 矩阵的秩"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "第三章 向量组 · 向量组线性相关"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "第三章 向量组 · 向量组秩"
+   },
+   {
+    "week": 6,
+    "session": 2,
+    "topic": "第三章 向量组 · 向量空间"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "第四章 线性方程组 · 齐次方程组"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "第四章 线性方程组 · 非齐次方程组"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "第四章 线性方程组 · 方程组结构"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "第五章 特征值与特征向量 · 特征值与特征向量"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "第五章 特征值与特征向量 · 相似矩阵"
+   },
+   {
+    "week": 9,
+    "session": 2,
+    "topic": "第五章 特征值与特征向量 · 对角化"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "第六章 二次型 · 二次型标准形"
+   },
+   {
+    "week": 10,
+    "session": 2,
+    "topic": "第六章 二次型 · 正定二次型"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "第一章 行列式 · 行列式定义"
+   },
+   {
+    "week": 11,
+    "session": 2,
+    "topic": "第一章 行列式 · 行列式性质"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "第一章 行列式 · 展开定理"
+   },
+   {
+    "week": 12,
+    "session": 2,
+    "topic": "第一章 行列式 · 克拉默法则"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "第二章 矩阵 · 矩阵运算"
+   },
+   {
+    "week": 13,
+    "session": 2,
+    "topic": "第二章 矩阵 · 逆矩阵"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "第二章 矩阵 · 分块矩阵"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "第二章 矩阵 · 初等变换"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "第二章 矩阵 · 矩阵的秩"
+   },
+   {
+    "week": 15,
+    "session": 2,
+    "topic": "第三章 向量组 · 向量组线性相关"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "第三章 向量组 · 向量组秩"
+   },
+   {
+    "week": 16,
+    "session": 2,
+    "topic": "第三章 向量组 · 向量空间"
+   }
+  ]
+ },
+ "普通物理A（1）": {
+  "spw": 2,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "第一章 质点运动学 · 位置矢量与运动方程"
+   },
+   {
+    "week": 1,
+    "session": 2,
+    "topic": "第一章 质点运动学 · 速度与加速度"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "第一章 质点运动学 · 圆周运动"
+   },
+   {
+    "week": 2,
+    "session": 2,
+    "topic": "第一章 质点运动学 · 相对运动"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "第二章 牛顿运动定律 · 牛顿三定律"
+   },
+   {
+    "week": 3,
+    "session": 2,
+    "topic": "第二章 牛顿运动定律 · 常见力"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "第二章 牛顿运动定律 · 非惯性系"
+   },
+   {
+    "week": 4,
+    "session": 2,
+    "topic": "第三章 动量与角动量 · 动量定理"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "第三章 动量与角动量 · 动量守恒"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "第三章 动量与角动量 · 角动量与力矩"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "第三章 动量与角动量 · 角动量守恒"
+   },
+   {
+    "week": 6,
+    "session": 2,
+    "topic": "第四章 功与能量 · 功与功率"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "第四章 功与能量 · 动能定理"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "第四章 功与能量 · 保守力与势能"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "第四章 功与能量 · 机械能守恒"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "第五章 刚体力学 · 刚体运动学"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "第五章 刚体力学 · 转动惯量"
+   },
+   {
+    "week": 9,
+    "session": 2,
+    "topic": "第五章 刚体力学 · 转动定律"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "第五章 刚体力学 · 角动量守恒应用"
+   },
+   {
+    "week": 10,
+    "session": 2,
+    "topic": "第六章 振动 · 简谐振动"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "第六章 振动 · 旋转矢量法"
+   },
+   {
+    "week": 11,
+    "session": 2,
+    "topic": "第六章 振动 · 阻尼与受迫振动"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "第六章 振动 · 振动合成"
+   },
+   {
+    "week": 12,
+    "session": 2,
+    "topic": "第七章 波动 · 机械波"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "第七章 波动 · 波动方程"
+   },
+   {
+    "week": 13,
+    "session": 2,
+    "topic": "第七章 波动 · 波的能量"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "第七章 波动 · 波的干涉"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "第七章 波动 · 驻波"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "第八章 热学 · 理想气体"
+   },
+   {
+    "week": 15,
+    "session": 2,
+    "topic": "第八章 热学 · 热力学第一定律"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "第八章 热学 · 热力学第二定律"
+   },
+   {
+    "week": 16,
+    "session": 2,
+    "topic": "第八章 热学 · 熵"
+   }
+  ]
+ },
+ "普通物理实验A（1）": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "普物实验A1 · 绪论与误差理论"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "普物实验A1 · 长度与密度的测量"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "普物实验A1 · 气垫导轨上的运动研究"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "普物实验A1 · 牛顿第二定律验证"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "普物实验A1 · 单摆与重力加速度"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "普物实验A1 · 杨氏模量的测定"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "普物实验A1 · 固体比热容测定"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "普物实验A1 · 简谐振动研究"
+   }
+  ]
+ },
+ "计算与人工智能概论": {
+  "spw": 2,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "第一章 计算机基础 · 计算机发展史"
+   },
+   {
+    "week": 1,
+    "session": 2,
+    "topic": "第一章 计算机基础 · 数据表示与存储"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "第一章 计算机基础 · 计算机系统组成"
+   },
+   {
+    "week": 2,
+    "session": 2,
+    "topic": "第二章 程序设计与Python · Python语法基础"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "第二章 程序设计与Python · 控制结构与函数"
+   },
+   {
+    "week": 3,
+    "session": 2,
+    "topic": "第二章 程序设计与Python · 数据结构"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "第二章 程序设计与Python · 面向对象与模块"
+   },
+   {
+    "week": 4,
+    "session": 2,
+    "topic": "第三章 算法基础 · 算法与复杂度"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "第三章 算法基础 · 排序与查找"
+   },
+   {
+    "week": 5,
+    "session": 2,
+    "topic": "第三章 算法基础 · 递归与分治"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "第四章 数据与数据库 · 数据结构概览"
+   },
+   {
+    "week": 6,
+    "session": 2,
+    "topic": "第四章 数据与数据库 · 数据库基础"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "第四章 数据与数据库 · SQL入门"
+   },
+   {
+    "week": 7,
+    "session": 2,
+    "topic": "第五章 人工智能导论 · AI发展史"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "第五章 人工智能导论 · 机器学习基础"
+   },
+   {
+    "week": 8,
+    "session": 2,
+    "topic": "第五章 人工智能导论 · 神经网络初步"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "第五章 人工智能导论 · AI应用案例"
+   },
+   {
+    "week": 9,
+    "session": 2,
+    "topic": "第六章 网络与安全 · 计算机网络基础"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "第六章 网络与安全 · 信息安全"
+   },
+   {
+    "week": 10,
+    "session": 2,
+    "topic": "第六章 网络与安全 · 伦理与法律"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "第一章 计算机基础 · 计算机发展史"
+   },
+   {
+    "week": 11,
+    "session": 2,
+    "topic": "第一章 计算机基础 · 数据表示与存储"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "第一章 计算机基础 · 计算机系统组成"
+   },
+   {
+    "week": 12,
+    "session": 2,
+    "topic": "第二章 程序设计与Python · Python语法基础"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "第二章 程序设计与Python · 控制结构与函数"
+   },
+   {
+    "week": 13,
+    "session": 2,
+    "topic": "第二章 程序设计与Python · 数据结构"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "第二章 程序设计与Python · 面向对象与模块"
+   },
+   {
+    "week": 14,
+    "session": 2,
+    "topic": "第三章 算法基础 · 算法与复杂度"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "第三章 算法基础 · 排序与查找"
+   },
+   {
+    "week": 15,
+    "session": 2,
+    "topic": "第三章 算法基础 · 递归与分治"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "第四章 数据与数据库 · 数据结构概览"
+   },
+   {
+    "week": 16,
+    "session": 2,
+    "topic": "第四章 数据与数据库 · 数据库基础"
+   }
+  ]
+ },
+ "计算与人工智能概论上机": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "Python上机 · Python环境与基础语法"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "Python上机 · 条件与循环练习"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "Python上机 · 函数与模块练习"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "Python上机 · 列表与字典实战"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "Python上机 · 字符串与文件操作"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "Python上机 · 综合编程（成绩管理系统）"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "Python上机 · 数据分析初步"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "Python上机 · 综合项目与演示"
+   }
+  ]
+ },
+ "导师课程": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "导师指导 · 专业导论与学业规划"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "导师指导 · 文献检索与学术规范"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "导师指导 · 科研方法入门"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "导师指导 · 学科前沿讲座"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "导师指导 · 学习问题答疑"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "导师指导 · 职业发展指导"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "导师指导 · 课题讨论(一)"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "导师指导 · 课题讨论(二)"
+   }
+  ]
+ },
+ "体育（2）": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 1,
+    "session": 1,
+    "topic": "体育 · 课堂常规与准备活动"
+   },
+   {
+    "week": 2,
+    "session": 1,
+    "topic": "体育 · 专项基础练习(一)"
+   },
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "体育 · 专项基础练习(二)"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "体育 · 专项组合练习(一)"
+   },
+   {
+    "week": 5,
+    "session": 1,
+    "topic": "体育 · 专项组合练习(二)"
+   },
+   {
+    "week": 6,
+    "session": 1,
+    "topic": "体育 · 专项提升练习(一)"
+   },
+   {
+    "week": 7,
+    "session": 1,
+    "topic": "体育 · 专项提升练习(二)"
+   },
+   {
+    "week": 8,
+    "session": 1,
+    "topic": "体育 · 体能练习：力量与柔韧"
+   },
+   {
+    "week": 9,
+    "session": 1,
+    "topic": "体育 · 体能练习：心肺与核心"
+   },
+   {
+    "week": 10,
+    "session": 1,
+    "topic": "体育 · 专项综合练习(一)"
+   },
+   {
+    "week": 11,
+    "session": 1,
+    "topic": "体育 · 体质测试"
+   },
+   {
+    "week": 12,
+    "session": 1,
+    "topic": "体育 · 专项综合练习(二)"
+   },
+   {
+    "week": 13,
+    "session": 1,
+    "topic": "体育 · 自主练习与纠错答疑"
+   },
+   {
+    "week": 14,
+    "session": 1,
+    "topic": "体育 · 复习与综合练习"
+   },
+   {
+    "week": 15,
+    "session": 1,
+    "topic": "体育 · 技能测试(一)"
+   },
+   {
+    "week": 16,
+    "session": 1,
+    "topic": "体育 · 技能测试(二)"
+   }
+  ]
+ },
+ "形势与政策(2)": {
+  "spw": 1,
+  "weeks": 16,
+  "rows": [
+   {
+    "week": 3,
+    "session": 1,
+    "topic": "形势政策专题 · 专题一：当前国内形势与政策"
+   },
+   {
+    "week": 4,
+    "session": 1,
+    "topic": "形势政策专题 · 专题二：国际形势与中国外交"
+   }
+  ]
+ }
+}
