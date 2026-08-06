@@ -24,6 +24,7 @@ python3 query.py help            # 查看全部命令与设计说明
 | `room` | 查询教室占用情况 | `--name` |
 | `check` | 全量校验汇总（复用 check_* 脚本） | — |
 | `summary` | 学期总览（门数/学分/课次/事件） | — |
+| `progress` | 课程进度（某虚拟时间下 已学/当前/未学 清单） | `--course` |
 | `girl` | 女孩档案（专业/体育/选修/个人调度/课表文件） | `--girl` |
 
 ## 三、通用参数
@@ -36,7 +37,7 @@ python3 query.py help            # 查看全部命令与设计说明
 | `--name X` | 课程名/教室名 | 渲染名（如"电机学（下）"、"复临舍202(中)"） |
 | `--id X` | 老师ID | 如 T800 / E1100 / P19a |
 | `--course X` | 课程名 | syllabus 单门过滤 |
-| `--at "YYYY-MM-DD HH:MM"` | 时间 | `now` 指定时刻（**只读，不污染虚拟时钟**） |
+| `--at "YYYY-MM-DD HH:MM"` | 时间 | `now`/`progress` 指定时刻（**只读，不污染虚拟时钟**） |
 | `--json` | — | 输出结构化 JSON（供程序消费） |
 
 ## 四、输出规范
@@ -57,6 +58,8 @@ python3 query.py help            # 查看全部命令与设计说明
   - `room`: `{room, occupancy: {sem: [行]}}`
   - `check`: `{conflicts, render, locations, syllabus, data}`（末行结果串）
   - `summary`: `{sem: {门数, 学分, 课次行数, 事件}}`
+  - `progress`: `{course, girl, semester, week, time, on_course, total,
+                 learned: [rows], current: [rows], pending: [rows]}`（rows = {week, session, topic}）
   - `girl`: `{girl, name, major, pe, electives, personal, schedules}`
 
 ## 五、退出码
@@ -76,6 +79,7 @@ python3 query.py help            # 查看全部命令与设计说明
 | 课表行（S4/5） | `girl_course_schedule` per-girl（老师/地点已入库） |
 | 授课进度 | `data/syllabus_semN.json`（`render_utils.syllabus_topic` 同口径） |
 | 虚拟时间 | `virtual_time.VirtualClock.current_course`（`--at` 传 dt，不 set 不污染） |
+| 课程进度（已学/当前/未学） | 当前节=`current_course.syllabus`（权威锚点）；已学/未学=按该课 syllabus 行序（week×session 时间线）相对当前时刻分割；非在课时按 db 行 `(week, weekday, slot)` 定位 |
 | 老师/地点 | `data/teachers.json` + `data/locations_semN.json` |
 | 学分（S1-3/6） | `virtual_course_schedule.credits`（build 权威，占位符含映射学分） |
 | 学分（S4/5） | `data/plan_courses.json`（培养方案；实验课按独立课程计 1 学分；体育/形势/四史不在 plan 计 0） |
@@ -99,6 +103,8 @@ python3 query.py room --name "复临舍202(中)"                # 教室占用
 python3 query.py check                                      # 全量校验
 python3 query.py summary --sem 6                            # 学期总览
 python3 query.py girl --girl sakawa                         # 女孩档案
+python3 query.py progress --course 电力系统分析 --at "2025-03-14 14:35"
+python3 query.py progress --course 传感与检测技术 --girl surrey   # 当前虚拟时间进度
 ```
 
 ## 八、约束

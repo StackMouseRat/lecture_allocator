@@ -400,6 +400,108 @@ def cmd_summary(a):
     return 0
 
 
+def _effective_slot(t):
+    """虚拟时刻所处的最近已开始 slot（课间/进行中均取已开始的最大 slot）"""
+    hm = t.strftime("%H:%M")
+    for s in range(10, 0, -1):
+        if hm >= SLOTS[s][1]:
+            return s
+    return 0
+
+
+def cmd_progress(a):
+    """课程进度：某虚拟时间下某门课的 已学/当前/未学 清单
+    用法：progress --course X [--at 'YYYY-MM-DD HH:MM'] [--girl G] [--sem N]
+    口径：当前节=VirtualClock.current_course 权威（syllabus 字段）；
+         已学/未学=按该课 syllabus 行序（week×session 时间线）相对当前时刻分割"""
+    from virtual_time import VirtualClock
+    course = a.course
+    if not course:
+        print("progress 需要 --course", file=sys.stderr)
+        return 4
+    vc = VirtualClock()
+    dt = datetime.strptime(a.at, "%Y-%m-%d %H:%M") if a.at else vc.now()
+    girl = a.girl or "surrey"
+    info = vc.current_course(dt=dt, girl=girl)
+    sem = a.sem or info.get("semester_no")
+    if sem is None or sem == -1:
+        print(f"该时刻 {dt} 非教学学期（假期/小学期）", file=sys.stderr)
+        return 3
+    week = info.get("week_no")
+    if week is None or week > 16:
+        print(f"该时刻为第{sem}学期非教学周（week={week}）", file=sys.stderr)
+        return 3
+    f = BASE / "data" / f"syllabus_sem{sem}.json"
+    if not f.exists():
+        print(f"第{sem}学期无授课方案文件", file=sys.stderr)
+        return 3
+    d = json.load(open(f, encoding="utf-8"))
+    if course not in d:
+        print(f"第{sem}学期无该课授课方案: {course}", file=sys.stderr)
+        return 2
+    rows = d[course]["rows"]
+    # 该课周次→天分布（db 权威，用于非在课时的 key 比较）
+    conn = _conn()
+    if sem in (4, 5):
+        q = conn.execute(
+            "SELECT weekday, slot_index, session_weeks FROM girl_course_schedule "
+            "WHERE semester_no=? AND course=? AND girl=?", (sem, course, girl)).fetchall()
+    else:
+        q = conn.execute(
+            "SELECT weekday, slot_index, session_weeks FROM virtual_course_schedule "
+            "WHERE semester_no=? AND course=?", (sem, course)).fetchall()
+    conn.close()
+    wmap = {}
+    for r in q:
+        for w in [int(x) for x in r["session_weeks"].split(",") if x.strip()]:
+            wmap.setdefault(w, {}).setdefault(r["weekday"], r["slot_index"])
+    wlist = {w: sorted((wd, s) for wd, s in wd_s.items()) for w, wd_s in wmap.items()}
+
+    on_course = info.get("status") == "in_class" and info.get("course") == course
+    cur_topic = info.get("syllabus") if on_course else None
+    learned, current, pending = [], [], []
+    if on_course and cur_topic:
+        # 权威锚点：正在上的这节课
+        cur_row = next((r for r in rows if r["topic"] == cur_topic), None)
+        if cur_row is not None:
+            idx = rows.index(cur_row)
+            learned, current, pending = rows[:idx], [cur_row], rows[idx + 1:]
+    if not current:
+        # 非在课：按该课时间线 (week, weekday, slot) 相对当前定位
+        cur_key = (week, dt.weekday(), _effective_slot(dt))
+        for r in rows:
+            lst = wlist.get(r["week"], [])
+            wd, slot = (lst[r["session"] - 1] if r["session"] - 1 < len(lst) else (0, 0))
+            if (r["week"], wd, slot) < cur_key:
+                learned.append(r)
+            else:
+                pending.append(r)
+    out = {"course": course, "girl": girl, "semester": sem, "week": week,
+           "time": dt.strftime("%Y-%m-%d %H:%M"), "on_course": on_course,
+           "total": len(rows), "learned": learned, "current": current, "pending": pending}
+    if a.json:
+        print(json.dumps(out, ensure_ascii=False, indent=1))
+        return 0
+    print(f"# 课程进度 · {course}（{GIRL_CN[girl]}）@ {out['time']}（第{sem}学期 第{week}周）")
+    print(f"  状态: {'🕐 正在上课' if on_course else '未在课上'} ｜ 总 {out['total']} 节 ｜ "
+          f"已学 {len(learned)} ｜ 当前 {len(current)} ｜ 未学 {len(pending)}")
+    if current:
+        print("  ▶ 当前:")
+        for r in current:
+            print(f"      W{r['week']}·{r['session']}  {r['topic']}")
+    if learned:
+        print("  ✔ 已学:")
+        for r in learned:
+            print(f"      W{r['week']}·{r['session']}  {r['topic']}")
+    if pending:
+        print("  ○ 未学:")
+        for r in pending[:12]:
+            print(f"      W{r['week']}·{r['session']}  {r['topic']}")
+        if len(pending) > 12:
+            print(f"      … 其余 {len(pending) - 12} 节")
+    return 0
+
+
 def cmd_girl(a):
     """女孩档案：专业/选修/个人调度/课表文件"""
     girl = a.girl or "surrey"
@@ -436,6 +538,7 @@ COMMANDS = {
     "room": (cmd_room, "教室占用"),
     "check": (cmd_check, "全量校验"),
     "summary": (cmd_summary, "学期总览"),
+    "progress": (cmd_progress, "课程进度（已学/当前/未学）"),
     "girl": (cmd_girl, "女孩档案"),
     "help": (cmd_help, "帮助"),
 }
