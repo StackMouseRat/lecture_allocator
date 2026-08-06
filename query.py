@@ -440,21 +440,13 @@ def cmd_progress(a):
         print(f"第{sem}学期无该课授课方案: {course}", file=sys.stderr)
         return 2
     rows = d[course]["rows"]
-    # 该课周次→天分布（db 权威，用于非在课时的 key 比较）
-    conn = _conn()
-    if sem in (4, 5):
-        q = conn.execute(
-            "SELECT weekday, slot_index, session_weeks FROM girl_course_schedule "
-            "WHERE semester_no=? AND course=? AND girl=?", (sem, course, girl)).fetchall()
-    else:
-        q = conn.execute(
-            "SELECT weekday, slot_index, session_weeks FROM virtual_course_schedule "
-            "WHERE semester_no=? AND course=?", (sem, course)).fetchall()
-    conn.close()
+    # 该课周次→天分布（渲染层权威 rows_for_sem：兼容占位符选修→渲染课名，如 专业选修·下午①→电力系统分析）
     wmap = {}
-    for r in q:
-        for w in [int(x) for x in r["session_weeks"].split(",") if x.strip()]:
-            wmap.setdefault(w, {}).setdefault(r["weekday"], r["slot_index"])
+    for wd, slot, cname, weeks, _t, _l, _ct in rows_for_sem(sem, girl):
+        if cname != course:
+            continue
+        for w in weeks:
+            wmap.setdefault(w, {}).setdefault(wd, slot)
     wlist = {w: sorted((wd, s) for wd, s in wd_s.items()) for w, wd_s in wmap.items()}
 
     on_course = info.get("status") == "in_class" and info.get("course") == course
