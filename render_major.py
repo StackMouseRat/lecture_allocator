@@ -56,6 +56,19 @@ def fmt_w(sw):
     if all(x%2==0 for x in wl) and len(wl)>=3: return f"双周{wl[0]}-{wl[-1]}"
     return ",".join(map(str,wl[:3]))+"…"
 
+LOC1 = None
+PE_LOC = None
+def load_loc1():
+    global LOC1
+    if LOC1 is None:
+        LOC1 = json.load(open(BASE/"data"/"locations_sem1.json", encoding="utf-8"))["courses"]
+    return LOC1
+def load_pe_loc():
+    global PE_LOC
+    if PE_LOC is None:
+        PE_LOC = json.load(open(BASE/"data"/"pe_plan.json", encoding="utf-8"))
+    return PE_LOC
+
 TEACHERS = None
 def load_teachers():
     global TEACHERS
@@ -83,16 +96,19 @@ def render(girl):
         for r in rows:
             cname, ct = r["course"], r["course_type"]
             wd, slot, wks = r["weekday"], r["slot_index"], r["session_weeks"]
+            loc = ""
             # 选修占位符 → 人设课程名；未选则跳过
             if ("选修" in cname) or cname.startswith("四史"):
+                ph = cname
                 real = rname(cname, girl)
                 if real is None: continue
                 cname, ct = real, "选修"
+                loc = load_loc1().get(ph, "")
             # 四史：只上5次课（多余学时自行复习），仅显示第1-5周
             if cname in SISHI:
                 wks = ",".join(map(str, range(1, 6)))   # 5次
                 ct = "四史"
-                cell[(wd, slot)].append((cname, ct, wks, "自习"))
+                cell[(wd, slot)].append((cname, ct, wks, "自习", "自习（无教室）"))
                 continue
             # 体育课 → 具体专项（按人设），时间不变（同公共课周三下午）
             if cname in PE_PLAN.get(girl, {}):
@@ -101,6 +117,7 @@ def render(girl):
                 ct = "体育"
                 cname = pname
                 tinfo = None  # 体育专项时间固定，不参与天偏移
+                loc = load_pe_loc().get(girl, {}).get("location", "")
             else:
                 tname = ""
             # 天偏移：按老师分配（同老师同偏移→时间必同；不同老师可不同）
@@ -110,7 +127,9 @@ def render(girl):
                 if a:
                     wd = (wd + a["offset"]) % 5
                     tname = a["teacher"]
-            cell[(wd,slot)].append((cname, ct, wks, tname))
+            if not loc:
+                loc = load_loc1().get(cname, "")
+            cell[(wd,slot)].append((cname, ct, wks, tname, loc))
         ev_cell = defaultdict(list)
         for e in evs:
             if any(k in e["course"] for k in NO_SCHEDULE):   # 无课表课程不显示
@@ -123,12 +142,13 @@ def render(girl):
                 parts = []
                 for cname, wn in sorted(ev_cell.get((wd,s),[])):
                     parts.append(f"⚠️{cname[:8]}(W{wn})")
-                for cname, ct, wks, tname in sorted(cell.get((wd,s),[]), key=lambda x: min(int(y) for y in x[2].split(','))):
+                for cname, ct, wks, tname, loc in sorted(cell.get((wd,s),[]), key=lambda x: min(int(y) for y in x[2].split(','))):
                     if ct == "四史":
                         parts.append(f"{cname}（5次·自习）{fmt_w(wks)}")
                         continue
                     tg = "🔬" if ct=="实验" else ("🏭" if ct=="实践" else "")
-                    parts.append(f"{cname[:8]}{tg}{fmt_w(wks)}{('·'+tname) if tname else ''}")
+                    loc_str = f"·{loc}" if loc else ""
+                    parts.append(f"{cname[:8]}{tg}{fmt_w(wks)}{('·'+tname) if tname else ''}{loc_str}")
                 line += (" "+"<br>".join(parts)+" |") if parts else " — |"
             lines.append(line)
         out = OUT / f"{girl}_sem{sem}.md"
