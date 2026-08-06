@@ -29,24 +29,24 @@
  },
  "通识选修·晚间⑤": {
   "default": "C++面向对象程序设计",
-  "surrey": "中外经典导读·英国卷",
-  "orage": "游戏与技术创新",
-  "sakawa": "影视鉴赏",
-  "taiyuan": "中国近现代史"
+  "surrey": "C++面向对象程序设计",
+  "orage": "C++面向对象程序设计",
+  "sakawa": "C++面向对象程序设计",
+  "taiyuan": "C++面向对象程序设计"
  },
  "通识选修·晚间⑥": {
   "default": "软件技术基础",
-  "surrey": "西方艺术史",
-  "orage": "信息传播学",
-  "sakawa": "社交心理学",
-  "taiyuan": "军事思想概论"
+  "surrey": "软件技术基础",
+  "orage": "软件技术基础",
+  "sakawa": "软件技术基础",
+  "taiyuan": "软件技术基础"
  },
  "通识选修·晚间⑦": {
   "default": "Python语言程序设计",
-  "surrey": "服饰与设计美学",
-  "orage": "逻辑与论辩",
-  "sakawa": "演讲与口才",
-  "taiyuan": "应用写作"
+  "surrey": "Python语言程序设计",
+  "orage": "Python语言程序设计",
+  "sakawa": "Python语言程序设计",
+  "taiyuan": "Python语言程序设计"
  },
  "专业选修·下午①": {
   "default": "电气工程新技术导论",
