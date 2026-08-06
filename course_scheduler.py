@@ -39,6 +39,7 @@ SLOTS = [
     (7, "第五节", 1, "19:00", "19:45", 1),
     (8, "第五节", 2, "19:55", "20:40", 1),
     (9, "第五节", 3, "20:50", "21:35", 1),
+    (12, "第五节", 4, "21:35", "22:20", 1),
 ]
 
 SLOT_2H = {"上午": [(1, 2), (3, 4)], "下午": [(5,), (6,)], "晚上": [(7, 8)]}   # 晚上：普通选修课优先
@@ -95,7 +96,14 @@ def build_lesson_plans(course):
         # 虚拟学时（不排课）扣除：实际排课时数 = 总学时 - 虚拟学时
         eff = total - course.get("virtual_hours", 0)
         sessions = course.get("sessions", max(1, round(eff / hps)))
-        return [{"weeks": None, "slots": (7, 8, 9), "hours": hps, "sessions": sessions}]
+        # 晚间小节数按每次学时：4学时→4小节(7,8,9,12)；3学时→3小节；≤2学时→2小节
+        if hps >= 4:
+            slots = (7, 8, 9, 12)
+        elif hps == 3:
+            slots = (7, 8, 9)
+        else:
+            slots = (7, 8)
+        return [{"weeks": None, "slots": slots, "hours": hps, "sessions": sessions}]
     # 块状课程（机电创新实训等）：每周1个半天/全天块；支持混合（半天段→全天段，全天一旦开始持续到结束）
     if course.get("block"):
         BLOCKS = {"full": (1, 2, 3, 4, 5, 6), "half-am": (1, 2, 3, 4), "half-pm": (5, 6)}
@@ -158,7 +166,7 @@ def allocate(data):
     placed_records = []
     two_slot_idx = 0        # 2课次课模式轮换计数器
     # 周次感知槽位：used_weeks[天][slot] = 已占用周次集合（支持1-8周/9-16周不同课复用同一槽位）
-    used_weeks = {w: {s: set() for s in range(1, 10)} for w in range(ndays)}
+    used_weeks = {w: {s: set() for s in range(1, 13) if s != 10 and s != 11} for w in range(ndays)}
     ALL_W = set(range(1, 17))
 
     def pick_slot(combo_pool, prefs, allow_reserved=False, exclude_days=(), no_evening=False,
@@ -314,7 +322,8 @@ def allocate(data):
             placed = False
             groups = ["晚上"] if course.get("evening_only") else ["下午", "晚上"]   # 仅晚间实验（上机）
             for slot_group in groups:                # 下午优先，晚上兜底
-                pool = {"下午": SLOT_AFTERNOON_BLOCK, "晚上": SLOT_EVENING}[slot_group]
+                eve_combo = (7, 8, 9, 12) if hps >= 4 else ((7, 8, 9) if hps == 3 else (7, 8))
+                pool = {"下午": SLOT_AFTERNOON_BLOCK, "晚上": [eve_combo]}[slot_group]
                 if course.get("weeks"):
                     week_opts = [[int(x) for x in course["weeks"].split(",")]]
                 elif continuous:
@@ -432,7 +441,8 @@ def allocate(data):
         if any(exp_cnt[x] >= 3 for x in sw):
             print(f"  ⚠️ 降级失败: {cname}（周{sw}实验数将超3）")
             continue
-        w2, combo2 = pick_slot({"晚上": SLOT_EVENING}, ["晚上"], allow_reserved=True, weeks=sw_set)
+        eve_combo = (7, 8, 9, 12) if hps >= 4 else ((7, 8, 9) if hps == 3 else (7, 8))
+        w2, combo2 = pick_slot({"晚上": [eve_combo]}, ["晚上"], allow_reserved=True, weeks=sw_set)
         if w2 is not None:
             for s in combo2:
                 used_weeks[w2][s].update(sw_set)
