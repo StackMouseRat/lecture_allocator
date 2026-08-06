@@ -131,8 +131,8 @@ S5 = [
     # ---- 实验（物电院，大三连续周，下午优先/晚间兜底）----
     C("电力电子技术基础实践", "实验", "物电院", 20, "cont", public=True, weeks=list(range(1, 6)),
       teachers={"*": "E700"}, hps=4, afternoon_first=True),
-    C("自动控制原理实验", "实验", "物电院", 12, "cont", public=True, weeks=list(range(5, 8)),
-      teachers={"*": "E600"}, hps=4, afternoon_first=True),
+    C("自动控制原理实验", "实验", "物电院", 12, "cont", public=True, weeks=list(range(4, 10)),
+      teachers={"*": "E600"}, hps=2, afternoon_first=True),   # 2学时/次 × 6次（用户明确）
     C("电机学（上）实验", "实验", "物电院", 12, "cont", public=True, weeks=list(range(6, 9)),
       teachers={"*": "E1000"}, hps=4, afternoon_first=True),
     C("信号与系统实验", "实验", "物电院", 12, "cont", public=True, weeks=list(range(9, 12)),
