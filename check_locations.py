@@ -15,10 +15,14 @@ SLOT_TIME = {1:"08:00", 2:"08:55", 3:"10:00", 4:"10:55", 5:"14:30", 6:"16:10", 7
 WD = ["周一","周二","周三","周四","周五"]
 GIRLS = [("surrey","萨里"),("orage","暴风雨"),("sakawa","酒匂"),("taiyuan","太原")]
 SEM_LIST = [1, 2, 3, 4, 5, 6]   # 已分配地点的学期（S4/5 走 per-girl 表；S6 用 locations_sem6.json）
+# 复临舍↔中楼 距离很近：跨楼相邻课次（gap≤30min 且同周次）允许（10 分钟可转场，用户明确）
+NEAR_PAIRS = {("复临舍", "中楼")}
+def near_ok(b1, b2):
+    return b1 == b2 or (b1, b2) in NEAR_PAIRS or (b2, b1) in NEAR_PAIRS
 
 def building(loc):
     if not loc: return None
-    for b in ["综合楼","研楼","复临舍","前进楼","体育馆","田径场","游泳馆","机电创新实训中心"]:
+    for b in ["综合楼","研楼","复临舍","中楼","电气院","前进楼","体育馆","田径场","游泳馆","机电创新实训中心"]:
         if b in loc: return b
     if "自习" in loc: return "自习"
     return loc
@@ -61,7 +65,7 @@ for sem_no in SEM_LIST:
                 cur, nxt = lst[i], lst[i+1]
                 gap = nxt[1] - cur[2]
                 if gap <= 30 and gap >= 0 and (cur[5] & nxt[5]):
-                    if cur[4] != nxt[4]:
+                    if cur[4] != nxt[4] and not near_ok(cur[4], nxt[4]):
                         conflicts.append((cur, nxt))
         print(f"\n【{cn}·第{sem_no}学期】")
         if not conflicts:

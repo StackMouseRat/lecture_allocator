@@ -41,6 +41,11 @@ SLOT_PREF = {3: 0, 6: 1, 5: 2, 1: 3, 7: 4, 9: 5, 10: 6}
 
 ROOMS = {
     "研楼": [f"研楼{c}{l}0{n}" for c in "ABC" for l in range(1, 4) for n in range(1, 6)],
+    # 复临舍：2-5F，X01/X05 大教室，其余 X02-X04/X06-X08 中（用户明确）
+    "复临舍": [f"复临舍{l}{n:02d}(中)" for l in range(2, 6) for n in (2, 3, 4, 6, 7, 8)],
+    # 中楼：1-2F，X01/X12 大教室，其余 X02-X11 中（用户明确）
+    "中楼": [f"中楼{l}{n:02d}(中)" for l in range(1, 3) for n in range(2, 12)],
+    "电气院": [f"电气院实验室{n}" for n in range(1, 7)],
     "综合楼中": ["综合楼301(中)", "综合楼302(中)", "综合楼303(中)", "综合楼304(中)", "综合楼305(中)",
                "综合楼306(中)", "综合楼308(中)", "综合楼309(中)", "综合楼311(中)", "综合楼312(中)",
                "综合楼313(中)", "综合楼314(中)", "综合楼401(中)", "综合楼402(中)", "综合楼403(中)"],
@@ -52,7 +57,13 @@ ROOMS = {
     "机电中心": ["机电创新实训中心1", "机电创新实训中心2"],
 }
 BUILDING = {"研楼": "研楼", "综合楼中": "综合楼", "综合楼大": "综合楼",
-            "物电院": "物电院", "体育馆": "体育馆", "自习": "自习", "机电中心": "机电中心"}
+            "物电院": "物电院", "体育馆": "体育馆", "自习": "自习", "机电中心": "机电中心",
+            "复临舍": "复临舍", "中楼": "中楼", "电气院": "电气院"}
+
+# 复临舍↔中楼 距离很近：相邻课次（gap≤30min）跨这两楼允许（10 分钟可转场，用户明确）
+NEAR_PAIRS = {("复临舍", "中楼")}
+def same_area(b1, b2):
+    return b1 == b2 or (b1, b2) in NEAR_PAIRS or (b2, b1) in NEAR_PAIRS
 
 
 def log(msg):
@@ -112,33 +123,33 @@ S5 = [
     # 第5学期起：4 人全部同班同专业（电气工程），核心课/实验/公共课全 public
     # （只有第6学期的专业选修按人不同；S5 无专业选修）
     # ===================================================================
-    C("信号与系统", "理论", "研楼", 38, "full+part3", public=True, teachers={"*": "T600"}),
-    C("电力电子技术基础", "理论", "研楼", 36, "full+w12", public=True, teachers={"*": "T300"}),
-    C("微机原理及其应用", "理论", "研楼", 48, "full+half1", public=True, teachers={"*": "T400"}),
-    C("自动控制原理", "理论", "研楼", 38, "full+part3", public=True, teachers={"*": "T100"}),
-    C("电机学（上）", "理论", "研楼", 44, "same2", public=True, weeks=list(range(1, 12)),
+    C("信号与系统", "理论", "复临舍", 38, "full+part3", public=True, teachers={"*": "T600"}),
+    C("电力电子技术基础", "理论", "中楼", 36, "full+w12", public=True, teachers={"*": "T300"}),
+    C("微机原理及其应用", "理论", "复临舍", 48, "full+half1", public=True, teachers={"*": "T400"}),
+    C("自动控制原理", "理论", "复临舍", 38, "full+part3", public=True, teachers={"*": "T100"}),
+    C("电机学（上）", "理论", "复临舍", 44, "same2", public=True, weeks=list(range(1, 12)),
       teachers={"*": "T200"}),
-    C("电力系统基础（上）", "理论", "研楼", 40, "same2", public=True, weeks=list(range(1, 11)),
+    C("电力系统基础（上）", "理论", "中楼", 40, "same2", public=True, weeks=list(range(1, 11)),
       teachers={"*": "T500"}),
-    C("高电压技术基础", "理论", "研楼", 32, "full", public=True, teachers={"*": "T700"}),
+    C("高电压技术基础", "理论", "复临舍", 32, "full", public=True, teachers={"*": "T700"}),
     # ---- 小班讨论（同班）----
-    C("信号与系统·讨论", "讨论", "研楼", 4, "single", public=True, weeks=[9, 10],
+    C("信号与系统·讨论", "讨论", "复临舍", 4, "single", public=True, weeks=[9, 10],
       teachers={"*": "T1900"}),
     # ---- 形势与政策（同班，周四 slot6 固定）----
-    C("形势与政策(5)", "讲座", "综合楼中", 4, "single", public=True,
+    C("形势与政策(5)", "讲座", "复临舍", 4, "single", public=True,
       teachers={"*": "P18a"}, weeks=[3, 4], day_fixed=4, slot_fixed=6,
       fixed=[(4, 6, [3, 4])]),
     # ---- 实验（物电院，大三连续周，下午优先/晚间兜底）----
-    C("电力电子技术基础实践", "实验", "物电院", 16, "cont", public=True, weeks=list(range(1, 9)),
+    C("电力电子技术基础实践", "实验", "电气院", 16, "cont", public=True, weeks=list(range(1, 9)),
       teachers={"*": "E700"}, hps=2, afternoon_first=True),   # 8次×2学时=16（课时减半次数翻倍，用户明确）
-    C("自动控制原理实验", "实验", "物电院", 12, "cont", public=True, weeks=list(range(4, 10)),
+    C("自动控制原理实验", "实验", "电气院", 12, "cont", public=True, weeks=list(range(4, 10)),
       teachers={"*": "E600"}, hps=2, afternoon_first=True),   # 2学时/次 × 6次（用户明确）
-    C("电机学（上）实验", "实验", "物电院", 8, "multi", public=True,
+    C("电机学（上）实验", "实验", "电气院", 8, "multi", public=True,
       weeks_list=[[6], [7], [8]], hours_list=[3, 3, 2], hps=3,
       teachers={"*": "E1000"}),   # 3次：3+3+2=8学时（培养方案实践8），3学时晚间3小节/2学时晚间2小节
-    C("信号与系统实验", "实验", "物电院", 12, "cont", public=True, weeks=list(range(9, 12)),
+    C("信号与系统实验", "实验", "电气院", 12, "cont", public=True, weeks=list(range(9, 12)),
       teachers={"*": "E900"}, hps=4, afternoon_first=True),
-    C("微机原理及其应用实践", "实验", "物电院", 32, "split", public=True,
+    C("微机原理及其应用实践", "实验", "电气院", 32, "split", public=True,
       weeks_list=[list(range(7, 11)), list(range(12, 16))],
       teachers={"*": "E800"}, hps=4, afternoon_first=True),
     # ---- 机电技术创新实训（固定块：周三下午 W6-11 半天 + 周五全天 W12-16）----
@@ -292,7 +303,7 @@ class Scheduler:
                         continue
                     if gap_ok(nb, s) if nb < s else gap_ok(s, nb):
                         for (wset, nb_b) in ggrid.get((wd, nb), []):
-                            if wset & set(weeks) and nb_b != b:
+                            if wset & set(weeks) and not same_area(nb_b, b):
                                 return False
         # 同课两行间隔≥2天
         for (pwd, pslot, pweeks) in prev_rows:
@@ -531,7 +542,7 @@ def verify(s):
                             if nb_s not in SLOT_TIME: continue
                             if gap_ok(nb_s, s_) if nb_s < s_ else gap_ok(s_, nb_s):
                                 for (wset, nb_b) in ggrid.get((wd, nb_s), []):
-                                    if wset & weeks_set and nb_b != b:
+                                    if wset & weeks_set and not same_area(nb_b, b):
                                         errs.append(f"{c['course']} {g} {WD_CN[wd]} slot{s_} 相邻{WD_CN[wd]}slot{nb_s} 不同楼({b} vs {nb_b})")
                 # 教室唯一
                 room = s.rooms.get((c["course"], girl, ri))

@@ -54,20 +54,22 @@ def syllabus_topic(course_name: str, semester_no: int, week: int, weekday: int, 
     return None
 
 def session_of_week(course_name, semester_no, week, weekday, slot_index, girl: str | None = None):
-    """该课当周第几节：按 db 中该课分布的不同天排序（同课次2小节算1节）
+    """该课当周第几节：按 db 中【本周有课】的不同天排序（同课次2小节算1节）
+    与 gen_syllabus build_rows 同口径（周次内天集合变化时按周过滤，如实训 W6-11 周三/W12-16 周五）
     per-girl 学期（4/5）查 girl_course_schedule（按 girl），共享学期查 virtual_course_schedule"""
     import sqlite3
     conn = sqlite3.connect(BASE / "db" / "virtual_time.db")
+    like = "',' || session_weeks || ',' LIKE '%,' || ? || ',%'"
     if semester_no in (4, 5) and girl:
         rows = conn.execute(
             "SELECT DISTINCT weekday FROM girl_course_schedule "
-            "WHERE semester_no=? AND course=? AND girl=? ORDER BY weekday",
-            (semester_no, course_name, girl)).fetchall()
+            f"WHERE semester_no=? AND course=? AND girl=? AND {like} ORDER BY weekday",
+            (semester_no, course_name, girl, str(week))).fetchall()
     else:
         rows = conn.execute(
             "SELECT DISTINCT weekday FROM virtual_course_schedule "
-            "WHERE semester_no=? AND course=? ORDER BY weekday",
-            (semester_no, course_name)).fetchall()
+            f"WHERE semester_no=? AND course=? AND {like} ORDER BY weekday",
+            (semester_no, course_name, str(week))).fetchall()
     conn.close()
     days = [r[0] for r in rows]
     if weekday in days:
