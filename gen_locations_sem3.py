@@ -8,8 +8,8 @@ from pathlib import Path
 
 random.seed(20230904)   # 固定种子可复现
 
-# 研楼教室：3层 × 01-05（研楼101~305）
-YANLOU = [f"研楼{f}{n:02d}" for f in range(1, 4) for n in range(1, 6)]
+# 研楼教室：A/B/C 区 × 3层 × 01-05（研楼A101~C305）
+YANLOU = [f"研楼{b}{f}{n:02d}" for b in "ABC" for f in range(1, 4) for n in range(1, 6)]
 # 电路3老师随机3个不同教室
 rooms = random.sample(YANLOU, 3)
 O401, O402, O403 = rooms
@@ -30,7 +30,7 @@ TEACHER_ROOMS = {
     "E300": "物电院实验室", "E301": "物电院实验室", "E302": "物电院实验室",
     "P16a": "综合楼201(中)", "P16b": "综合楼202(中)", "P16c": "综合楼203(中)",
 }
-out = {"buildings": ["综合楼", "研楼(3层×01-05)", "物电院", "体育馆", "田径场", "前进楼"],
+out = {"buildings": ["综合楼", "研楼(A/B/C×3层×01-05)", "物电院", "体育馆", "田径场", "前进楼"],
        "courses": LOC, "teacher_rooms": TEACHER_ROOMS}
 Path("data/locations_sem3.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 print("✅ 第3学期地点模型已生成（研楼电路随机分配）")
