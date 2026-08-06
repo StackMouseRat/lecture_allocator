@@ -46,8 +46,8 @@ def EV(name, credits, half="first", weeks="9-16", hps=2):  # 讨论/讲座课
 def SX(name, credits, half="second", weeks="1-8"):   # 形势与政策学期事件
     return {"name": name, "credits": credits, "category": "必修", "type": "讲座",
             "total_hours": 4,
-            "events": [{"week": 3, "weekday": 2, "slot": 5, "start": "14:30", "end": "16:00"},
-                       {"week": 12, "weekday": 2, "slot": 5, "start": "14:30", "end": "16:00"}]}
+            "events": [{"week": 3, "weekday": 1, "slot": 5, "start": "14:30", "end": "16:00"},
+                       {"week": 12, "weekday": 1, "slot": 5, "start": "14:30", "end": "16:00"}]}
 
 # 培养方案大班授课学时（用于标准档判断：总学时含讨论/实践，大班学时才是排课主体）
 LECTURE_MAP = {
