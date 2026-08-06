@@ -56,13 +56,14 @@ def fmt_w(sw):
     if all(x%2==0 for x in wl) and len(wl)>=3: return f"双周{wl[0]}-{wl[-1]}"
     return ",".join(map(str,wl[:3]))+"…"
 
-LOC1 = None
+LOC1 = {}
 PE_LOC = None
-def load_loc1():
+def load_loc(sem):
     global LOC1
-    if LOC1 is None:
-        LOC1 = json.load(open(BASE/"data"/"locations_sem1.json", encoding="utf-8"))
-    return LOC1
+    if sem not in LOC1:
+        f = BASE/"data"/f"locations_sem{sem}.json"
+        LOC1[sem] = json.load(open(f, encoding="utf-8")) if f.exists() else {}
+    return LOC1[sem]
 def load_pe_loc():
     global PE_LOC
     if PE_LOC is None:
@@ -103,7 +104,7 @@ def render(girl):
                 real = rname(cname, girl)
                 if real is None: continue
                 cname, ct = real, "选修"
-                loc = load_loc1().get("courses", {}).get(ph, "")
+                loc = load_loc(sem).get("courses", {}).get(ph, "")
             # 四史：只上5次课（多余学时自行复习），仅显示第1-5周
             if cname in SISHI:
                 wks = ",".join(map(str, range(1, 6)))   # 5次
@@ -129,7 +130,7 @@ def render(girl):
                     tname = a["teacher"]
             if not loc:
                 # 老师级教室优先（不同老师教室必不同），再课程级
-                loc = load_loc1().get("teacher_rooms", {}).get(tname, "") or load_loc1().get("courses", {}).get(cname, "")
+                loc = load_loc(sem).get("teacher_rooms", {}).get(tname, "") or load_loc(sem).get("courses", {}).get(cname, "")
             cell[(wd,slot)].append((cname, ct, wks, tname, loc))
         ev_cell = defaultdict(list)
         for e in evs:

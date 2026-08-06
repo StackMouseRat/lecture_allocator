@@ -66,19 +66,19 @@
   "type": "public",
   "assign": {
    "surrey": {
-    "teacher": "P04",
-    "offset": 0
-   },
-   "taiyuan": {
-    "teacher": "P04",
-    "offset": 0
-   },
-   "orage": {
-    "teacher": "P04",
+    "teacher": "O501",
     "offset": 0
    },
    "sakawa": {
-    "teacher": "P04",
+    "teacher": "O501",
+    "offset": 0
+   },
+   "taiyuan": {
+    "teacher": "O502",
+    "offset": 0
+   },
+   "orage": {
+    "teacher": "O503",
     "offset": 0
    }
   }

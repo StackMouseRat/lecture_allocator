@@ -19,8 +19,9 @@ def elective_content():
 def teachers():
     return _load("teachers", "data/teachers.json")
 
-def locations():
-    return _load("locations", "data/locations_sem1.json")
+def locations(semester_no: int = 1):
+    f = f"data/locations_sem{semester_no}.json"
+    return _load(f"locations{semester_no}", f) if (BASE / f).exists() else {}
 
 def pe_plan():
     return _load("pe", "data/pe_plan.json")
@@ -79,7 +80,7 @@ def resolve(girl: str, raw_name: str, semester_no: int = 1):
             if name in SISHI:
                 return {"name": name, "teacher": "自习", "location": "自习（无教室）",
                         "course_type": "四史", "placeholder": raw_name}
-            loc = locations().get("courses", {}).get(raw_name, "")
+            loc = locations(semester_no).get("courses", {}).get(raw_name, "")
             return {"name": name, "teacher": "", "location": loc,
                     "course_type": "选修", "placeholder": raw_name}
     # 体育 → 专项（第1-3学期=基础专项，第4学期=提高班）
@@ -96,7 +97,7 @@ def resolve(girl: str, raw_name: str, semester_no: int = 1):
     tinfo = teachers().get(raw_name, {})
     a = tinfo.get("assign", {}).get(girl, {})
     teacher = a.get("teacher", "")
-    loc = locations().get("teacher_rooms", {}).get(teacher, "") or \
-          locations().get("courses", {}).get(raw_name, "")
+    loc = locations(semester_no).get("teacher_rooms", {}).get(teacher, "") or \
+          locations(semester_no).get("courses", {}).get(raw_name, "")
     return {"name": raw_name, "teacher": teacher, "location": loc,
             "course_type": "理论", "placeholder": None}
