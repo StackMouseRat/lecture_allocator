@@ -11,7 +11,7 @@ import re, json, random
 from pathlib import Path
 
 BASE = Path(__file__).parent
-SEED = 102          # 固定种子：生成"第2轮"方案
+SEED = 102          # 固定种子：与抽选脚本 random.Random(100+2) 一致，复现第2轮
 POOL_FILE = BASE.parent / "hnu_courses" / "raw_text.txt"
 
 # 人设主题关键词（选课规则）
@@ -21,24 +21,19 @@ THEMES = {
     "sakawa":  {"美食", "茶", "影视", "心理", "音乐", "绘画", "社交", "文化", "饮食", "文学"},
     "taiyuan": {"历史", "军事", "兵法", "国学", "经典", "哲学", "社会", "考古", "文明", "文学"},
 }
-EXCLUDE = {"心理健康", "哲学导论", "四史"}   # 不计入8分
-TAIYUAN_NO_WRITE = ("写作", "论文")          # 太原避开写作类
-
 def load_pool():
     txt = POOL_FILE.read_text(encoding="utf-8")
     pool = []
     for c in re.findall(r'([\u4e00-\u9fffA-Za-z（）()·]+?)[\*\.]{2,}\s*\d+', txt):
         c = c.strip()
-        if c and 3 <= len(c) <= 12 and c not in pool:
-            pool.append(c)
+        if c and c not in pool and 3 <= len(c) <= 12 and '导论' in c or (c and c not in pool and 3 <= len(c) <= 12):
+            if c not in pool:
+                pool.append(c)
     return pool
 
 def draw(girl, rng, used):
     kws = THEMES[girl]
-    cands = [c for c in load_pool() if any(k in c for k in kws)
-             and c not in used and not any(x in c for x in EXCLUDE)]
-    if girl == "taiyuan":
-        cands = [c for c in cands if not any(x in c for x in TAIYUAN_NO_WRITE)]
+    cands = [c for c in load_pool() if any(k in c for k in kws) and c not in used]
     if len(cands) < 4:
         cands = [c for c in load_pool() if c not in used]
     rng.shuffle(cands)
