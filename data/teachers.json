@@ -1222,19 +1222,19 @@
   "assign": {
    "surrey": {
     "teacher": "O401",
-    "offset": 2
-   },
-   "taiyuan": {
-    "teacher": "O402",
-    "offset": 4
-   },
-   "orage": {
-    "teacher": "O403",
-    "offset": 1
+    "offset": 0
    },
    "sakawa": {
     "teacher": "O401",
-    "offset": 2
+    "offset": 0
+   },
+   "taiyuan": {
+    "teacher": "O402",
+    "offset": 0
+   },
+   "orage": {
+    "teacher": "O403",
+    "offset": 0
    }
   }
  },
